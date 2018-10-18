@@ -1,16 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import{RouterModule,Routes} from '@angular/router';
+import {FeedbackListComponent} from './feedback/feedback-list/feedback-list.component';
 
-import { AppComponent } from './app.component';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+const routes:Routes=[
+    
+    {path:'',redirectTo:'/feed/lista',pathMatch:'full'},
+    
+    {path:'feed',component:FeedbackListComponent}
+];
