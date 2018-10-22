@@ -1,16 +1,19 @@
 <div class="container-fluid">
-    <div class="col-md-2">
+    <div class="col-md-3">
         <table class="table table-striped">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
-                    <th>Name</th>    
+                    <th colspan="3">Feedbacks</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = " let feedback of feedbacks">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/feedbacks/{{feedback.descripcion}}">{{feedback.descripcion}}</dd>
-                    </td>
+                <th>Usuario</th>
+                <th>Descripcion</th>
+                <th>Rating</th>
+                <tr *ngFor="let feedback of feedbacks">
+                    <td>{{feedback.usuario}}</td>
+                    <td>{{feedback.descripcion}}</td>
+                    <td>{{feedback.rating}}</td>
                 </tr>
             </tbody>
         </table>

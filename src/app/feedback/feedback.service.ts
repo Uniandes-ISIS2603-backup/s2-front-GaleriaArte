@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import {Feedback} from './feedback';
 
 const API_URL = "../../assets/";
-const feedbacks = 'feedbacks.json';
+const feedbacks = 'feedback.json';
 /**
 * The service provider for everything related to feedbacks
 */
