@@ -1,3 +1,18 @@
-<p>
-  feedback-list works!
-</p>
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = " let feedback of feedbacks">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/feedbacks/{{feedback.descripcion}}">{{feedback.descripcion}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
