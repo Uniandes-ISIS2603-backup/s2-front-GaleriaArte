@@ -1,17 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import{RouterModule,Routes} from '@angular/router';
-import {FeedbackListComponent} from './feedback/feedback-list/feedback-list.component';
+import{ RouterModule,Routes } from '@angular/router';
+import { routes } from './routes';
 
 
-const routes:Routes=[
-    
-    
-    {
-        path:'feed',
-        component:FeedbackListComponent
-    }
-];
 @NgModule({
   imports: [
     CommonModule,
