@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-3">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="3">Artist</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <tr *ngFor="let artist of artists">
+                    <td>{{artist.nombre}}</td>
+                    <td>{{artist.imagen}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
