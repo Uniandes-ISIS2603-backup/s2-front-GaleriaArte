@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {Artist} from './artist';
+import { Observable } from 'rxjs'         ;
+import { Artist     } from './artist'     ;
 
-const API_URL = "../../assets/";
-const artist = 'artist.json';
+const API_URL = "../../assets/" ;
+const artist  = 'artist.json'   ;
 
-@Injectable({
+  @Injectable({
   providedIn: 'root'
-})
-export class ArtistService {
+  })
+  export class ArtistService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  get Artists(): Observable<Artist[]> {
-    return this.http.get<Artist[]>(API_URL + artist);
-}
+    getArtists(): Observable<Artist[]> {
+      return this.http.get<Artist[]>(API_URL + artist);
+  }
 }
