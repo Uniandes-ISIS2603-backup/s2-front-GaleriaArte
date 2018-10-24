@@ -1,12 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FeedbackModule} from "./feedback/feedback.module";
-import {BuyerModule} from './buyer/buyer.module';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AppComponent } from './app.component';
-import { InicioComponent } from './inicio/inicio.component';
+import { BrowserModule    } from '@angular/platform-browser'  ;
+import { NgModule         } from '@angular/core'              ;
+import { HttpClientModule } from '@angular/common/http'       ;
+import { AppRoutingModule } from './app-routing'              ;
+import { NgbModule        } from '@ng-bootstrap/ng-bootstrap' ;
+import { AppComponent     } from './app.component'            ;
+
+import { ArtistModule     } from './artist/artist.module'     ;
+import { FeedbackModule   } from "./feedback/feedback.module" ;
+import { BuyerModule      } from './buyer/buyer.module'       ;
+import { InicioComponent  } from './inicio/inicio.component'  ;
 
 @NgModule({
   declarations: [
@@ -16,9 +18,12 @@ import { InicioComponent } from './inicio/inicio.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+/**********  Importe de los modulos nuestros  ************************** */
+    ArtistModule,
     FeedbackModule,
-    AppRoutingModule,
     BuyerModule,
+/*********************************************************************** */
+    AppRoutingModule,
     NgbModule
     ],
   providers: [],
