@@ -13,7 +13,7 @@ export class ArtistService {
 
   constructor(private http: HttpClient) { }
 
-  getFeedBacks(): Observable<Artist[]> {
+  get Artists(): Observable<Artist[]> {
     return this.http.get<Artist[]>(API_URL + artist);
 }
 }
