@@ -16,4 +16,7 @@ const artist  = 'artist.json'   ;
     getArtists(): Observable<Artist[]> {
       return this.http.get<Artist[]>(API_URL + artist);
   }
+  //getArtistDetail(artistId): Observable<ArtistDetail> {
+  //  return this.http.get<ArtistDetail>(API_URL + artist + '/' + artistId);
+//}
 }

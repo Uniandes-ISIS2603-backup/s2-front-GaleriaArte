@@ -10,6 +10,9 @@
                 <th>Nombre</th>
                 <th>Imagen</th>
                 <tr *ngFor="let artist of artists">
+                        <!----td style="cursor: pointer;">
+                                <dd class="figure-caption" routerLink="/artists/{{artist.id}}">{{artist.name}}</dd>
+                            </td-->
                     <td>{{artist.nombre}}</td>
                     <td>{{artist.imagen}}</td>
                 </tr>
