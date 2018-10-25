@@ -1,22 +1,22 @@
 <div class="container-fluid">
-    <div class="col-md-3">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="3">Artists</th>
-                </tr>
-            </thead>
-            <tbody>
-                <th>Nombre</th>
-                <th>Imagen</th>
-                <tr *ngFor="let artist of artists">
-                        <!----td style="cursor: pointer;">
-                                <dd class="figure-caption" routerLink="/artists/{{artist.id}}">{{artist.name}}</dd>
-                            </td-->
-                    <td>{{artist.nombre}}</td>
-                    <td>{{artist.imagen}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div clas="row">
+        <div class="col">
+            <table class="table table-striped">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th class = "h3" colspan="2">Artist´s</th>
+                            </tr>
+                            <th>Usuario</th>
+                            <th>imagen</th>
+                        </thead>
+                <tbody>
+                    <tr *ngFor = "let artist of artists"
+                        (click)="onSelected(artist.id)">
+                        <td style="cursor: pointer;">{{artist.nombre}}</td>
+                        <td>{{artist.imagen}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
 </div>

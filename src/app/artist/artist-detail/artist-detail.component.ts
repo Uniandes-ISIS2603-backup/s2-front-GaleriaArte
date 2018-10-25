@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistService } from '../artist.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist-detail',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private artistService: ArtistService,
+    private route: ActivatedRoute) { }
+
+    artist_id: number;
 
   ngOnInit() {
+    this.artist_id = +this.route.snapshot.paramMap.get('id');
   }
 
 }
