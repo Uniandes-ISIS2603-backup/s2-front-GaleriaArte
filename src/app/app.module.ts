@@ -1,3 +1,4 @@
+import { PaintworkModule } from './paintwork/paintwork.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
 import { HttpClientModule } from '@angular/common/http'             ;
@@ -20,6 +21,7 @@ import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-
     BrowserModule,
     HttpClientModule,
 /**********  Importe de los modulos nuestros  ************************** */
+    PaintworkModule,
     ArtistModule,
     FeedbackModule,
     BuyerModule,

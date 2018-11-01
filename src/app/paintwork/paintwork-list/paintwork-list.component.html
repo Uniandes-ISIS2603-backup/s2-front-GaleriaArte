@@ -1,0 +1,15 @@
+<div>
+        <div class="row card-group">
+                <div class="col-4"  *ngFor="let paintwork of paintworks">
+                    <div class="card">
+                            <img class="card-img-top" src="{{paintwork.imagePath}}" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">{{paintwork.name}}</h5>
+                              <p class="card-text">{{paintwork.description}}</p>
+                              <p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p>
+                              <button type="button" class="btn btn-primary">See more</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+</div>

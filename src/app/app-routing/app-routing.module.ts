@@ -5,13 +5,22 @@ import { FeedbackListComponent  } from '../feedback/feedback-list/feedback-list.
 import { InicioComponent        } from "../inicio/inicio.component";
 import { ArtistListComponent    } from "../artist/artist-list/artist-list.component";
 import { ArtistDetailComponent  } from '../artist/artist-detail/artist-detail.component';
+import { PaintworkListComponent    } from "../paintwork/paintwork-list/paintwork-list.component";
+import { PaintworkDetailComponent  } from '../paintwork/paintwork-detail/paintwork-detail.component';
 import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
 
 
 export const routes: Routes=[
+  { path: 'paintwork', children: [
+    {path: 'create', component: PaintworkDetailComponent},
+     {path: 'list', component: PaintworkListComponent}]},
+
+
     { path: 'artists', children: [
        {path: 'list', component: ArtistListComponent},
        {path: ':id', component: ArtistDetailComponent}]},
+
+
     { path: 'feedbacks', children: [
       {path: 'create', component: FeedbacksCreateComponent},
        {path: 'list', component: FeedbackListComponent}]},
