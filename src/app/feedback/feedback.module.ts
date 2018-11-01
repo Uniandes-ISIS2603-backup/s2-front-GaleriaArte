@@ -4,12 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 
 import {FeedbackService} from './feedback.service';
+import { FeedbacksCreateComponent } from './feedbacks-create/feedbacks-create.component';
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [FeedbackListComponent],
+  declarations: [FeedbackListComponent, FeedbacksCreateComponent],
   providers:[FeedbackService],
-  exports:[FeedbackListComponent]
+  exports:[FeedbackListComponent,FeedbacksCreateComponent]
 })
 export class FeedbackModule { }

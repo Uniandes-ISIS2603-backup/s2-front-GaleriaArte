@@ -26,4 +26,8 @@ export class FeedbackService {
   getFeedBacks(): Observable<Feedback[]> {
         return this.http.get<Feedback[]>(API_URL + feedbacks);
 }
+
+createFeedback(feedback): Observable<Feedback> {
+  return this.http.post<Feedback>(API_URL + feedbacks, feedback);
+}
 }

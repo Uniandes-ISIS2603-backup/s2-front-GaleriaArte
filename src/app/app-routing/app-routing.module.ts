@@ -5,6 +5,7 @@ import { FeedbackListComponent  } from '../feedback/feedback-list/feedback-list.
 import { InicioComponent        } from "../inicio/inicio.component";
 import { ArtistListComponent    } from "../artist/artist-list/artist-list.component";
 import { ArtistDetailComponent  } from '../artist/artist-detail/artist-detail.component';
+import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
 
 
 export const routes: Routes=[
@@ -12,6 +13,7 @@ export const routes: Routes=[
        {path: 'list', component: ArtistListComponent},
        {path: ':id', component: ArtistDetailComponent}]},
     { path: 'feedbacks', children: [
+      {path: 'create', component: FeedbacksCreateComponent},
        {path: 'list', component: FeedbackListComponent}]},
     { path:'', component:InicioComponent}
 ];
