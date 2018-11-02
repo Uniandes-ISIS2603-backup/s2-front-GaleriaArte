@@ -11,7 +11,8 @@ import { FeedbackModule   } from "./feedback/feedback.module" ;
 import { BuyerModule      } from './buyer/buyer.module'       ;
 import { InicioComponent  } from './inicio/inicio.component';
 import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-create.component'  ;
-
+import { MedioPagoModule } from './medioPago/medioPago.module';
+import { ExtraServiceModule} from './extraService/extraService.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,8 @@ import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-
     ArtistModule,
     FeedbackModule,
     BuyerModule,
+    MedioPagoModule,
+    ExtraServiceModule,
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule

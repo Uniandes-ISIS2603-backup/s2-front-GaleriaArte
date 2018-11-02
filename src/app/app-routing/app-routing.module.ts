@@ -8,13 +8,20 @@ import { ArtistDetailComponent  } from '../artist/artist-detail/artist-detail.co
 import { PaintworkListComponent    } from "../paintwork/paintwork-list/paintwork-list.component";
 import { PaintworkDetailComponent  } from '../paintwork/paintwork-detail/paintwork-detail.component';
 import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
-
+import { ExtraServiceListComponent } from '../extraService/extraService-list/extraService-list.component';
+import { MedioPagoListComponent } from '../medioPago/medioPago-list/medioPago-list.component';
 
 export const routes: Routes=[
   { path: 'paintwork', children: [
     {path: 'create', component: PaintworkDetailComponent},
      {path: 'list', component: PaintworkListComponent}]},
-
+    
+     {path: 'medioPagos', children:[
+       {path:'list', component: MedioPagoListComponent}]},
+    
+        
+     {path: 'extraServices', children:[
+       {path: 'list', component: ExtraServiceListComponent} ]},
 
     { path: 'artists', children: [
        {path: 'list', component: ArtistListComponent},

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+<div clas="row">
+        <div class="col">
+            <table class="table table-striped">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th class = "h3" colspan="2">Artist´s</th>
+                            </tr>
+                            <th>Usuario</th>
+                            <th>imagen</th>
+                        </thead>
+                <tbody>
+                    <tr *ngFor = "let artist of artists"
+                        (click)="onSelected(artist.id)">
+                        <td style="cursor: pointer;">{{artist.nombre}}</td>
+                        <td>{{artist.imagen}}</td>
+                        <td><img src="{{artist.imagen}}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
+</div>
