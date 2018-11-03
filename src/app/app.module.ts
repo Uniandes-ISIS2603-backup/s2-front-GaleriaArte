@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http'             ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
 import { NgbModule        } from '@ng-bootstrap/ng-bootstrap' ;
 import { AppComponent     } from './app.component'            ;
-
+import {FirebaseModule, FirebaseProvider} from 'angular-firebase';
 import { ArtistModule     } from './artist/artist.module'     ;
 import { FeedbackModule   } from "./feedback/feedback.module" ;
 import { BuyerModule      } from './buyer/buyer.module'       ;
@@ -21,6 +21,7 @@ import { ExtraServiceModule} from './extraService/extraService.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FirebaseModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     ArtistModule,
@@ -32,7 +33,7 @@ import { ExtraServiceModule} from './extraService/extraService.module';
     AppRoutingModule,
     NgbModule
     ],
-  providers: [],
+  providers: [FirebaseProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
