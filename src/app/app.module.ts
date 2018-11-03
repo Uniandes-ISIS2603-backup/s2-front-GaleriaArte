@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
@@ -5,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http'             ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
 import { NgbModule        } from '@ng-bootstrap/ng-bootstrap' ;
 import { AppComponent     } from './app.component'            ;
-import {FirebaseModule, FirebaseProvider} from 'angular-firebase';
 import { ArtistModule     } from './artist/artist.module'     ;
 import { FeedbackModule   } from "./feedback/feedback.module" ;
 import { BuyerModule      } from './buyer/buyer.module'       ;
@@ -13,6 +13,7 @@ import { InicioComponent  } from './inicio/inicio.component';
 import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-create.component'  ;
 import { MedioPagoModule } from './medioPago/medioPago.module';
 import { ExtraServiceModule} from './extraService/extraService.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,6 @@ import { ExtraServiceModule} from './extraService/extraService.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FirebaseModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     ArtistModule,
@@ -33,7 +33,7 @@ import { ExtraServiceModule} from './extraService/extraService.module';
     AppRoutingModule,
     NgbModule
     ],
-  providers: [FirebaseProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
