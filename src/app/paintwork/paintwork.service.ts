@@ -2,8 +2,9 @@ import { Paintwork } from './paintwork';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 const API_URL = "../../assets/";
-const paintworks = 'Paintorks.json';
+const paintworks = 'paintwork.json';
 
 /**
 * The service provider for everything related to editorials
