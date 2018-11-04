@@ -20,4 +20,8 @@ export class SaleService {
     * @param http The HttpClient - This is necessary in order to perform requests
     */
   constructor(private http: HttpClient) { }
+
+  getSale(saleId): Observable<Sale>{
+    return this.http.get<Sale>(API_URL + sale +'/'+saleId);
+  }
 }

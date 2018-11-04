@@ -15,6 +15,7 @@ import { MedioPagoModule } from './medioPago/medioPago.module';
 import { ExtraServiceModule} from './extraService/extraService.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     InicioComponent,
     NotFoundComponent,
     LoginComponent,
+    ModalBasicComponent,
   ],
   imports: [
     BrowserModule,
