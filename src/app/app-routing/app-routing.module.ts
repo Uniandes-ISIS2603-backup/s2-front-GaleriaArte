@@ -1,3 +1,5 @@
+import { LoginComponent } from './../login/login.component';
+import { NotFoundComponent } from './../not-found/not-found.component';
 import { NgModule               } from '@angular/core';
 import { CommonModule           } from '@angular/common';
 import { Routes, RouterModule   } from "@angular/router";
@@ -10,11 +12,17 @@ import { PaintworkDetailComponent  } from '../paintwork/paintwork-detail/paintwo
 import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
 import { ExtraServiceListComponent } from '../extraService/extraService-list/extraService-list.component';
 import { MedioPagoListComponent } from '../medioPago/medioPago-list/medioPago-list.component';
+import { PaintworkAddComponent } from '../paintwork/paintwork-add/paintwork-add.component';
+import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-edit.component';
+
+
 
 export const routes: Routes=[
   { path: 'paintwork', children: [
-    {path: 'create', component: PaintworkDetailComponent},
-     {path: 'list', component: PaintworkListComponent}]},
+    {path: 'detail/:id', component: PaintworkDetailComponent},
+    {path: 'add', component: PaintworkAddComponent},
+    {path: 'edit/:id', component: PaintworkEditComponent},
+    {path: 'list', component: PaintworkListComponent}]},
     
      {path: 'medioPagos', children:[
        {path:'list', component: MedioPagoListComponent}]},
@@ -31,6 +39,10 @@ export const routes: Routes=[
     { path: 'feedbacks', children: [
       {path: 'create', component: FeedbacksCreateComponent},
        {path: 'list', component: FeedbackListComponent}]},
+
+      //{path: '**', component :NotFoundComponent},
+      {path: 'login', component :LoginComponent},
+
     { path:'', component:InicioComponent}
 ];
 

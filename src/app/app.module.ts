@@ -13,11 +13,16 @@ import { InicioComponent  } from './inicio/inicio.component';
 import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-create.component'  ;
 import { MedioPagoModule } from './medioPago/medioPago.module';
 import { ExtraServiceModule} from './extraService/extraService.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
+    NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
