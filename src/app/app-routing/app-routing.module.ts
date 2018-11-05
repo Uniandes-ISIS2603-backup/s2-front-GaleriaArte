@@ -14,6 +14,8 @@ import { ExtraServiceListComponent } from '../extraService/extraService-list/ext
 import { MedioPagoListComponent } from '../medioPago/medioPago-list/medioPago-list.component';
 import { PaintworkAddComponent } from '../paintwork/paintwork-add/paintwork-add.component';
 import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-edit.component';
+import { SaleListComponent } from '../sale/sale-list/sale-list.component';
+import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
 
 
 
@@ -43,7 +45,9 @@ export const routes: Routes=[
       //{path: '**', component :NotFoundComponent},
       {path: 'login', component :LoginComponent},
 
-    { path:'', component:InicioComponent}
+    { path:'', component:InicioComponent},
+    { path:'añade', component:ModalBasicComponent},
+    {path:'sale', component: SaleListComponent}
 ];
 
 @NgModule({

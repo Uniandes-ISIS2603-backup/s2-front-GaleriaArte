@@ -16,6 +16,7 @@ import { ExtraServiceModule} from './extraService/extraService.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
+import { SaleModule } from './sale/sale.module';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
     InicioComponent,
     NotFoundComponent,
     LoginComponent,
-    ModalBasicComponent,
+    ModalBasicComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,8 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
     ExtraServiceModule,
 /*********************************************************************** */
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    SaleModule
     ],
   providers: [],
   bootstrap: [AppComponent]

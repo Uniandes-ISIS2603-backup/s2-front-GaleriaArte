@@ -7,7 +7,7 @@ import {FeedbackService} from './feedback.service';
 import { FeedbacksCreateComponent } from './feedbacks-create/feedbacks-create.component';
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [FeedbackListComponent, FeedbacksCreateComponent],
   providers:[FeedbackService],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
-  selector: 'ngbd-modal-basic',
+  selector: 'app-ngbd-modal-basic',
   templateUrl: './modal-basic.component.html',
   styleUrls: ['./modal-basic.component.css']
 })
