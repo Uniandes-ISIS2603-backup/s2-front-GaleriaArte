@@ -30,6 +30,10 @@ export class FeedbacksCreateComponent implements OnInit {
 
       return this.feedback;
     }
+
+    cancelCreation(): void{
+      this.cancel.emit();
+    }
   ngOnInit() {
    // this.feedback= new Feedback();
   }
