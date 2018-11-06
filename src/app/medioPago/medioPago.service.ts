@@ -4,8 +4,8 @@ import {HttpClient} from '@angular/common/http';
 
 import {MedioPago} from './medioPago';
 
-const API_URL = "../../assets/";
-const medioPagos = '/medioPagos.json';
+const API_URL = "../../assets";
+const medioPagos = '/medioPago.json';
 
 /**
 * The service provider for everything related to medioPagos

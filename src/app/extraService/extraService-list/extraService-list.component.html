@@ -4,17 +4,16 @@
             <table class="table table-striped">
                     <thead class="thead-dark">
                             <tr>
-                                <th class = "h3" colspan="2">Artist´s</th>
+                                <th class = "h3" colspan="2">Servicios Extra</th>
                             </tr>
-                            <th>Usuario</th>
-                            <th>imagen</th>
+                                <th>Id</th>
+                                <th>Nombre</th>
                         </thead>
                 <tbody>
-                    <tr *ngFor = "let artist of artists"
-                        (click)="onSelected(artist.id)">
-                        <td style="cursor: pointer;">{{artist.nombre}}</td>
-                        <td>{{artist.imagen}}</td>
-                        <td><img src="{{artist.imagen}}"></td>
+                    <tr *ngFor = "let extraService of extraServices"
+                        (click)="onSelected(extraService.id)">
+                        <td style="cursor: pointer;">{{extraService.id}}</td>
+                        <td> {{extraService.name}}</td>
                     </tr>
                 </tbody>
             </table>

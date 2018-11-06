@@ -4,8 +4,8 @@ import {HttpClient} from '@angular/common/http';
 
 import {ExtraService} from './extraService';
 
-const API_URL = "../../assets/";
-const extraServices = '/extraServices.json';
+const API_URL = "../../assets";
+const extraServices = '/extraService.json';
 
 @Injectable()
 export class ExtraServiceService 
