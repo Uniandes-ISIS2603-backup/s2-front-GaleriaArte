@@ -1,3 +1,7 @@
+import { AuthService } from './services/auth.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
 import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
@@ -27,6 +31,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     ArtistModule,
@@ -38,7 +45,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     NgbModule
     ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
