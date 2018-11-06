@@ -11,7 +11,9 @@ import { PaintworkListComponent } from "../paintwork/paintwork-list/paintwork-li
 import { PaintworkDetailComponent } from '../paintwork/paintwork-detail/paintwork-detail.component';
 import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
 import { ExtraServiceListComponent } from '../extraService/extraService-list/extraService-list.component';
+import {ExtraServiceDetailComponent } from '../extraService/extraService-detail/extraService-detail.component';
 import { MedioPagoListComponent } from '../medioPago/medioPago-list/medioPago-list.component';
+import {MedioPagoDetailComponent } from '../medioPago/medioPago-detail/medioPago-detail.component';
 import { PaintworkAddComponent } from '../paintwork/paintwork-add/paintwork-add.component';
 import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-edit.component';
 import { SaleListComponent } from '../sale/sale-list/sale-list.component';
@@ -29,14 +31,20 @@ export const routes: Routes = [
   },
 
   {
-    path: 'medioPagos', children: [
-      { path: 'list', component: MedioPagoListComponent }]
+    path: 'medioPagos', 
+    children: [
+      { path: 'list', 
+      component: MedioPagoListComponent }
+    
+      ]
   },
 
 
   {
-    path: 'extraServices', children: [
-      { path: 'list', component: ExtraServiceListComponent }]
+    path: 'extraServices', children: 
+    [
+      { path: 'list', component: ExtraServiceListComponent }
+    ]
   },
 
   {

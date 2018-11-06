@@ -1,4 +1,4 @@
-export interface MedioPago
+export class MedioPago
 {
     id :  number;
     

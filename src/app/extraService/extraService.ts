@@ -1,4 +1,4 @@
-export interface ExtraService
+export class ExtraService
 {
     
     id : number;

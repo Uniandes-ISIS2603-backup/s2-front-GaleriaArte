@@ -3,9 +3,10 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 import {MedioPago} from './medioPago';
+import {MedioPagoDetail} from './medioPago-detail';
 
-const API_URL = "../../assets";
-const medioPagos = '/medioPago.json';
+const API_URL = "http://localhost:8080/s2_interart-api/api";
+const medioPagos = '/medioPagos';
 
 /**
 * The service provider for everything related to medioPagos
@@ -27,5 +28,10 @@ export class MedioPagoService
     getMedioPagos(): Observable<MedioPago[]> {
         return this.http.get<MedioPago[]>(API_URL + medioPagos);
     }
+    
+     getMedioPagoDetail(medioPagoId): Observable<MedioPago> 
+   {
+        return this.http.get<MedioPagoDetail>(API_URL + medioPagos + '/' + medioPagoId);
+   }
 
 }
