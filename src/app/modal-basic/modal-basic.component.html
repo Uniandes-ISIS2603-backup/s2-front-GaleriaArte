@@ -1,0 +1,42 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Añadir un comentario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+           
+            <form name="author">
+               
+                <div class="form-group">
+                    <label for="authorDescription"><b>Comentario: </b></label>
+                    <textarea name="authorDescription" class="form-control" id="authorDescription" ></textarea>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="authorImage"><b>Rating</b></label>
+                    <ngb-rating [(rate)]="currentRate"></ngb-rating>
+
+                </div>
+
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Añade un comentario</button>
+
+
+<pre>{{closeResult}}</pre>
+

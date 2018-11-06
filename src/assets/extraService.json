@@ -1,0 +1,16 @@
+[
+    {
+        "id" : 1,
+        "name" : "Forro de cuero",
+        "description" : "Forro a la medida para guardar o transportar la obra de arte hecho de cuero",
+        "price" : 20000,
+        "availability" : false
+    },
+    {
+        "id" : 2,
+        "name" : "Marco de madera",
+        "description" : "Marco para la obra de arte hecho de madera a la medida",
+        "price" : 10000,
+        "availability": true
+    }
+]

@@ -17,7 +17,8 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         FormsModule
     ],
     declarations: [ExtraServiceListComponent],
-    providers: [ExtraServiceService]
+    providers: [ExtraServiceService],
+    exports: [ExtraServiceListComponent]
 })
 export class ExtraServiceModule {}
 

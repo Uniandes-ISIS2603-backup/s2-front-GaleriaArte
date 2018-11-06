@@ -1,0 +1,34 @@
+<div class="container-fluid"> 
+    <div class="row">
+      <div class="col">
+        <h2>Obra</h2>
+        
+        <img src="">
+      </div>
+      <div class="col">
+        <h2>Realizar compra</h2>
+        <hr>
+        <h4>Informacion:</h4>
+        <br>
+        <h5>Descripcion: </h5>
+        <p>{{sale.descripcion}}</p>
+        <br>
+        <h5>Artista: </h5>
+        <p>{{sale.artista}}</p>
+  
+        <h5>Servicios extra:</h5>
+  
+        <hr>
+        <h6>Precio:</h6>
+        <p>{{sale.precio}}</p>
+        <h6>Impuestos:</h6>
+        {{sale.taxes}}
+        <br>
+        <hr>
+        <h6>Total: </h6>
+        <p>{{sale.precio + sale.taxes}}</p>
+      </div>
+    </div>
+  
+    
+  </div>

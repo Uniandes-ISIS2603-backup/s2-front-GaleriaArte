@@ -5,9 +5,17 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 
 import {FeedbackService} from './feedback.service';
 import { FeedbacksCreateComponent } from './feedbacks-create/feedbacks-create.component';
+
+import { AppRoutingModule } from '../app-routing/app-routing.module';
+
+
+
+ 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
+    
   ],
   declarations: [FeedbackListComponent, FeedbacksCreateComponent],
   providers:[FeedbackService],

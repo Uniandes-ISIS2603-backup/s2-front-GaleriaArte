@@ -1,0 +1,14 @@
+[
+    {
+        "id" :  1,
+        "description" : "Tarjeta de Credito" ,
+        "number" : 1871382974610937,
+        "bank " : "Bancolombia"
+    },
+    {
+        "id" : 2,
+        "description" : "Tarjeta Debito",
+        "number": 2134678301873987,
+        "bank" : "Bando de Bogota"
+    }
+]
