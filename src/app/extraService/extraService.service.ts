@@ -5,8 +5,8 @@ import {HttpClient} from '@angular/common/http';
 import {ExtraService} from './extraService';
 import {ExtraServiceDetail}from './extraService-detail';
 
-const API_URL = "http://localhost:8080/s2_interart-api/api";
-const extraServices = '/extraServices';
+const API_URL = "../../assets/";
+const extraServices = 'extraService.json';
 
 @Injectable()
 export class ExtraServiceService 
@@ -30,5 +30,9 @@ export class ExtraServiceService
      {
        return this.http.get<ExtraServiceDetail>(API_URL + extraServices + '/' + extraServiceId);
     }
+
+    createExtraService(extraService): Observable<ExtraService> {
+        return this.http.post<ExtraService>(API_URL + extraServices, extraService);
+      }
 }
 

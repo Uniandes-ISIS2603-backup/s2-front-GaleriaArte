@@ -14,7 +14,7 @@ export class ExtraServiceCreateComponent implements OnInit {
     private extraServiceService: ExtraServiceService,
    // private toastrService: ToastrService
   ) { }
-    extraSevice: ExtraService;
+    extraService: ExtraService;
 
     @Output() cancel = new EventEmitter();
 
@@ -24,7 +24,7 @@ export class ExtraServiceCreateComponent implements OnInit {
     {
       console.log(this.extraService);
 
-      this extraServiceService.createExtraService(this.extraService).subscribe((extraService) => {this.extraService=extraService; this.create.emit(); 
+      this.extraServiceService.createExtraService(this.extraService).subscribe((extraService) => {this.extraService=extraService; this.create.emit(); 
         //this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
       });
 

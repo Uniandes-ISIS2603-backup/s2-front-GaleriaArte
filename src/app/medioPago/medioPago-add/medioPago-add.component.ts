@@ -14,7 +14,7 @@ export class MedioPagoCreateComponent implements OnInit {
     private medioPagoService: MedioPagoService,
    // private toastrService: ToastrService
   ) { }
-    medioPagoSevice: MedioPagoService;
+    medioPago: MedioPago;
 
     @Output() cancel = new EventEmitter();
 
@@ -24,7 +24,7 @@ export class MedioPagoCreateComponent implements OnInit {
     {
       console.log(this.medioPago);
 
-      this medioPago.createMedioPago(this.medioPago).subscribe((medioPago) => {this.medioPago=medioPago; this.create.emit(); 
+      this.medioPagoService.createMedioPago(this.medioPago).subscribe((medioPago) => {this.medioPago=medioPago; this.create.emit(); 
         //this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
       });
 
