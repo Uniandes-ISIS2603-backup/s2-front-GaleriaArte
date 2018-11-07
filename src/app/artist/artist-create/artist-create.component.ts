@@ -75,3 +75,4 @@ export class ArtistCreateComponent implements OnInit {
     ngOnInit() {
         this.artist = new Artist();
     }
+}
