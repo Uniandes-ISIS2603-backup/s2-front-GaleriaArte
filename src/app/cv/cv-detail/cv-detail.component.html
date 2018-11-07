@@ -1,3 +1,31 @@
-<p>
-  cv-detail works!
-</p>
+<div class="container-fluid">
+  <div clas="row">
+          <div class="col">
+              <table class="table table-striped">
+                      <thead class="thead-dark">
+                              <tr>
+                                  <th class = "h3" colspan="2">{{cvDetail.name}}  </th>
+                              </tr>
+                                  <th>Id</th>
+                                  <th>Nombre</th>
+                                  <th>Fecha de nacimiento</th>
+                                  <th>informacion adicional</th>
+                                 
+                          </thead>
+                  <tbody>
+                      <tr *ngFor = "let cvDetail of cvDetail">
+                          <td>{{cvDetail.id}}</td>
+                          <td> {{cvDetail.name}}</td>
+                           <td> {{cvDetail.description}}</td>
+                            <td> {{cvDetail.price}}</td>
+                             
+                      </tr>
+                  </tbody>
+              </table>
+              <div>
+                  <button type="button" class="btn btn-danger">Volver</button>
+              </div>
+          </div>
+       </div>
+  </div>
+  
