@@ -1,3 +1,23 @@
-<p>
-  artist-detail works!
-</p>
+<div class="panel-body">
+  <div class="border margin">
+      <p class="h3 p-3">{{artistDetail.name}}<p> 
+      <div class="row">
+          <div class="col-md-3">
+              <div class="thumb">
+                  <img class="img-fluid" src='{{artistDetail.image}}' alt="{{artistDetail.image}}" />   
+              </div>
+          </div>
+          <div class="col">
+              <dl>     
+                  <dt>Bio</dt>
+                  <dd>{{artistDetail.description}}</dd>
+                  <dt>BirthDay</dt>
+                  <dd>{{artistDetail.birthDate| date:'MM/dd/yyyy'}}</dd>
+              </dl>
+          </div>
+
+      </div>
+  </div>
+  <!-->p class="h3 p-3">Books by this artist : </p-->
+  <!-->app-book-list [books]="artistDetail.books"></app-book-list-->
+</div>

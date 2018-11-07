@@ -1,12 +1,21 @@
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <br>
             <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()">Create an artist</button>
             </div>
-        </div>
+            <div class="col-8">
+                <div *ngIf="selectedArtist">
+                    <app-artist-detail [artistDetail]="selectedArtist"></app-artist-detail>
+                </div>
+                <div *ngIf="showCreate">
+                    <app-artist-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artist-create>
+                </div>
+            </div>
+         </div>
     </div>
     <br>
     <div>
@@ -18,16 +27,9 @@
                         <h5 class="card-title">{{artist.name}}</h5>
                         <p class="card-text">{{artist.description}}</p>
                         <!-->p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p-->
-                        <button type="button" class="btn btn-primary">See more</button>
+                        <a class="btn btn-primary" routerLink= "/artist/detail">Ver mas</a>
+
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-8">
-            <div *ngIf="selectedArtist">
-                <app-artist-detail [artistDetail]="selectedArtist"></app-artist-detail>
-            </div>
-            <div *ngIf="showCreate">
-                <app-artist-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artist-create>
             </div>
         </div>
