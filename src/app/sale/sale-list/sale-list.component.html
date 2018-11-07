@@ -3,9 +3,10 @@
       <div class="col">
         <h2>Obra</h2>
         
-        <img src="">
+        <img src="{{sale.obra}}">
       </div>
       <div class="col">
+        <br>
         <h2>Realizar compra</h2>
         <hr>
         <h4>Informacion:</h4>
@@ -27,6 +28,22 @@
         <hr>
         <h6>Total: </h6>
         <p>{{sale.precio + sale.taxes}}</p>
+        <div>
+            <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Realizar compra</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h2>Compra realizada con exito!</h2>
+                </div>
+                </ng-template>
+                <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Realizar compra</button>
+
+        </div>
+
       </div>
     </div>
   

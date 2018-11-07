@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Sale } from '../sale';
 import { SaleService } from '../sale.service';
 import { ActivatedRoute } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sale-list',
@@ -13,21 +14,38 @@ export class SaleListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private saleService: SaleService
+    private saleService: SaleService,
+    private modalService: NgbModal
   ) { }
     saleId: number;
+    closeResult: string;
 
+    open(content) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+    }
+  
+    private getDismissReason(reason: any): string {
+      if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+      } else {
+        return  `with: ${reason}`;
+      }
+    }
     getSale(): void{
       this.saleService.getSale(this.saleId).subscribe(sale=>{this.sale= sale});
     }
   ngOnInit() 
   {
-    this.saleId= +this.route.snapshot.paramMap.get('id');
-    if(this.saleId)
-    {
+   
      // this.sale= new Sale();
       this.getSale();
-    }
+    
   }
 
 }

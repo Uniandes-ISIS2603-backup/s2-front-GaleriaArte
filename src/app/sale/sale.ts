@@ -20,5 +20,5 @@ export interface Sale
         //metodo pago
         //servicios extra
         //comprador
-        //obra
+        obra :String;
 }

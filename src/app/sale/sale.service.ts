@@ -22,6 +22,6 @@ export class SaleService {
   constructor(private http: HttpClient) { }
 
   getSale(saleId): Observable<Sale>{
-    return this.http.get<Sale>(API_URL + sale +'/'+saleId);
+    return this.http.get<Sale>(API_URL + sale );
   }
 }
