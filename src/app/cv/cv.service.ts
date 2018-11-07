@@ -22,3 +22,4 @@ export class CvService {
     createCv(cv): Observable<Cv> {
       return this.http.post<Cv>(API_URL + cvs, cv);
 }
+}
