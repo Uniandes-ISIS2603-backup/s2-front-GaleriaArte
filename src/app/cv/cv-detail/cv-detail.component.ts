@@ -15,33 +15,35 @@ export class CvDetailComponent implements OnInit {
     private route: ActivatedRoute) { }
 
      /**
-    * El servicio extra
+    * El cv
     */
    cvDetail: cvDetail;
 
    /**
-   * El id del servicio extra que viene en el path get .../extraService/extraService_id
+   * El id del cv que viene en el path get .../cv/cv_id
    */
-   extraService_id: number;
+   cv_id: number;
    /**
-   * The method which obtains el medio de Pago whose details we want to show
+   * The method which obtains el cv whose details we want to show
    */
-   getExtraServiceDetail(): void 
+   getCvDetail(): void 
        {
-       this.extraServiceService.getExtraServiceDetail(this.extraService_id)
-           .subscribe(extraServiceDetail => {
-               this.extraServiceDetail = extraServiceDetail
+       this.cvService.getCvDetail(this.cv_id)
+           .subscribe(cvDetail => {
+               this.cvDetail = cvDetail
            });
    }
 
   
    /**
    * The method which initializes the component.
-   * We need to create el servicio extra so it is never considered as undefined
+   * We need to create el cv so it is never considered as undefined
    */
 
   ngOnInit() {
     this.cv_id = +this.route.snapshot.paramMap.get('id');
+    this.cvDetail = new cvDetail();
+    this.getCvDetail();
   }
 
 }

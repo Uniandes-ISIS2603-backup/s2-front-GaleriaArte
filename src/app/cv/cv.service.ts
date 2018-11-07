@@ -6,7 +6,7 @@ import {cvDetail}from './cv-detail';
 
 
 const API_URL = "../../assets/" ;
-const cv  = 'cv.json'   ;
+const cvs  = 'cv.json'   ;
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,8 @@ export class CvService {
  
   getCvDetail(cvId): Observable<cvDetail> 
      {
-       return this.http.get<cvDetail>(API_URL + cv + '/' + cvId);
+       return this.http.get<cvDetail>(API_URL + cvs + '/' + cvId);
     }
-
+    createCv(cv): Observable<Cv> {
+      return this.http.post<Cv>(API_URL + cvs, cv);
 }
