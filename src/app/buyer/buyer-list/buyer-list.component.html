@@ -1,21 +1,19 @@
 <div class="container-fluid">
-  <div class="col-md-3">
+  <div class="row">
       <table class="table table-striped">
           <thead class="thead-dark">
               <tr>
-                  <th colspan="3">Feedbacks</th>
+                  <th colspan="4">Buyers</th>
               </tr>
           </thead>
           <tbody>
-              <th>Nombre</th>
-              <th>Usuario</th>
-              <th>Adress</th>
+              <th>Name</th>
+              <th>User</th>
               <th>Email</th>
               <th>Phone</th>
-              <tr *ngFor="let feedback of feedbacks">
+              <tr *ngFor="let buyer of buyers">
                   <td>{{buyer.name}}</td>
                   <td>{{buyer.user}}</td>
-                  <td>{{buyer.adress}}</td>
                   <td>{{buyer.email}}</td>
                   <td>{{buyer.phone}}</td>
               </tr>

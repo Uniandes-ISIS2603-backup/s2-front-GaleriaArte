@@ -4,8 +4,6 @@ export interface Buyer {
 
     user: String;
 
-    adress: String;
-
     email: String;
 
     phone : String;

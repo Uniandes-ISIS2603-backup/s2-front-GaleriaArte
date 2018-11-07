@@ -1,0 +1,27 @@
+[{
+    "name":"Diego",
+    "user": "diego99",
+    "email": "diego@correo.com",
+    "phone":"123456789"
+},{
+    "name":"Juan",
+    "user": "Juan99",
+    "email": "juan@correo.com",
+    "phone":"123456789"
+},{
+    "name":"Paula",
+    "user": "paula99",
+    "email": "paula@correo.com",
+    "phone":"123456789"
+},{
+    "name":"Andrea",
+    "user": "andrea99",
+    "email": "andrea@correo.com",
+    "phone":"123456789"
+ },{
+    "name":"Manuel",
+    "user": "manuel99",
+    "email": "manuel@correo.com",
+    "phone":"123456789"
+ }
+]
