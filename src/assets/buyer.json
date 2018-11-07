@@ -2,26 +2,31 @@
     "name":"Diego",
     "user": "diego99",
     "email": "diego@correo.com",
-    "phone":"123456789"
+    "phone":"123456789",
+    "image":"https://images.askmen.com/1080x540/2016/01/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg"
 },{
     "name":"Juan",
     "user": "Juan99",
     "email": "juan@correo.com",
-    "phone":"123456789"
+    "phone":"123456789",
+    "image":"http://libapps-ca.s3.amazonaws.com/accounts/119974/profiles/112269/Ryanprofile.jpg"
 },{
     "name":"Paula",
     "user": "paula99",
     "email": "paula@correo.com",
-    "phone":"123456789"
+    "phone":"123456789",
+    "image":"https://s3-ap-southeast-1.amazonaws.com/blog-sg/wp-content/uploads/2016/09/29153513/Business-lady-small.jpg"
 },{
     "name":"Andrea",
     "user": "andrea99",
     "email": "andrea@correo.com",
-    "phone":"123456789"
+    "phone":"123456789",
+    "image":"http://libapps-ca.s3.amazonaws.com/accounts/64065/profiles/55339/LibGuides_profile_pic.jpg"
  },{
     "name":"Manuel",
     "user": "manuel99",
     "email": "manuel@correo.com",
-    "phone":"123456789"
+    "phone":"123456789",
+    "image":"http://xn--casadecampaa-khb.com/wp-content/uploads/2017/12/1-intro-photo-final.jpg"
  }
 ]
