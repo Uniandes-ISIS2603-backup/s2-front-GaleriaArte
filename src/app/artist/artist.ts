@@ -1,8 +1,26 @@
-export interface Artist 
+export class Artist 
 {
-    id: number;
+    /**
+    * The artist's id
+    */
+   id: number;
 
-    nombre:String;
+   /**
+    * The artist's name
+    */
+   name: string;
 
-    imagen:String;
+   /** Fecha de nacimiento del artista. Estamos utilizando de tipo  string. 
+    * 
+    */
+   birthDate: any;
+   /**
+    * The location of the artist's profile picture
+    */
+   image: string;
+
+   /**
+    * A brief description of the artist's life
+    */
+   description: string;
 }
