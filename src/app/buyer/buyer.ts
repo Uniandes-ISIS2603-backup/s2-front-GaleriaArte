@@ -1,4 +1,4 @@
-export interface Buyer {
+export class Buyer {
 
     name: String;
 

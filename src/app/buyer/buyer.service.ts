@@ -18,4 +18,7 @@ export class BuyerService {
 getArtist(): Observable<Buyer[]> {
   return this.http.get<Buyer[]>(API_URL + buyers);
 }
+createBuyer(buyer): Observable<Buyer> {
+  return this.http.post<Buyer>(API_URL + buyers, buyer);
+}
 }
