@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { CvService } from '../cv.service';
 @Component({
   selector: 'app-cv-detail',
   templateUrl: './cv-detail.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cvService:CvService,
+    private route: ActivatedRoute) { }
+
+    cv_id: number;
 
   ngOnInit() {
+    this.cv_id = +this.route.snapshot.paramMap.get('id');
   }
 
 }

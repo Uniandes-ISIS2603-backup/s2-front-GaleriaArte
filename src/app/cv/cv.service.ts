@@ -4,7 +4,7 @@ import { Observable } from 'rxjs'         ;
 import { Cv    } from './cv'     ;
 
 const API_URL = "../../assets/" ;
-//const cv  = 'cv.json'   ;
+const cv  = 'cv.json'   ;
 
 @Injectable({
   providedIn: 'root'
