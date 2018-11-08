@@ -38,16 +38,16 @@ export class BuyerCreateComponent implements OnInit {
     
     createBuyer(): Buyer {
         console.log(this.buyer);
-        console.log(this.buyer)
         this.buyerService.createBuyer(this.buyer)
             .subscribe((buyer) => {
                 this.buyer = buyer;
                 this.create.emit();
-                //this.toastrService.success("The buyer was created", "buyer creation");
+                //this.toastrService.success("The artist was created", "artist creation");
                 
             });
             return this.buyer;
     }
+
 
     /**
     * Emits the signal to tell the parent component that the
