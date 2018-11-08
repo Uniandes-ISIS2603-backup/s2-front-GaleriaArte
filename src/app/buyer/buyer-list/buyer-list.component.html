@@ -1,19 +1,5 @@
-<br>
-                            <div class="row justify-content-center align-self-center">
-                                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                                    (click)="showHideCreate()">Create an buyer</button>
-                            </div>
-                            <div class="col-8">
-                                <div *ngIf="selectedBuyer">
-                                    <app-buyer-detail [buyerDetail]="selectedBuyer"></app-buyer-detail>
-                                </div>
-                                <div *ngIf="showCreate">
-                                    <app-buyer-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-buyer-create>
-                                </div>
-                            </div>
-                    
-                    <br> 
-            <h1 class="text-center h2"><span>Buyers </span></h1>
+
+            <h1 class="text-center h2"><span>Compradores</span></h1>
             <div class="card-group">
 
            <div class="col-4"  *ngFor="let buyer of buyers">
@@ -35,4 +21,18 @@
            
               
            </div>
+
+           <br>
+           <div class=" align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Nuevo comprador</button>
+           </div>
+           <div class="col-8">
+               
+               <div *ngIf="showCreate">
+                   <app-buyer-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-buyer-create>
+               </div>
+           </div>
+   
+   <br> 
            
