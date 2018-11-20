@@ -186,7 +186,7 @@ img{
   line-height: 1;
 }
 .words span {
-  font-size: 120px;
+  font-size: 80px;
   display: inline-block;
   -webkit-animation: move 2s ease-in-out infinite;
           animation: move 2s ease-in-out infinite;

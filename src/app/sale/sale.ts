@@ -1,4 +1,4 @@
-export interface Sale 
+export class Sale 
     {
           /**
     * The sale's price
