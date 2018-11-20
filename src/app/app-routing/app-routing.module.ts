@@ -24,10 +24,11 @@ import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
 export const routes: Routes = [
   {
     path: 'paintwork', children: [
-      { path: 'detail/:id', component: PaintworkDetailComponent },
-      { path: 'add', component: PaintworkAddComponent },
-      { path: 'edit/:id', component: PaintworkEditComponent },
-      { path: 'list', component: PaintworkListComponent }]
+      { path: 'list', component: PaintworkListComponent },
+      { path: ':id', component: PaintworkDetailComponent },
+      // { path: 'add', component: PaintworkAddComponent },
+      // { path: 'edit/:id', component: PaintworkEditComponent }
+      ]
   },
 
   {

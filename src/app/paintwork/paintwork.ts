@@ -1,4 +1,4 @@
-export interface Paintwork {
+export class Paintwork {
     idPaintwork:number;
     name: string;
     country: string;

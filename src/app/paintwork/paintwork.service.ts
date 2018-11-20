@@ -1,3 +1,4 @@
+import { PaintworkDetail } from './paintwork-detail';
 import { Paintwork } from './paintwork';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -22,5 +23,9 @@ export class PaintworkService {
   
    getPaintworks() : Observable<Paintwork[]> {
        return this.http.get<Paintwork[]>(API_URL + paintworks);
+   }
+
+   getPaintworkDetail(paintworkId): Observable<PaintworkDetail>{
+       return this.http.get<PaintworkDetail>(API_URL+ paintworks + '/'+ paintworkId);
    }
 }
