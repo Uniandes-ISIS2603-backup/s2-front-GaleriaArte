@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Sale} from './sale';
+import { SaleDetail } from './sale-detail';
 
 
 
@@ -23,5 +24,14 @@ export class SaleService {
 
   getSale(saleId): Observable<Sale>{
     return this.http.get<Sale>(API_URL + sale );
+  }
+  getSales():Observable<Sale[]>{
+
+    return this.http.get<Sale[]>(API_URL + sale);
+  
+  }
+
+  createSale(sale): Observable<SaleDetail>{
+    return this.http.post<SaleDetail>(API_URL + sale, sale);
   }
 }

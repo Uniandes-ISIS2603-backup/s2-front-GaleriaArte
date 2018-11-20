@@ -1,4 +1,4 @@
-export interface Cv {
+export class Cv {
 
     id: number;
 

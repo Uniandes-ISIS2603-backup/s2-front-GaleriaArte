@@ -5,8 +5,8 @@ import {HttpClient} from '@angular/common/http';
 import {MedioPago} from './medioPago';
 import {MedioPagoDetail} from './medioPago-detail';
 
-const API_URL = "http://localhost:8080/s2_interart-api/api";
-const medioPagos = '/medioPagos';
+const API_URL = "../../assets/";
+const medioPagos = 'medioPago.json';
 
 /**
 * The service provider for everything related to medioPagos
@@ -34,4 +34,7 @@ export class MedioPagoService
         return this.http.get<MedioPagoDetail>(API_URL + medioPagos + '/' + medioPagoId);
    }
 
+   createMedioPago(medioPago): Observable<MedioPago> {
+    return this.http.post<MedioPago>(API_URL + medioPagos, medioPago);
+  }
 }

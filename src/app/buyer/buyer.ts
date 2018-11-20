@@ -1,10 +1,8 @@
-export interface Buyer {
+export class Buyer {
 
     name: String;
 
     user: String;
-
-    adress: String;
 
     email: String;
 

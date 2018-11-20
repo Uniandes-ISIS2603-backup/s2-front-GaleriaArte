@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'         ;
 import { Cv    } from './cv'     ;
+import {cvDetail}from './cv-detail';
+
 
 const API_URL = "../../assets/" ;
-const cv  = 'cv.json'   ;
+const cvs  = 'cv.json'   ;
 
 @Injectable({
   providedIn: 'root'
@@ -12,4 +14,12 @@ const cv  = 'cv.json'   ;
 export class CvService {
 
   constructor(private http: HttpClient) { }
+ 
+  getCvDetail(cvId): Observable<cvDetail> 
+     {
+       return this.http.get<cvDetail>(API_URL + cvs + '/' + cvId);
+    }
+    createCv(cv): Observable<Cv> {
+      return this.http.post<Cv>(API_URL + cvs, cv);
+}
 }

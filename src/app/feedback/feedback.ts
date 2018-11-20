@@ -1,4 +1,4 @@
-export interface Feedback 
+export class Feedback 
 {
     /**
     * The feedbacks's description

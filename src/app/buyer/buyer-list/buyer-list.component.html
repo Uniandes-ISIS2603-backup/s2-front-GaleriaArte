@@ -1,25 +1,38 @@
-<div class="container-fluid">
-  <div class="col-md-3">
-      <table class="table table-striped">
-          <thead class="thead-dark">
-              <tr>
-                  <th colspan="3">Feedbacks</th>
-              </tr>
-          </thead>
-          <tbody>
-              <th>Nombre</th>
-              <th>Usuario</th>
-              <th>Adress</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <tr *ngFor="let feedback of feedbacks">
-                  <td>{{buyer.name}}</td>
-                  <td>{{buyer.user}}</td>
-                  <td>{{buyer.adress}}</td>
-                  <td>{{buyer.email}}</td>
-                  <td>{{buyer.phone}}</td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
-</div>
+
+            <h1 class="text-center h2"><span>Compradores</span></h1>
+            <div class="card-group">
+
+           <div class="col-4"  *ngFor="let buyer of buyers">
+               
+                   <div class="card profile-card-2">
+                           
+                       <div class="card-body pt-5">
+               
+                               <h5>{{buyer.name}}</h5>
+                               <p class="card-text">Usuario:</p>
+                               <td>{{buyer.user}}</td>
+                               <p class="card-text">Email:</p>
+                               <td>{{buyer.email}}</td>
+                               <p class="card-text">Phone:</p>
+                               <td>{{buyer.phone}}</td>
+                               
+                       </div>  
+                   </div>
+           
+              
+           </div>
+
+           <br>
+           <div class=" align-self-center">
+               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                   (click)="showHideCreate()">Nuevo comprador</button>
+           </div>
+           <div class="col-8">
+               
+               <div *ngIf="showCreate">
+                   <app-buyer-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-buyer-create>
+               </div>
+           </div>
+   
+   <br> 
+           

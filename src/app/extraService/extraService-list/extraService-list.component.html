@@ -10,9 +10,8 @@
                                 <th>Nombre</th>
                         </thead>
                 <tbody>
-                    <tr *ngFor = "let extraService of extraServices"
-                        (click)="onSelected(extraService.id)">
-                        <td style="cursor: pointer;">{{extraService.id}}</td>
+                    <tr *ngFor = "let extraService of extraServices">
+                        <td style="cursor: pointer;"> <dd routerLink="/extraServices/{{extraService.id}}">{{extraService.id}}</dd></td>
                         <td> {{extraService.name}}</td>
                     </tr>
                 </tbody>

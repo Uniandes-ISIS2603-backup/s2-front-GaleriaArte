@@ -6,7 +6,6 @@ import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
-import { HttpClientModule } from '@angular/common/http'             ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
 import { NgbModule        } from '@ng-bootstrap/ng-bootstrap' ;
 import { AppComponent     } from './app.component'            ;
@@ -21,7 +20,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { SaleModule } from './sale/sale.module';
-
+//import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Error404Component } from './error404/error404.component';
+//import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { SaleModule } from './sale/sale.module';
     InicioComponent,
     NotFoundComponent,
     LoginComponent,
-    ModalBasicComponent
+    ModalBasicComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
@@ -44,12 +47,19 @@ import { SaleModule } from './sale/sale.module';
     BuyerModule,
     MedioPagoModule,
     ExtraServiceModule,
+   // ToastrModule.forRoot({
+    //  timeOut: 10000,
+      //positionClass: 'toast-bottom-right',
+      //preventDuplicates: true,
+ // }),
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule,
     SaleModule
     ],
-  providers: [AuthService],
+  // providers: [ {  provide: HTTP_INTERCEPTORS,
+  //   useClass: HttpErrorInterceptor,
+  //   multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

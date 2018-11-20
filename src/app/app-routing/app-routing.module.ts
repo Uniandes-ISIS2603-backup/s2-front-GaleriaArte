@@ -7,6 +7,8 @@ import { FeedbackListComponent } from '../feedback/feedback-list/feedback-list.c
 import { InicioComponent } from "../inicio/inicio.component";
 import { ArtistListComponent } from "../artist/artist-list/artist-list.component";
 import { ArtistDetailComponent } from '../artist/artist-detail/artist-detail.component';
+import { BuyerListComponent } from "../buyer/buyer-list/buyer-list.component";
+import { BuyerDetailComponent } from '../buyer/buyer-detail/buyer-detail.component';
 import { PaintworkListComponent } from "../paintwork/paintwork-list/paintwork-list.component";
 import { PaintworkDetailComponent } from '../paintwork/paintwork-detail/paintwork-detail.component';
 import { FeedbacksCreateComponent } from '../feedback/feedbacks-create/feedbacks-create.component';
@@ -40,6 +42,11 @@ export const routes: Routes = [
       ]
   },
 
+  {
+    path: 'buyer', children: [
+      { path: 'list', component: BuyerListComponent },
+      { path: ':id', component: BuyerDetailComponent }]
+  },
 
   {
     path: 'extraServices', children: 

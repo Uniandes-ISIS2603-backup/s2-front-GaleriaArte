@@ -19,7 +19,9 @@ export class InicioComponent implements OnInit {
     config.pauseOnHover = true;
   
   }
+  
   ngOnInit() {
+    
   }
 
 }

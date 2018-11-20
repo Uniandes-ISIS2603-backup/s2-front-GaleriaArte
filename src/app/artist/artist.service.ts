@@ -1,22 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'         ;
-import { Artist     } from './artist'     ;
+import { Observable } from 'rxjs';
+import { Artist } from './artist';
+import { ArtistDetail } from './artist-detail';
 
-const API_URL = "../../assets/" ;
-const artist  = 'artist.json'   ;
+import { environment } from '../../environments/environment';
+const API_URL2 = environment.apiURL;
+const artists2 = '/artists';
+const API_URL = "../../assets/";
+const artists = 'artist.json';
 
-  @Injectable({
+@Injectable({
   providedIn: 'root'
-  })
-  export class ArtistService {
+})
+export class ArtistService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    getArtists(): Observable<Artist[]> {
-      return this.http.get<Artist[]>(API_URL + artist);
+  getArtists(): Observable<Artist[]> {
+    return this.http.get<Artist[]>(API_URL + artists);
   }
-  //getArtistDetail(artistId): Observable<ArtistDetail> {
-  //  return this.http.get<ArtistDetail>(API_URL + artist + '/' + artistId);
-//}
+  /**
+    * Returns the Observable object with the details of an artist retrieved from the API
+    * @returns The artist details
+    */
+  getArtistDetail(artistId): Observable<ArtistDetail> {
+    return this.http.get<ArtistDetail>(API_URL + "artist" + artistId + ".json");
+  }
+
+  /**
+  * Creates an artist
+  * @param artist The new artist
+  * @returns The confirmation that the artist was created
+  */
+  createArtist(artist): Observable<Artist> {
+    return this.http.post<Artist>(API_URL + artists, artist);
+  }
 }

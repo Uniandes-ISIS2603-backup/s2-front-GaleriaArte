@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="container-fluid">
+<div clas="row">
+        <div class="col">
+            <table class="table table-striped">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th class = "h3" colspan="2">{{extraServiceDetail.name}}  </th>
+                            </tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Availability</th>
+                        </thead>
+                <tbody>
+                    <tr *ngFor = "let extraServiceDetail of extraServicesDetail">
+                        <td>{{extraServiceDetail.id}}</td>
+                        <td> {{extraServiceDetail.name}}</td>
+                         <td> {{extraServiceDetail.description}}</td>
+                          <td> {{extraServiceDetail.price}}</td>
+                           <td> {{extraServiceDetail.availability}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button type="button" class="btn btn-danger">Volver</button>
+            </div>
+        </div>
+     </div>
+</div>
+
