@@ -20,10 +20,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { SaleModule } from './sale/sale.module';
-//import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
-//import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
+import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -47,19 +48,20 @@ import { Error404Component } from './error404/error404.component';
     BuyerModule,
     MedioPagoModule,
     ExtraServiceModule,
-   // ToastrModule.forRoot({
-    //  timeOut: 10000,
-      //positionClass: 'toast-bottom-right',
-      //preventDuplicates: true,
- // }),
+   ToastrModule.forRoot({
+     timeOut: 10000,
+    positionClass: 'toast-bottom-right',
+    preventDuplicates: true
+ }),
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule,
     SaleModule
     ],
-  // providers: [ {  provide: HTTP_INTERCEPTORS,
-  //   useClass: HttpErrorInterceptor,
-  //   multi: true}],
+   providers: [ { 
+      provide: HTTP_INTERCEPTORS,
+     useClass: HttpErrorInterceptor,
+     multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

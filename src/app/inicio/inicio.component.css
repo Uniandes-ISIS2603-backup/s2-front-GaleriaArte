@@ -171,6 +171,9 @@ img{
     color: #39393B;
     transition-delay: 1100ms;
   }
+
+
+  
   .efecto {
     background: white;
   overflow-x: hidden;
@@ -190,10 +193,14 @@ img{
   display: inline-block;
   -webkit-animation: move 2s ease-in-out infinite;
           animation: move 2s ease-in-out infinite;
+  }
+.words span:nth-child(1) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 .words span:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 .words span:nth-child(3) {
   -webkit-animation-delay: 0.5s;
@@ -202,6 +209,28 @@ img{
 .words span:nth-child(4) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
+}
+.words span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.words span:nth-child(6) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}.words span:nth-child(7) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.words span:nth-child(8) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.words span:nth-child(9) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}.words span:nth-child(10) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 @-webkit-keyframes move {
@@ -230,6 +259,7 @@ img{
     -webkit-transform: translate(33%, 0);
             transform: translate(33%, 0);
   }
+  
 }
 * {
   box-sizing: border-box;
