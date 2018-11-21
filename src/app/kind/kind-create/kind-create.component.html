@@ -1,0 +1,18 @@
+<form name="kind" (ngSubmit)="f.form.valid && createKind()" #f="ngForm" novalidate>
+    <div class="form-group">
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" name="kindName" class="form-control" id="kindName" [(ngModel)]="kind.name"
+              #kindName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && kindName.invalid }" required>
+        <div class="invalid-feedback">
+             <div>The kind's name is missing</div>
+        </div>
+     </div>
+     <label for="description"><b>Description</b></label>
+        <input type="text" rows="5" name="kindDescription" class="form-control" id="kindDescription" [(ngModel)]="kind.description"
+              #kindDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && kindDescription.invalid }" required>
+        <div class="invalid-feedback">
+             <div>The kind's description is missing</div>
+        </div>
+     </div>
+<form>
