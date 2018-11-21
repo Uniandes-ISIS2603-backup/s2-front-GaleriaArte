@@ -20,6 +20,8 @@ import { PaintworkAddComponent } from '../paintwork/paintwork-add/paintwork-add.
 import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-edit.component';
 import { SaleListComponent } from '../sale/sale-list/sale-list.component';
 import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
+import { Error404Component } from '../error404/error404.component';
+
 
 
 
@@ -81,9 +83,11 @@ export const routes: Routes = [
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },
 
-  { path: '', component: InicioComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'aniade', component: ModalBasicComponent },
   { path: 'sale', component: SaleListComponent },
+  { path: '**', component: Error404Component }
 
 
 
