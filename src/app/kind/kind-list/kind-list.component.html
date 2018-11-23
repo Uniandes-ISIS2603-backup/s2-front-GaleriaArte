@@ -1,3 +1,10 @@
-<p>
-  kind-list works!
-</p>
+<html>
+    <div class="col-4"  >
+<ol>
+  <li *ngFor="let k of kinds">
+    <h4>{{k.name}}</h4>
+    <p>{{k.description}}.</p>
+  </li>
+  </ol>
+  </div>
+</html>

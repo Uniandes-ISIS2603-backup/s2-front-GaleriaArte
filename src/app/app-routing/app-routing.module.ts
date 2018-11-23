@@ -1,3 +1,4 @@
+import { KindCreateComponent } from './../kind/kind-create/kind-create.component';
 import { LoginComponent } from './../login/login.component';
 import { NotFoundComponent } from './../not-found/not-found.component';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-ed
 import { SaleListComponent } from '../sale/sale-list/sale-list.component';
 import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
 import { Error404Component } from '../error404/error404.component';
+import { KindListComponent } from '../kind/kind-list/kind-list.component';
 
 
 
@@ -49,6 +51,12 @@ export const routes: Routes = [
       { path: 'list', component: BuyerListComponent },
       { path: ':id', component: BuyerDetailComponent }]
   },
+  {path: 'kinds', children: [
+    { path: 'list', component: KindListComponent },
+    //{ path: ':id', component: BuyerDetailComponent }
+    {path : 'create', component : KindCreateComponent}
+  ]
+},
 
   {
     path: 'extraServices', children: 

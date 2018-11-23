@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const kinds = '/kinds';
+const API_URL = "http://localhost:8080/s2_galeriaarte-api/api/";
+const kinds = 'kinds';
 
 @Injectable({
   providedIn: 'root'
