@@ -1,3 +1,5 @@
+import { KindModule } from './kind/kind.module';
+import { KindCreateComponent } from './kind/kind-create/kind-create.component';
 import { AuthService } from './services/auth.service';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -26,6 +28,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +46,7 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
     AngularFirestoreModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
+    KindModule,
     ArtistModule,
     FeedbackModule,
     BuyerModule,
