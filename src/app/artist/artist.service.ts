@@ -5,10 +5,10 @@ import { Artist } from './artist';
 import { ArtistDetail } from './artist-detail';
 
 import { environment } from '../../environments/environment';
-const API_URL2 = environment.apiURL;
-const artists2 = '/artists';
-const API_URL = "../../assets/";
-const artists = 'artist.json';
+const API_URL = environment.apiURL;
+const artists = '/artists';
+//const API_URL = "../../assets/";
+//const artists = 'artist.json';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class ArtistService {
     * @returns The artist details
     */
   getArtistDetail(artistId): Observable<ArtistDetail> {
-    return this.http.get<ArtistDetail>(API_URL + "artist" + artistId + ".json");
+    return this.http.get<ArtistDetail>(API_URL + artists + '/' + artistId);
   }
 
   /**
