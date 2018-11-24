@@ -48,8 +48,10 @@ export class ArtistCreateComponent implements OnInit {
     */
     createArtist(): Artist {
         console.log(this.artist);
-        let dateB: Date = new Date(this.artist.birthDate.year, this.artist.birthDate.month-1, this.artist.birthDate.day);
-        this.artist.birthDate = this.dp.transform(dateB, 'yyyy-MM-dd');
+        let dateB: Date = new Date(this.artist.birthDate.year,
+             this.artist.birthDate.month-1,
+             this.artist.birthDate.day);
+        this.artist.birthDate = this.dp.transform(dateB, 'yyyy-MM-dd HH:MI:SS');
         console.log(this.artist)
         this.artistService.createArtist(this.artist)
             .subscribe((artist) => {

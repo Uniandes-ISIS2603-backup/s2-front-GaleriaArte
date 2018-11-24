@@ -20,14 +20,14 @@
     <br>
     <div>
         <div class="card-group">
-            <div class="col-3" *ngFor="let artist of artists" (click)="onSelected(artist.id)">
+            <div class="col-3" *ngFor="let artist of artists">
                 <div class="card">
                     <img class="card-img-top" src="{{artist.image}}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{artist.name}}</h5>
                         <p class="card-text">{{artist.description}}</p>
                         <!-->p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p-->
-                        <a class="btn btn-primary" routerLink= "/artist/detail">Ver mas</a>
+                        <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
 
                     </div>
                 </div>

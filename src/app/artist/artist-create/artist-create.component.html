@@ -1,28 +1,52 @@
 <div class="row">
-    <div class="col">
+    <div class="col-3"></div>
+    <div class="col-6">
         <br>
-        <h2 class="text-center">Register like an artist</h2>
+        <h2 class="text-center">Create an artist</h2>
         <br>
-    </div>
-    <div class="col">
-        <form class="login-form">
+        <form name="artist" (ngSubmit)="f.form.valid && createArtist()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label class="text-uppercase">Nombre</label>
-                <input type="text" class="form-control" placeholder="Su nombre por favor">
+                <label for="artistName"><b>Name</b></label>
+                <input type="text" name="artistName" class="form-control" id="artistName" [(ngModel)]="artist.name"
+                    #artistName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && artistName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The artist's name is missing</div>
+                </div>
             </div>
             <div class="form-group">
-                <label class="text-uppercase">Fecha de nacimiento</label>
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <label for="artistBirthDate"><b>Birth date</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && artistBirthDate.invalid }">
+                    <input class="form-control" id="artistBirthDate" name="artistBirthDate" [(ngModel)]="artist.birthDate"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #artistBirthDate="ngModel" [ngClass]="{'is-invalid': f.submitted && (artistBirthDate.untouched || artistBirthDate.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>The artist's birth date is missing</div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Crear</button>
+            <div class="form-group">
+                <label for="artistDescription"><b>Description</b></label>
+                <textarea name="artistDescription" class="form-control" id="artistDescription" [(ngModel)]="artist.description"
+                    #artistDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && artistDescription.invalid }"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    <div>The artist's description is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="artistImage"><b>Image</b></label>
+                <input type="text" name="artistImage" class="form-control" id="artistImage" [(ngModel)]="artist.image"
+                    #artistImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && artistImage.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The artist's image is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
             </div>
         </form>
     </div>
-    <div class="form-group">
-        <label for="artistDescription"><b>Descipcion: </b></label>
-        <textarea name="artistDescription" class="form-control" id="artistDescription">
-                Por favor introduce una descripción.
-                    </textarea>
-    </div>
+    <div class="col-3"></div>
 </div>
