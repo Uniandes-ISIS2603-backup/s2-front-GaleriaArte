@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgbdRatingBasicComponent } from './ngbd-rating-basic.component';
+import { FeedbackCreateComponent } from './feedback-create.component';
 
-describe('NgbdRatingBasicComponent', () => {
-  let component: NgbdRatingBasicComponent;
-  let fixture: ComponentFixture<NgbdRatingBasicComponent>;
+describe('FeedbackCreateComponent', () => {
+  let component: FeedbackCreateComponent;
+  let fixture: ComponentFixture<FeedbackCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgbdRatingBasicComponent ]
+      declarations: [ FeedbackCreateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgbdRatingBasicComponent);
+    fixture = TestBed.createComponent(FeedbackCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
