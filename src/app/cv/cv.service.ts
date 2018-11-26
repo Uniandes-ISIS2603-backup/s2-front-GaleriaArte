@@ -22,4 +22,8 @@ export class CvService {
     createCv(cv): Observable<Cv> {
       return this.http.post<Cv>(API_URL + cvs, cv);
 }
+deleteCV(cvId): Observable<boolean>
+{
+  return this.http.delete<boolean>(API_URL + cvs + '/' +cvId);
+}
 }

@@ -5,8 +5,8 @@ import { MedioPago } from '../medioPago';
 
 @Component({
   selector: 'app-medioPago-create',
-  templateUrl: './medioPago-create.component.html',
-  styleUrls: ['./medioPago-create.component.css'],
+  templateUrl: './medioPago-add.component.html',
+  styleUrls: ['./medioPago-add.component.css'],
 })
 export class MedioPagoCreateComponent implements OnInit {
 

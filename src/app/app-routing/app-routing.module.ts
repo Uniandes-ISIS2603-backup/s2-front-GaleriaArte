@@ -29,6 +29,11 @@ import { SaleDetailComponent } from '../sale/sale-detail/sale-detail.component';
 import { MedioPagoDetail } from '../medioPago/medioPago-detail';
 import { MedioPagoEditComponent } from '../medioPago/medio-pago-edit/medio-pago-edit.component';
 import { MedioPagoCreateComponent } from '../medioPago/medioPago-add/medioPago-add.component';
+import { BuyerEditComponent } from '../buyer/buyer-edit/buyer-edit.component';
+import { BuyerCreateComponent } from '../buyer/buyer-create/buyer-create.component';
+import { ExtraServiceDetail } from '../extraService/extraService-detail';
+import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
+import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
 
 
 
@@ -57,11 +62,13 @@ export const routes: Routes = [
   {
     path: 'buyer', children: [
       { path: 'list', component: BuyerListComponent },
-      { path: ':id', component: BuyerDetailComponent }]
+      { path: ':id', component: BuyerDetailComponent },
+      {path: ':id/edit', component: BuyerEditComponent},
+      {path: 'create', component: BuyerCreateComponent}
+    ]
   },
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
-    //{ path: ':id', component: BuyerDetailComponent }
     {path : 'create', component : KindCreateComponent}
   ]
 },
@@ -69,7 +76,11 @@ export const routes: Routes = [
   {
     path: 'extraServices', children: 
     [
-      { path: 'list', component: ExtraServiceListComponent }
+      { path: 'list', component: ExtraServiceListComponent },
+      {path: ':id', component:ExtraServiceDetail},
+      {path: ':id/edit', component: ExtraServiceEditComponent},
+      {path: 'create', component: ExtraServiceCreateComponent}
+
     ]
   },
 

@@ -36,4 +36,9 @@ export class ArtistService {
   createArtist(artist): Observable<Artist> {
     return this.http.post<Artist>(API_URL + artists, artist);
   }
+
+  deleteArtist(artistId): Observable<boolean>
+{
+  return this.http.delete<boolean>(API_URL + artists + '/' +artistId);
+}
 }

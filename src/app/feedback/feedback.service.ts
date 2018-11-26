@@ -30,4 +30,8 @@ export class FeedbackService {
 createFeedback(feedback): Observable<Feedback> {
   return this.http.post<Feedback>(API_URL + feedbacks, feedback);
 }
+deleteFeedback(feedbackId): Observable<boolean>
+{
+  return this.http.delete<boolean>(API_URL + feedbacks + '/' +feedbackId);
+}
 }
