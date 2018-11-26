@@ -2,9 +2,9 @@
   <div class="col-3"></div>
   <div class="col-6">
       <br>
-      <h2 class="text-center">Create a sale</h2>
+      <h2 class="text-center">Edit a sale</h2>
       <br>
-      <form name="author" (ngSubmit)="createAuthor()">
+      <form name="author" (ngSubmit)="editSale()">
           <div class="form-group">
               <label for="authorName"><b>Name</b></label>
               <input type="text" name="authorName" class="form-control" id="authorName" required>
@@ -31,7 +31,7 @@
           <div class="row form-inline justify-content-center align-self-center">
               <button type="submit" class="btn btn-primary">Create</button>
               <div class="divider"></div>
-              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+              <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
           </div>
       </form>
   </div>

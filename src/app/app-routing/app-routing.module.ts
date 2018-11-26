@@ -23,6 +23,12 @@ import { SaleListComponent } from '../sale/sale-list/sale-list.component';
 import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
 import { Error404Component } from '../error404/error404.component';
 import { KindListComponent } from '../kind/kind-list/kind-list.component';
+import { SaleCreateComponent } from '../sale/sale-create/sale-create.component';
+import { SaleEditComponent } from '../sale/sale-edit/sale-edit.component';
+import { SaleDetailComponent } from '../sale/sale-detail/sale-detail.component';
+import { MedioPagoDetail } from '../medioPago/medioPago-detail';
+import { MedioPagoEditComponent } from '../medioPago/medio-pago-edit/medio-pago-edit.component';
+import { MedioPagoCreateComponent } from '../medioPago/medioPago-add/medioPago-add.component';
 
 
 
@@ -41,8 +47,10 @@ export const routes: Routes = [
     path: 'medioPagos', 
     children: [
       { path: 'list', 
-      component: MedioPagoListComponent }
-    
+      component: MedioPagoListComponent },
+      {path: ':id', component:MedioPagoDetail},
+      {path: ':id/edit' , component:MedioPagoEditComponent},
+      {path: 'create' , component: MedioPagoCreateComponent}
       ]
   },
 
@@ -94,7 +102,25 @@ export const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: '',   redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'aniade', component: ModalBasicComponent },
-  { path: 'sale', component: SaleListComponent },
+  { 
+    path: 'sale', 
+    children:[
+      {
+       path:'create', component: SaleCreateComponent
+      },
+      {
+        path:'list', component: SaleListComponent
+      },
+      {
+        path:':id/edit', component: SaleEditComponent
+      },
+      {
+        path: ':id', component: SaleDetailComponent
+      }
+    ]
+  
+},
+
   { path: '**', component: Error404Component }
 
 
