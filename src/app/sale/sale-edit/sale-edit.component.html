@@ -4,10 +4,10 @@
         <br>
         <h2 class="text-center">Create a sale</h2>
         <br>
-        <form name="sale" (ngSubmit)="editAuthor()" >
+        <form name="sale" (ngSubmit)="editAuthor() && f.form.valid" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="saleName"><b>Name</b></label>
-                <input type="text" name="saleName" class="form-control" id="saleName" >
+                <input type="text" name="saleName" class="form-control" id="saleName" [(ngModel)]="sale.id" #saleName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && saleName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>The sale's name is missing</div>
                 </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group" >
                 <label for="authorImage"><b>Image</b></label>
-                <input type="text" name="authorImage" class="form-control" id="authorImage" >
+                <input type="text" name="authorImage" class="form-control" id="authorImage" [(ngModel)]="sale.obra" #saleImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && saleImage.invalid }" required>
                 <div class="invalid-feedback">
                     <div>The sale's image is missing</div>
                 </div>

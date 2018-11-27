@@ -40,7 +40,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component,
+    Error404Component
+
   ],
   imports: [
     BrowserModule,
