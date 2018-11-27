@@ -7,7 +7,9 @@ import {FormsModule} from '@angular/forms';
 import {MedioPagoListComponent} from './medioPago-list/medioPago-list.component';
 import {MedioPagoService} from './medioPago.service';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-
+import {MedioPagoCreateComponent} from './medioPago-add/medioPago-add.component';
+import {MedioPagoDetailComponent} from './medioPago-detail/medioPago-detail.component';
+import {MedioPagoEditComponent} from './medio-pago-edit/medio-pago-edit.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -16,8 +18,6 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         CommonModule,
         FormsModule
     ],
-    declarations: [MedioPagoListComponent],
-    providers: [MedioPagoService],
-     exports :[MedioPagoListComponent ]
+    declarations: [MedioPagoListComponent, MedioPagoDetailComponent, MedioPagoCreateComponent, MedioPagoEditComponent]
 })
 export class MedioPagoModule {}

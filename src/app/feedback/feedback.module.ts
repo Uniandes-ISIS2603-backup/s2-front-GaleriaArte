@@ -1,24 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
+import { FeedbackDetailComponent } from './feedback-detail/feedback-detail.component';
+import { FeedbackCreateComponent } from './feedback-create/feedback-create.component';
 
-import {FeedbackService} from './feedback.service';
-import { FeedbacksCreateComponent } from './feedbacks-create/feedbacks-create.component';
-
-import { AppRoutingModule } from '../app-routing/app-routing.module';
-
-
-
- 
 @NgModule({
   imports: [
-    CommonModule,
-    AppRoutingModule
-    
+    CommonModule
   ],
-  declarations: [FeedbackListComponent, FeedbacksCreateComponent],
-  providers:[FeedbackService],
-  exports:[FeedbackListComponent,FeedbacksCreateComponent]
+  declarations: [FeedbackListComponent, FeedbackDetailComponent, FeedbackCreateComponent]
 })
 export class FeedbackModule { }

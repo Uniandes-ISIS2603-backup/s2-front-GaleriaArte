@@ -21,4 +21,6 @@ export class Sale
         //servicios extra
         //comprador
         obra :String;
+
+        id: number;
 }

@@ -5,10 +5,10 @@ import { Artist } from './artist';
 import { ArtistDetail } from './artist-detail';
 
 import { environment } from '../../environments/environment';
-const API_URL2 = environment.apiURL;
-const artists2 = '/artists';
-const API_URL = "../../assets/";
-const artists = 'artist.json';
+const API_URL = environment.apiURL;
+const artists = '/artists';
+//const API_URL = "../../assets/";
+//const artists = 'artist.json';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class ArtistService {
     * @returns The artist details
     */
   getArtistDetail(artistId): Observable<ArtistDetail> {
-    return this.http.get<ArtistDetail>(API_URL + "artist" + artistId + ".json");
+    return this.http.get<ArtistDetail>(API_URL + artists + '/' + artistId);
   }
 
   /**
@@ -36,4 +36,22 @@ export class ArtistService {
   createArtist(artist): Observable<Artist> {
     return this.http.post<Artist>(API_URL + artists, artist);
   }
+
+/**
+* Updates an artist
+* @param artist The artist's information updated
+* @returns The confirmation that the artist was updated
+*/
+updateArtist(artist): Observable<ArtistDetail> {
+    return this.http.put<ArtistDetail>(API_URL + artists + '/' + artist.id, artist);
+}
+
+/**
+* Deletes an artist from the BookStore
+* @param artistId The id of the artist
+* @returns The confirmation that the artist was deleted
+*/
+deleteArtist(artistId): Observable<boolean> {
+    return this.http.delete<boolean>(API_URL + artists + '/' + artistId);
+}
 }

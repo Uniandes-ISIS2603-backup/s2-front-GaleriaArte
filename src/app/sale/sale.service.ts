@@ -7,7 +7,7 @@ import { SaleDetail } from './sale-detail';
 
 
 const API_URL = "../../assets/";
-const sale = 'sale.json'; 
+const sales = 'sale.json'; 
 /**
 * The service provider for everything related to sale
 */
@@ -23,15 +23,22 @@ export class SaleService {
   constructor(private http: HttpClient) { }
 
   getSale(saleId): Observable<Sale>{
-    return this.http.get<Sale>(API_URL + sale );
+    return this.http.get<Sale>(API_URL + sales );
   }
   getSales():Observable<Sale[]>{
 
-    return this.http.get<Sale[]>(API_URL + sale);
+    return this.http.get<Sale[]>(API_URL + sales);
   
   }
 
   createSale(sale): Observable<SaleDetail>{
-    return this.http.post<SaleDetail>(API_URL + sale, sale);
+    return this.http.post<SaleDetail>(API_URL + sales, sale);
+  }
+  updateSale(sale):Observable<SaleDetail>{
+    return this.http.put<SaleDetail>(API_URL + sales + '/' + sale.id, sale  );
+  }
+  deleteSale(saleId): Observable<boolean>
+  {
+    return this.http.delete<boolean>(API_URL + sales + '/' +saleId);
   }
 }

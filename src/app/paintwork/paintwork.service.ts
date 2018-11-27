@@ -28,4 +28,8 @@ export class PaintworkService {
    getPaintworkDetail(paintworkId): Observable<PaintworkDetail>{
        return this.http.get<PaintworkDetail>(API_URL+ paintworks + '/'+ paintworkId);
    }
+   deletePaintwork(paintworkId): Observable<boolean>
+   {
+     return this.http.delete<boolean>(API_URL + paintworks + '/' +paintworkId);
+   }
 }

@@ -4,8 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ArtistService } from '../artist.service';
 
 import { ArtistDetail } from '../artist-detail';
-import { Artist } from '../artist';
-
 
 @Component({
     selector: 'app-artist-detail',

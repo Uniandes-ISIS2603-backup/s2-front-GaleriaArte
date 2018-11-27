@@ -37,4 +37,11 @@ export class MedioPagoService
    createMedioPago(medioPago): Observable<MedioPago> {
     return this.http.post<MedioPago>(API_URL + medioPagos, medioPago);
   }
+  updateMedioPago(medioPago):Observable<MedioPagoDetail>{
+    return this.http.put<MedioPagoDetail>(API_URL + medioPagos + '/' + medioPago.id, medioPago  );
+  }
+  deleteMedioPago(medioPagoId): Observable<boolean>
+  {
+    return this.http.delete<boolean>(API_URL + medioPagos + '/' +medioPagoId);
+  }
 }
