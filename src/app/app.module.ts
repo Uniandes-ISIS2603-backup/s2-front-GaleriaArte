@@ -27,15 +27,10 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
-<<<<<<< HEAD
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-=======
-import { MedioPagoEditComponent } from './medioPago/medio-pago-edit/medio-pago-edit.component';
-import { ExtraServiceEditComponent } from './extraService/extra-service-edit/extra-service-edit.component';
->>>>>>> 4707a10ab0120262e587ac449cbb82b6b18fb60f
 
 
 @NgModule({
@@ -45,13 +40,8 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-<<<<<<< HEAD
     Error404Component,
   ],
-=======
-    Error404Component
-    ],
->>>>>>> 4707a10ab0120262e587ac449cbb82b6b18fb60f
   imports: [
     BrowserModule,
     HttpClientModule,

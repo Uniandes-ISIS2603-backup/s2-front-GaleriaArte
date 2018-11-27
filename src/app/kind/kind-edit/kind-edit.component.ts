@@ -51,6 +51,20 @@ export class KindEditComponent implements OnInit {
         this.toastrService.error(err, "Error");
       });
     }
+
+    editKind():void{
+      var kind_edit = {
+        idType: this.kindId,
+        name: this.kind.name,
+        description: this.kind.description
+      };
+
+      this.kindService.updateKind(kind_edit)
+      .subscribe(()=> {
+        this.toastrService.success("The kinds's information was updated", "Author edition");
+        //this.update.emit();
+      })
+    }
     
 
 

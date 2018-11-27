@@ -69,10 +69,7 @@ export const routes: Routes = [
   },
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
-<<<<<<< HEAD
     { path: 'detail/:id', component: KindDetailComponent },
-=======
->>>>>>> 4707a10ab0120262e587ac449cbb82b6b18fb60f
     {path : 'create', component : KindCreateComponent}
   ]
 },
