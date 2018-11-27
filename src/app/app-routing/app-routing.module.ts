@@ -91,21 +91,7 @@ export const routes: Routes = [
   },
 
 
-  {
-    path: 'feedbacks',
-    children: [
-      {
-        path: 'create', component: FeedbacksCreateComponent
-      },
-      {
-        path: 'list', component: FeedbackListComponent
-      },
-      {
-        path: 'modal', component: ModalBasicComponent
-      }
-    ]
-
-  },
+  
 
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },

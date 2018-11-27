@@ -26,4 +26,7 @@ deleteCV(cvId): Observable<boolean>
 {
   return this.http.delete<boolean>(API_URL + cvs + '/' +cvId);
 }
+updateCV(cv):Observable<cvDetail>{
+  return this.http.put<cvDetail>(API_URL + cvs + '/' + cv.id, cv  );
+}
 }
