@@ -21,6 +21,7 @@ h3 {
 
 ol {
   counter-reset: section;
+  
 }
 
 li {
@@ -31,6 +32,8 @@ li {
   margin-bottom: 15px;
   background: #72e0ff;
   color: #fff;
+  display: block;
+  
 }
 
 h4 {

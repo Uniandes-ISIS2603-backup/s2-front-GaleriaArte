@@ -1,3 +1,4 @@
+import { KindDetailComponent } from './../kind/kind-detail/kind-detail.component';
 import { KindCreateComponent } from './../kind/kind-create/kind-create.component';
 import { LoginComponent } from './../login/login.component';
 import { NotFoundComponent } from './../not-found/not-found.component';
@@ -53,7 +54,7 @@ export const routes: Routes = [
   },
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
-    //{ path: ':id', component: BuyerDetailComponent }
+    { path: 'detail/:id', component: KindDetailComponent },
     {path : 'create', component : KindCreateComponent}
   ]
 },

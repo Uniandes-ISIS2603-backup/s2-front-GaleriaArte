@@ -27,6 +27,10 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -36,11 +40,14 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component
+    Error404Component,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
