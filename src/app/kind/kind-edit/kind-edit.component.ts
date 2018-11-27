@@ -61,15 +61,23 @@ export class KindEditComponent implements OnInit {
       this.kindService.updateKind(kind_edit)
       .subscribe(()=> {
         this.toastrService.success("The kinds's information was updated", "Author edition");
-        //this.update.emit();
-      })
+        this.update.emit();
+      }, err => {
+        this.toastrService.error(err, "Error");
+    });
     }
-    
 
-
-
+    /**
+    * Emits the signal to tell the parent component that the
+    * user no longer wants to create an user
+    */
+   cancelEdition(): void {
+    this.cancel.emit();
+   }
 
   ngOnInit() {
+    this.kind = new Kind();
+    this.getKind();
   }
 
 }

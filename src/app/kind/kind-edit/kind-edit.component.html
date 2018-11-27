@@ -1,3 +1,38 @@
-<p>
-  kind-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Edit an kind</h2>
+        <br>
+        <form name="kind" (ngSubmit)="f.form.valid && editKind()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="kindName"><b>Name</b></label>
+                <input type="text" name="kindName" class="form-control" id="kindName" [(ngModel)]="kind.name"
+                    #kindName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && kindName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The kind's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="kindDescription"><b>Description</b></label>
+                <textarea name="kindDescription" class="form-control" id="kindDescription" [(ngModel)]="kind.description"
+                    #kindDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && kindDescription.invalid }"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    <div>The kind's description is missing</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <button type="button" class="btn btn-primary" (click)="editKind()">Edit</button>
+            <div class="divider"></div>
+            <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+        </div>
+    </div>
+</div>
+<br>
+<br>

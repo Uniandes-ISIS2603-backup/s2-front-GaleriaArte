@@ -34,6 +34,7 @@ import { BuyerCreateComponent } from '../buyer/buyer-create/buyer-create.compone
 import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
+import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
 
 
 
@@ -70,7 +71,8 @@ export const routes: Routes = [
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
     { path: 'detail/:id', component: KindDetailComponent },
-    {path : 'create', component : KindCreateComponent}
+    {path : 'create', component : KindCreateComponent},
+    {path : 'edit/:id', component : KindEditComponent}
   ]
 },
 
