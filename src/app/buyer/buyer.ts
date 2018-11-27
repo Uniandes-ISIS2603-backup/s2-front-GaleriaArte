@@ -7,4 +7,6 @@ export class Buyer {
     email: String;
 
     phone : String;
+
+    id: number;
 }

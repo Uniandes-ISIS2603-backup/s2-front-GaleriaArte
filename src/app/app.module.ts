@@ -27,6 +27,8 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
+import { MedioPagoEditComponent } from './medioPago/medio-pago-edit/medio-pago-edit.component';
+import { ExtraServiceEditComponent } from './extraService/extra-service-edit/extra-service-edit.component';
 
 
 @NgModule({
@@ -37,7 +39,7 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
     LoginComponent,
     ModalBasicComponent,
     Error404Component
-  ],
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,

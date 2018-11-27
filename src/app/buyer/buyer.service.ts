@@ -28,4 +28,11 @@ getBuyerDetail(buyerId): Observable<BuyerDetail> {
 createBuyer(buyer): Observable<Buyer> {
   return this.http.post<Buyer>(API_URL + buyers, buyer);
 }
+updateBuyer(buyer):Observable<BuyerDetail>{
+  return this.http.put<BuyerDetail>(API_URL + buyers + '/' + buyer.id, buyer  );
+}
+deleteBuyer(buyerId): Observable<boolean>
+{
+  return this.http.delete<boolean>(API_URL + buyers + '/' +buyerId);
+}
 }

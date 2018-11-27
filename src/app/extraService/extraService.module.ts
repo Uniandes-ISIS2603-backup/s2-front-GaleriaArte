@@ -7,7 +7,10 @@ import {FormsModule} from '@angular/forms';
 import {ExtraServiceListComponent} from './extraService-list/extraService-list.component';
 import {ExtraServiceService} from './extraService.service';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-
+import { ExtraServiceCreateComponent } from './extraService-add/extraService-add.component';
+import { ExtraServiceDetail } from './extraService-detail';
+import {ExtraServiceEditComponent} from './extra-service-edit/extra-service-edit.component';
+import { ExtraServiceDetailComponent } from './extraService-detail/extraService-detail.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -16,9 +19,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         CommonModule,
         FormsModule
     ],
-    declarations: [ExtraServiceListComponent],
-    providers: [ExtraServiceService],
-    exports: [ExtraServiceListComponent]
+    declarations: [ExtraServiceListComponent, ExtraServiceCreateComponent, ExtraServiceDetailComponent, ExtraServiceEditComponent]
 })
 export class ExtraServiceModule {}
 

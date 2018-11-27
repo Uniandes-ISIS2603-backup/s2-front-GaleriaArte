@@ -34,5 +34,14 @@ export class ExtraServiceService
     createExtraService(extraService): Observable<ExtraService> {
         return this.http.post<ExtraService>(API_URL + extraServices, extraService);
       }
-}
+
+      updateExtraService(extraService):Observable<ExtraServiceDetail>{
+        return this.http.put<ExtraServiceDetail>(API_URL + extraServices + '/' + extraService.id, extraService  );
+      }
+      deleteExtraService(extraServiceId): Observable<boolean>
+      {
+        return this.http.delete<boolean>(API_URL + extraServices + '/' +extraServiceId);
+      }
+    }
+
 
