@@ -4,10 +4,10 @@
       <br>
       <h2 class="text-center">Create a sale</h2>
       <br>
-      <form name="author" (ngSubmit)="createAuthor()">
+      <form name="sale" (ngSubmit)="createAuthor()"  novalidate>
           <div class="form-group">
-              <label for="authorName"><b>Name</b></label>
-              <input type="text" name="authorName" class="form-control" id="authorName" required>
+              <label for="saleName"><b>Name</b></label>
+              <input type="text" name="saleName" class="form-control" id="saleName"  required>
               <div class="invalid-feedback">
                   <div>The sale's name is missing</div>
               </div>
@@ -21,7 +21,7 @@
                   <div>The sale's description is missing</div>
               </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" >
               <label for="authorImage"><b>Image</b></label>
               <input type="text" name="authorImage" class="form-control" id="authorImage"  required>
               <div class="invalid-feedback">
