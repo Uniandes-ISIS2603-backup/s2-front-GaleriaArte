@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 //import { ToastrService } from 'ngx-toastr';
 
@@ -43,38 +44,39 @@ export class ArtistCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
 
+    
     /**
     * Creates an artist
     */
-    createArtist(): Artist {
-        console.log(this.artist);
-        let dateB: Date = new Date(this.artist.birthDate.year,
-             this.artist.birthDate.month-1,
-             this.artist.birthDate.day);
-        this.artist.birthDate = this.dp.transform(dateB, 'yyyy-MM-dd HH:MI:SS');
-        console.log(this.artist)
-        this.artistService.createArtist(this.artist)
-            .subscribe((artist) => {
-                this.artist = artist;
-                this.create.emit();
-                //this.toastrService.success("The artist was created", "artist creation");
-                
-            });
-            return this.artist;
-    }
+   createArtist(): Artist {
 
-    /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
-    */
-    cancelCreation(): void {
-        this.cancel.emit();
-    }
+    //let dateB: Date = new Date(this.artist.birthDate.year, this.artist.birthDate.month-1, this.artist.birthDate.day);
+    let dateB: Date = new Date('2015-05-18');
+       
+    this.artist.birthDate = this.dp.transform(dateB, 'dd/MM/yyyy');
+    console.log(this.artist);
+    this.artistService.createArtist(this.artist)
+        .subscribe((artist) => {
+            this.artist = artist;
+            this.create.emit();
+            //this.toastrService.success("The artist was created", "Artist creation");
 
-    /**
-    * This function will initialize the component
-    */
-    ngOnInit() {
-        this.artist = new Artist();
-    }
+        });
+    return this.artist;
+}
+
+/**
+* Emits the signal to tell the parent component that the
+* user no longer wants to create an user
+*/
+cancelCreation(): void {
+    this.cancel.emit();
+}
+
+/**
+* This function will initialize the component
+*/
+ngOnInit() {
+    this.artist = new Artist();
+}
 }

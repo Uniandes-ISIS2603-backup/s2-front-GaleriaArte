@@ -14,11 +14,6 @@ import { ArtistDetail } from '../artist-detail';
     templateUrl: './artist-list.component.html',
     styleUrls: ['./artist-list.component.css']
 })
-@Component({
-    selector: 'app-artist-list',
-    templateUrl: './artist-list.component.html',
-    // styleUrls: [ './artist-list.component.css']
-})
 export class ArtistListComponent implements OnInit {
 
     /**
@@ -27,12 +22,18 @@ export class ArtistListComponent implements OnInit {
     * @param toastrService The toastr to show messages to the user
     */
     constructor(
-        private artistService: ArtistService) { }
+        private artistService: ArtistService,
+        private viewRef: ViewContainerRef) {}
 
     /**
-    * The list of artists which belong to the BookStore
+    * The list of artists
     */
     artists: Artist[];
+
+    /**
+    * The id of the artist that the user wants to view
+    */
+    artist_id: number;
 
     /**
     * Shows or hides the artist-create-component
@@ -40,9 +41,14 @@ export class ArtistListComponent implements OnInit {
     showCreate: boolean;
 
     /**
-    * The id of the artist that the user wants to view
+     * Shows or hides the detail of an artist
+     */
+    showView: boolean;
+
+    /**
+    * Shows or hides the edition of an artist
     */
-    artist_id: number;
+    showEdit: boolean;
 
     /**
      * the artist that the user views.
@@ -55,6 +61,8 @@ export class ArtistListComponent implements OnInit {
     */
     onSelected(artist_id: number): void {
         this.showCreate = false;
+        this.showEdit = false;
+        this.showView = true;
         this.artist_id = artist_id;
         this.selectedArtist = new ArtistDetail();
         this.getArtistDetail();
@@ -64,11 +72,27 @@ export class ArtistListComponent implements OnInit {
     * Shows or hides the create component
     */
     showHideCreate(): void {
-        if (this.selectedArtist) {
-            this.selectedArtist = undefined;
-            this.artist_id = undefined;
-        }
+        this.showView = false;
+        this.showEdit = false;
         this.showCreate = !this.showCreate;
+    }
+
+    /**
+    * Shows or hides the create component
+    */
+    showHideEdit(artist_id: number): void {
+        if (!this.showEdit || (this.showEdit && artist_id != this.selectedArtist.id)) {
+            this.showView = false;
+            this.showCreate = false;
+            this.showEdit = true;
+            this.artist_id = artist_id;
+            this.selectedArtist = new ArtistDetail();
+            this.getArtistDetail();
+        }
+        else {
+            this.showEdit = false;
+            this.showView = true;
+        }
     }
 
     /**
@@ -87,14 +111,22 @@ export class ArtistListComponent implements OnInit {
                 this.selectedArtist = selectedArtist
             });
     }
+
+    updateArtist(): void {
+        this.showEdit = false;
+        this.showView = true;
+    }
+
     /**
     * This will initialize the component by retrieving the list of artists from the service
     * This method will be called when the component is created
     */
-    ngOnInit() {
-        this.showCreate = false;
-        this.selectedArtist = undefined;
-        this.artist_id = undefined;
-        this.getArtists();
-    }
+   ngOnInit() {
+    this.showCreate = false;
+    this.showView = false;
+    this.showEdit = false;
+    this.selectedArtist = undefined;
+    this.artist_id = undefined;
+    this.getArtists();
+}
 }
