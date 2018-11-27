@@ -15,7 +15,7 @@ import { ArtistModule     } from './artist/artist.module'     ;
 import { FeedbackModule   } from "./feedback/feedback.module" ;
 import { BuyerModule      } from './buyer/buyer.module'       ;
 import { InicioComponent  } from './inicio/inicio.component';
-import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-create.component'  ;
+import { FeedbackCreateComponent } from './feedback/feedback-create/feedback-create.component'  ;
 import { MedioPagoModule } from './medioPago/medioPago.module';
 import { ExtraServiceModule} from './extraService/extraService.module';
 import { NotFoundComponent } from './not-found/not-found.component';
