@@ -29,6 +29,7 @@ import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 
 
@@ -45,6 +46,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    ModalDialogModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
