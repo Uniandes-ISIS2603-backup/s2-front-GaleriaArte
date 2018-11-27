@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output ,EventEmitter } from '@angular/core';
 import { KindService } from '../kind.service';
 import { ToastrService } from 'ngx-toastr';
 import { KindDetail } from '../kind-detail';
-import { EventEmitter } from 'protractor';
 import { Kind } from '../kind';
 
 @Component({

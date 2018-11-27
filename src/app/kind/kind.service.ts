@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/observable/throw';
 
 const API_URL = "http://localhost:8080/s2_galeriaarte-api/api/";
 const kinds = 'kinds';
