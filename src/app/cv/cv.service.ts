@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 
 
 const API_URL = environment.apiURL;
-const cvs = '/artists/';
+const cvs = '/artists';
 //const API_URL = "../../assets/";
 //const cvs = 'cv.json';
 

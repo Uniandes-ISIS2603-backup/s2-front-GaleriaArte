@@ -14,11 +14,11 @@
                     <p class="price">{{artistDetail.birthDate| date:'yyyy-mm-dd'}}</p>
                     <p>{{artistDetail.description}}</p>
                     <span title="Hoja de vida del artista">
-                        <a class="btn btn-primary" routerLink="/artists/{{artistDetail.id}}/cvs">Hoja de vida</a></span>
+                        <a class="btn btn-primary" routerLink="/cvs/{{artistDetail.id}}/cvs">Hoja de vida</a></span>
                 </div>
             </div>
         </div>
         <p class="h3 p-3">Obras del artista: </p>
         <app-paintwork-list [paintworks]="artistDetail.obras"></app-paintwork-list>
-        <app-cv-detail [cvDetail] = "artistDetail.cvs"></app-cv-detail>
+        <!--app-cv-detail [cv_detail] = "artistDetail.cv"></app-cv-detail-->
     </div>

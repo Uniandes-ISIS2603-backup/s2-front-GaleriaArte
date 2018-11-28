@@ -13,8 +13,7 @@ import {ArtistDetailComponent} from './artist-detail/artist-detail.component';
 import {ArtistCreateComponent} from './artist-create/artist-create.component';
 import {ArtistEditComponent} from './artist-edit/artist-edit.component';
 import {PaintworkModule} from '../paintwork/paintwork.module';
-
-
+import { CvModule } from '../cv/cv.module';
 
 @NgModule({
     imports: [
@@ -25,6 +24,7 @@ import {PaintworkModule} from '../paintwork/paintwork.module';
         //NgxPermissionsModule,
         FormsModule,
         PaintworkModule,
+        CvModule,
         NgbModule
     ],
     declarations: [

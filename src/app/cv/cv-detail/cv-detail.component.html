@@ -1,31 +1,48 @@
 <div class="container-fluid">
-  <div clas="row">
-          <div class="col">
-              <table class="table table-striped">
-                      <thead class="thead-dark">
-                              <tr>
-                                  <th class = "h3" colspan="2">{{cvDetail.name}}  </th>
-                              </tr>
-                                  <th>Id</th>
-                                  <th>Nombre</th>
-                                  <th>Fecha de nacimiento</th>
-                                  <th>informacion adicional</th>
-                                 
-                          </thead>
-                  <tbody>
-                      <tr *ngFor = "let cvDetail of cvDetail">
-                          <td>{{cv.id}}</td>
-                          <td> {{cv.name}}</td>
-                           <td> {{cv.fechaNacimiento}}</td>
-                            <td> {{cv.informaconAdicional}}</td>
-                             
-                      </tr>
-                  </tbody>
-              </table>
-              <div>
-                  <button type="button" class="btn btn-danger">Volver</button>
-              </div>
-          </div>
-       </div>
+
+       <div id="header"></div>
+<div class="left"></div>
+<div class="stuff">
+  <br><br>
+  <h1>Hoja de vida</h1>
+  <h2>{{cvDetail.informaconAdicional}}</h2>
+  <hr />
+  <br>
+  <p class="head">Info</p>
+  <ul>
+    <li>{{cv.informaconAdicional}}</li>
+  </ul>
+  <p class="head">Skills</p>
+  <ul>
+    <li>Web Design with HTML & CSS</li>
+  </ul>
+  <p class="head">Education</p>
+  <ul>
+    <a href="http://www.wiltonhighschool.org/pages/Wilton_High_School">
+      <li>Wilton High School</li>
+    </a>
+    <!--Link-->
+    <a href="https://www.silvermineart.org/">
+      <li>Silvermine School of Arts</li>
+    </a>
+    <li>Codeacademy</li>
+  </ul>
+  <p class="head">Experience</p>
+  <ul>
+    <li>Student Technology Intern for Wilton School District</li>
+    <li>Babysitter</li>
+  </ul>
+  <p class="head">Extracurriculars</p>
+  <ul>
+    <li>Recycling Club</li>
+    <li>Gardening Club</li>
+    <li>Book Club</li>
+  </ul>
+  <a class="btn btn-primary" routerLink="/artists/list">Back</a>
+
+</div>
+<div class="right"></div>
+<div id="footer">
+  <h2 id="name">{{cv_detail.nombre}}</h2></div>
   </div>
   
