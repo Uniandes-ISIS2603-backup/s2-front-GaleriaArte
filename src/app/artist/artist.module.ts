@@ -12,7 +12,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {ArtistDetailComponent} from './artist-detail/artist-detail.component';
 import {ArtistCreateComponent} from './artist-create/artist-create.component';
 import {ArtistEditComponent} from './artist-edit/artist-edit.component';
-//import {BookModule} from '../book/book.module';
+import {PaintworkModule} from '../paintwork/paintwork.module';
 
 
 
@@ -24,7 +24,7 @@ import {ArtistEditComponent} from './artist-edit/artist-edit.component';
         CommonModule,
         //NgxPermissionsModule,
         FormsModule,
-        //BookModule,
+        PaintworkModule,
         NgbModule
     ],
     declarations: [

@@ -1,5 +1,5 @@
 import { PaintworkService } from './../paintwork.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Paintwork } from '../paintwork';
 
 @Component({
@@ -11,7 +11,7 @@ export class PaintworkListComponent implements OnInit {
 
   constructor(private paintwork : PaintworkService) { }
 
-  paintworks:Paintwork[];
+  @Input() paintworks:Paintwork[];
 
   getPaintworks():void{
     this.paintwork.getPaintworks().subscribe(paintwork=>{this.paintworks=paintwork;})

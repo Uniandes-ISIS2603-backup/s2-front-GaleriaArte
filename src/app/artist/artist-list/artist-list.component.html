@@ -1,12 +1,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
-            <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Create an artist</button>
-            </div>
+        <div class="col-10"></div>
             <div class="col-8">
                 <div *ngIf="selectedArtist">
                     <app-artist-detail [artistDetail]="selectedArtist"></app-artist-detail>
@@ -39,3 +34,7 @@
                       </div>
             </div>
         </div>
+        <div class="navbar">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an artist</button>
+                </div>

@@ -1,57 +1,27 @@
 
-<ul class="nav nav-tabs">
-
-  <li class="nav-item">
-        <a routerLink="/" class="nav-link">Inicio</a>
-  </li>
-  <li class="nav-item">
-        <a routerLink="/paintwork/list" class="nav-link">Obras</a>
-  </li>
-  <li class="nav-item">
-      <a routerLink="/kinds/list" class="nav-link">Kinds</a>
-</li>
-  <li class="nav-item">
-        <a routerLink="/perfil" class="nav-link">Mi perfil</a>
-  </li>
-  <li class="nav-item">
-        <a routerLink="/artists/list" class="nav-link">Artistas</a>
-  </li>
-  <li class="nav-item">
-    <a routerLink="/buyer/list" class="nav-link">Buyer</a>
-</li>
-  <li class="nav-item">
-        <a id="extraServiceTag" class="nav-link" routerLink="/extraServices/list">Servicios Extra</a>
-    </li>
-     <li class="nav-item">
-        <a id="medioPagoTag" class="nav-link" routerLink="/medioPagos/list">Medios de pago</a>
-    </li>
-  <li class="nav-item">
-      <a id="feedbacksTag" class="nav-link" routerLink="/feedbacks/list">Feedbacks</a>
-    </li>
-    <li class="nav-item " >
-      <a id="sale" class="nav-link" routerLink="/sale">Sale prueba</a>
-    </li>
-    <li class="nav-item ml-auto" >
-      <a id="iniciar" class="nav-link" routerLink="/login">Iniciar Sesion</a>
-    </li>
-    
-    <li class="nav-item">
-        <img src="{{userPicture}} "height="42" width="42">
-      </li>
-      <li class="nav-item">
-          <p>{{userNombre}}</p>
-        </li>
-    <li class="nav-item">
-      <a id="registro" class="nav-link" routerLink="/registro">Registrarse</a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link" (click)="onLogout()">Salir</a>
-      </li>
-</ul>
+<br>
+<br>
+<br>
 <div class="list">
   <router-outlet></router-outlet>
 </div>
-
+<div class="navbar">
+    <a routerLink="/" class="nav-link">Inicio</a>
+    <a routerLink="/paintwork/list" class="nav-link">Obras</a>
+    <a routerLink="/kinds/list" class="nav-link">Kinds</a>
+    <a routerLink="/artists/list" class="nav-link">Artistas</a>
+    <a routerLink="/perfil" class="nav-link">Mi perfil</a>
+    <a routerLink="/buyer/list" class="nav-link">Buyer</a>
+    <a id="extraServiceTag" class="nav-link" routerLink="/extraServices/list">Servicios Extra</a>
+    <a id="medioPagoTag" class="nav-link" routerLink="/medioPagos/list">Medios de pago</a>  
+    <a id="feedbacksTag" class="nav-link" routerLink="/feedbacks/list">Feedbacks</a>
+    <a id="sale" class="nav-link" routerLink="/sale">Sale prueba</a>
+    <a id="iniciar" class="nav-link" routerLink="/login">Iniciar Sesion</a>
+    <img src="{{userPicture}} "height="42" width="42">
+    <p>{{userNombre}}</p>
+    <a id="registro" class="nav-link" routerLink="/registro">Registrarse</a>
+    <a href="#" class="nav-link" (click)="onLogout()">Salir</a>
+  </div>
 <footer class="footer bg-light" id="footer">
   <div class="container">
       <p class="navbar-text text-center">
