@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
+import { CategoryModule } from './category/category.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
@@ -15,7 +16,7 @@ import { ArtistModule     } from './artist/artist.module'     ;
 import { FeedbackModule   } from "./feedback/feedback.module" ;
 import { BuyerModule      } from './buyer/buyer.module'       ;
 import { InicioComponent  } from './inicio/inicio.component';
-import { FeedbacksCreateComponent } from './feedback/feedbacks-create/feedbacks-create.component'  ;
+import { FeedbackCreateComponent } from './feedback/feedback-create/feedback-create.component'  ;
 import { MedioPagoModule } from './medioPago/medioPago.module';
 import { ExtraServiceModule} from './extraService/extraService.module';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -38,7 +39,8 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component
+    Error404Component,
+
     ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
     KindModule,
     ArtistModule,
     FeedbackModule,
+    CategoryModule,
     BuyerModule,
     MedioPagoModule,
     ExtraServiceModule,
