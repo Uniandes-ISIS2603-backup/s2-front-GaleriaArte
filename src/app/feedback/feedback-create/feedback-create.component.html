@@ -1,3 +1,42 @@
-<p>
-  feedback-create works!
-</p>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+      <br>
+      <h2 class="text-center">Crear un comentario</h2>
+      <br>
+      <form name="comentario" (ngSubmit)="f.form.valid && createFeedback()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="usuario"><b>Usuario</b></label>
+              <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="feedback.usuario"
+                  #usuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuario.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>Falta el usuario del comentario</div>
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <label for="feedbackDescription"><b>Descripción</b></label>
+              <textarea name="feedbackDescription" class="form-control" id="feedbackDescription" [(ngModel)]="feedback.descripcion"
+                  #feedbackDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && feedbackDescription.invalid }"
+                  required></textarea>
+              <div class="invalid-feedback">
+                  <div>Falta la descripción del comentario</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="rating"><b>Calificación</b></label>
+              <input type="nmber" name="rating" min="1" max="10" step="1" class="form-control" id="rating" [(ngModel)]="feedback.rating"
+                  #rating="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rating.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>Falta la calificación </div>
+              </div>
+          </div>
+          <div class="row form-inline justify-content-center align-self-center">
+              <button type="submit" class="btn btn-primary">Create</button>
+              <div class="divider"></div>
+              <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+          </div>
+      </form>
+  </div>
+  <div class="col-3"></div>
+</div>

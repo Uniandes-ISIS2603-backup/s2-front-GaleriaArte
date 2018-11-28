@@ -9,16 +9,19 @@ import { FeedbackListComponent } from '../feedback/feedback-list/feedback-list.c
 import { InicioComponent } from "../inicio/inicio.component";
 import { ArtistListComponent } from "../artist/artist-list/artist-list.component";
 import { ArtistDetailComponent } from '../artist/artist-detail/artist-detail.component';
+import { FeedbackDetailComponent } from '../feedback/feedback-detail/feedback-detail.component';
 import { BuyerListComponent } from "../buyer/buyer-list/buyer-list.component";
 import { BuyerDetailComponent } from '../buyer/buyer-detail/buyer-detail.component';
 import { PaintworkListComponent } from "../paintwork/paintwork-list/paintwork-list.component";
 import { PaintworkDetailComponent } from '../paintwork/paintwork-detail/paintwork-detail.component';
+import { FeedbackCreateComponent } from '../feedback/feedback-create/feedback-create.component';
 import { ExtraServiceListComponent } from '../extraService/extraService-list/extraService-list.component';
 import {ExtraServiceDetailComponent } from '../extraService/extraService-detail/extraService-detail.component';
 import { MedioPagoListComponent } from '../medioPago/medioPago-list/medioPago-list.component';
 import {MedioPagoDetailComponent } from '../medioPago/medioPago-detail/medioPago-detail.component';
 import { PaintworkAddComponent } from '../paintwork/paintwork-add/paintwork-add.component';
 import { PaintworkEditComponent } from '../paintwork/paintwork-edit/paintwork-edit.component';
+import { FeedbackEditComponent } from '../feedback/feedback-edit/feedback-edit.component';
 import { SaleListComponent } from '../sale/sale-list/sale-list.component';
 import { ModalBasicComponent } from '../modal-basic/modal-basic.component';
 import { Error404Component } from '../error404/error404.component';
@@ -34,11 +37,17 @@ import { BuyerCreateComponent } from '../buyer/buyer-create/buyer-create.compone
 import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
+import { CategoryListComponent } from '../category/category-list/category-list.component';
+import { CategoryDetailComponent } from '../category/category-detail/category-detail.component';
+import { CategoryEditComponent } from '../category/category-edit/category-edit.component';
+import { CategoryCreateComponent } from '../category/category-create/category-create.component';
+
 import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
 import { CvListComponent } from '../cv/cv-list/cv-list.component';
 import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
 import {SaleListListasComponent} from '../sale/sale-list-listas/sale-list-listas.component';
 import { Sale } from '../sale/sale';
+
 export const routes: Routes = [
   {
     path: 'paintwork', children: [
@@ -90,6 +99,33 @@ export const routes: Routes = [
     path: 'artists', children: [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
+  },
+  {
+    path: 'categories', children: [
+      { path: 'list', component: CategoryListComponent },
+      { path: 'create', component: CategoryCreateComponent },
+      { path: 'edit', component: CategoryEditComponent },
+      { path: ':detail', component: CategoryDetailComponent }]
+  },
+  {
+    path: 'feedbacks',
+    children: [
+      {
+        path: 'create', component: FeedbackCreateComponent
+      },
+      {
+        path: 'list', component: FeedbackListComponent
+      },
+      {
+        path: 'detail', component: FeedbackDetailComponent
+      },
+      {
+        path: 'edit', component: FeedbackEditComponent
+      },
+      {
+        path: 'modal', component: ModalBasicComponent
+      }
+    ]
   },
   {
     path: 'cvs', children: [
