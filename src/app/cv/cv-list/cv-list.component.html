@@ -1,3 +1,23 @@
-<p>
-  cv-list works!
-</p>
+
+<div class="container-fluid">
+<div clas="row">
+        <div class="col">
+            <table class="table table-striped">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th class = "h3" colspan="2">Hojas de vida</th>
+                            </tr>
+                                <th>Id</th>
+                                <th>nombre</th>
+                        </thead>
+                <tbody>
+                    <tr *ngFor = "let cv of cvs"
+                        (click)="onSelected(cv.id)">
+                        <td style="cursor: pointer;">{{cv.id}}</td>
+                        <td> {{cv.nombre}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
+</div>

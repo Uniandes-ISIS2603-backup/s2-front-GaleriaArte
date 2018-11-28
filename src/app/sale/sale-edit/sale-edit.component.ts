@@ -1,5 +1,7 @@
-import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output,ViewContainerRef, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+
 import { SaleService } from '../sale.service';
 import { SaleDetail } from '../sale-detail';
 
@@ -12,6 +14,9 @@ export class SaleEditComponent implements OnInit,OnChanges {
 
   constructor(
     private saleService: SaleService,
+    private modalDialogService: ModalDialogService,
+    private viewRef: ViewContainerRef,
+
     private toastrService: ToastrService
   ) { }
 
@@ -34,6 +39,7 @@ export class SaleEditComponent implements OnInit,OnChanges {
   getSale():void{
     this.saleService.getSale(this.sale.id).subscribe(sale=>{this.sale=sale});
   }
+
   ngOnInit() {
     this.sale= new SaleDetail();
     this.getSale();
@@ -44,4 +50,9 @@ export class SaleEditComponent implements OnInit,OnChanges {
     this.ngOnInit();
   }
 
-}
+ 
+
+  
+
+  }
+

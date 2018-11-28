@@ -1,15 +1,30 @@
-<div>
-        <div class="card-group">
-                <div class="col-4"  *ngFor="let paintwork of paintworks">
-                    <div class="card">
-                            <img class="card-img-top" src="{{paintwork.imagePath}}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">{{paintwork.name}}</h5>
-                              <p class="card-text">{{paintwork.description}}</p>
-                              <p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p>
-                              <!-- <a routerLink="/paintwork/{{paintwork.idPaintwork}}">link to user component</a> -->
-                            </div>
-                    </div>
-                </div>
-            </div>
-</div>
+<body>
+                <div id="alertPanel" style="text-align: center"></div>
+                <div class="container-fluid">
+                    <div class="card-group">
+                    <div class="col-4 mt-2 " *ngFor="let p of paintworks">
+                      <div class="card">
+                                <img class="card-img-top" src="{{p.imagePath}}" alt="Card image cap">
+                        <div class="card-body">
+                                <a name="createC"></a>
+                          <h5 class="card-title">{{p.name}}</h5>
+                          <p class="card-text">{{p.description}}</p>
+                          <button type="button" class="btn btn-primary pull-right mr-3" (click)="btnClick(p.idPaintwork)"><i class="fa fa-plus"></i>Ver más</button>    
+                          <button [ngClass]="{ 'btn-warning': (!showEdit || edit_paintwork_id != p.idPaintwork), 'btn-danger': (showEdit && edit_paintwork_idPaintwork == p.idPaintwork) }"
+                                                type="button" class="btn mr-3" (click)="showEditPaintwork(p.idPaintwork)">Editar Obra</button>
+                          <button class="btn btn-danger" (click)="deletePaintwork(p.idPaintwork)"><span class="fa fa-trash mb-3"></span>Eliminar Obra</button>
+                          
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-md-8">
+                      <app-paintwork-add (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-paintwork-add>
+                      <app-paintwork-edit [paintwork_id]="edit_paintwork_id" (cancel)="hideEditPaintwork()" (update)="getPaintworks()" *ngIf="showEdit"></app-paintwork-edit>
+                  </div>
+                        </div>
+                </body>
+                <div class="navbar">
+                                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                                    (click)="showHideCreate()">Crear una obra</button><a href="#createC"></a>
+                                </div>

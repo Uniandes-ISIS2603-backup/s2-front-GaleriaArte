@@ -1,10 +1,28 @@
-<html>
-    <div class="col-4"  >
-<ol>
-  <li *ngFor="let k of kinds">
-    <h4>{{k.name}}</h4>
-    <p>{{k.description}}.</p>
-  </li>
-  </ol>
+<body>
+<div id="alertPanel" style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="card-group">
+    <div class="col-4 mt-2 " *ngFor="let k of kinds">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{k.name}}</h5>
+          <p class="card-text">{{k.description}}</p>
+          <button type="button" class="btn btn-primary pull-right mr-3" (click)="btnClick(k.idType)"><i class="fa fa-plus"></i>Ver más</button>    
+          <button [ngClass]="{ 'btn-warning': (!showEdit || edit_kind_id != k.idType), 'btn-danger': (showEdit && edit_kind_idType == k.idType) }"
+                                type="button" class="btn mr-3" (click)="showEditKind(k.idType)">Editar Tipo</button>
+          <button class="btn btn-danger" (click)="deleteKind(k.idType)"><span class="fa fa-trash mb-3"></span>Eliminar tipo</button>
+          
+        </div>
+      </div>
   </div>
-</html>
+  </div>
+  <div class="col-md-8">
+      <app-kind-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-kind-create>
+      <app-kind-edit [kind_id]="edit_kind_id" (cancel)="hideEditKind()" (update)="getKinds()" *ngIf="showEdit"></app-kind-edit>
+  </div>
+  <div class="row justify-content-center align-self-center">
+      <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn mt-3"
+          (click)="showHideCreate()">Crear un tipo</button>
+  </div>
+</div>
+</body>

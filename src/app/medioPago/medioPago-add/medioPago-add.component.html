@@ -3,22 +3,22 @@
     <div class="col-3"></div>
     <div class="col-6">
        
-        <form name="medioPago" (ngSubmit)="createMedioPago()">
+        <form name="medioPago" (ngSubmit)="createMedioPago() && f.form.valid" #f="ngForm" novalidate>
            
              
             <div class="form-group">
                 <label for="medioPagoDescription"><b>Descripcion: </b></label>
-                <textarea name="medioPagoDescription" class="form-control" id="medioPagoDescription" ></textarea>       
+                <input name="medioPagoDescription" class="form-control" id="medioPagoDescription" [(ngModel)]="medioPago.description" #medioPagoDescription="ngModel" [ngClass]="{'is-invalid': f.submitted && medioPagoDescription.invalid}" required >      
             </div>
             
                <div class="form-group">
                 <label for="medioPagoNumber"><b>Numero: </b></label>
-                <input type="number" name="medioPagoNumber" class="form-control" id="medioPagoNumber" >       
+                <input type="number" name="medioPagoNumber" class="form-control" id="medioPagoNumber" [(ngModel)]="medioPago.number" #medioPagoNumber="ngModel" [ngClass]="{'is-invalid': f.submitted && medioPagoNumber.invalid}" required >       
             </div>
             
             <div class="form-group">
                 <label for="medioPagoBank"><b>Banco: </b></label>
-                <textarea name="medioPagoBank" class="form-control" id="medioPagoBank" ></textarea>       
+                <input name="medioPagoBank" class="form-control" id="medioPagoBank" [(ngModel)]="medioPago.bank" #medioPagoBank="ngModel" [ngClass]="{'is-invalid': f.submitted && medioPagoBank.invalid}" required >      
             </div>
             
           

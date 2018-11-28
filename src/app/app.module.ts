@@ -28,8 +28,13 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
-import { MedioPagoEditComponent } from './medioPago/medio-pago-edit/medio-pago-edit.component';
-import { ExtraServiceEditComponent } from './extraService/extra-service-edit/extra-service-edit.component';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CvModule } from './cv/cv.module';
+import { ModalDialogModule } from 'ngx-modal-dialog';
+import {NgxPermissionsModule} from 'ngx-permissions';
+import { MedioPagoService } from './medioPago/medioPago.service';
+
 
 
 @NgModule({
@@ -40,14 +45,18 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
     LoginComponent,
     ModalBasicComponent,
     Error404Component,
-
     ],
   imports: [
     BrowserModule,
+    ModalDialogModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgxPermissionsModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     KindModule,
@@ -55,7 +64,9 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
     FeedbackModule,
     CategoryModule,
     BuyerModule,
+    CvModule,
     MedioPagoModule,
+    
     ExtraServiceModule,
    ToastrModule.forRoot({
      timeOut: 10000,
@@ -65,12 +76,17 @@ import { ExtraServiceEditComponent } from './extraService/extra-service-edit/ext
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule,
-    SaleModule
+    SaleModule,
+    ModalDialogModule.forRoot()
     ],
    providers: [ { 
       provide: HTTP_INTERCEPTORS,
      useClass: HttpErrorInterceptor,
-     multi: true}],
+     multi: true},
+    {
+      provide: MedioPagoService
+    }],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

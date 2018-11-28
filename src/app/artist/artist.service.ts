@@ -37,8 +37,21 @@ export class ArtistService {
     return this.http.post<Artist>(API_URL + artists, artist);
   }
 
-  deleteArtist(artistId): Observable<boolean>
-{
-  return this.http.delete<boolean>(API_URL + artists + '/' +artistId);
+/**
+* Updates an artist
+* @param artist The artist's information updated
+* @returns The confirmation that the artist was updated
+*/
+updateArtist(artist): Observable<ArtistDetail> {
+    return this.http.put<ArtistDetail>(API_URL + artists + '/' + artist.id, artist);
+}
+
+/**
+* Deletes an artist from the BookStore
+* @param artistId The id of the artist
+* @returns The confirmation that the artist was deleted
+*/
+deleteArtist(artistId): Observable<boolean> {
+    return this.http.delete<boolean>(API_URL + artists + '/' + artistId);
 }
 }

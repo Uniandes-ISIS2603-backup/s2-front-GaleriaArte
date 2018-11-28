@@ -35,7 +35,6 @@ export class MedioPagoEditComponent implements OnInit,OnChanges {
       this.medioPagoService.getMedioPagoDetail(this.medioPago.id).subscribe(medioPago=>{this.medioPago=medioPago});
     }
   ngOnInit() {
-    this.medioPago= new MedioPagoDetail();
     this.getMedioPago();
   }
 

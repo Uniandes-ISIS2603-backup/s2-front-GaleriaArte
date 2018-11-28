@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {MedioPagoListComponent} from './medioPago-list/medioPago-list.component';
 import {MedioPagoService} from './medioPago.service';
@@ -16,6 +17,8 @@ import {MedioPagoEditComponent} from './medio-pago-edit/medio-pago-edit.componen
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
+        ReactiveFormsModule,
+        NgxPermissionsModule,
         FormsModule
     ],
     declarations: [MedioPagoListComponent, MedioPagoDetailComponent, MedioPagoCreateComponent, MedioPagoEditComponent]

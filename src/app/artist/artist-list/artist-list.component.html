@@ -1,18 +1,16 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-10">
-            <br>
-            <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Create an artist</button>
-            </div>
+        <div class="col-10"></div>
             <div class="col-8">
                 <div *ngIf="selectedArtist">
                     <app-artist-detail [artistDetail]="selectedArtist"></app-artist-detail>
                 </div>
                 <div *ngIf="showCreate">
                     <app-artist-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-artist-create>
+                </div>
+                <div *ngIf="showEdit">
+                        <app-artist-edit [artist]="selectedArtist" (cancel)="showHideEdit(selectedArtist.id)" (update)="updateArtist()" ></app-artist-edit>
                 </div>
             </div>
          </div>
@@ -21,15 +19,22 @@
     <div>
         <div class="card-group">
             <div class="col-3" *ngFor="let artist of artists">
-                <div class="card">
-                    <img class="card-img-top" src="{{artist.image}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{artist.name}}</h5>
-                        <p class="card-text">{{artist.description}}</p>
-                        <!-->p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p-->
-                        <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
-
-                    </div>
-                </div>
+                <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{artist.image}}" style="width:200px;height:200px;">
+                          </div>
+                          <div class="flip-card-back">
+                            <h1>{{artist.name}}</h1> 
+                            <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
+                        <a class="btn btn-primary" (click)="showHideEdit(artist.id)">Edit<span class="fa fa-pencil"></span>
+                        </a>
+                          </div>
+                        </div>
+                      </div>
             </div>
         </div>
+        <div class="navbar">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an artist</button>
+                </div>

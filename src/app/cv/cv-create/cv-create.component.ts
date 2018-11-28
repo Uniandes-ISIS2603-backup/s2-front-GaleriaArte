@@ -25,7 +25,7 @@ export class CvCreateComponent implements OnInit {
       console.log(this.cv);
 
       this.cvService.createCv(this.cv).subscribe((cv) => {this.cv=cv; this.create.emit(); 
-        //this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
+        //this.toastrService.success("El cv fue creado", "Creacion de cv") 
       });
 
       return this.cv;
@@ -35,7 +35,7 @@ export class CvCreateComponent implements OnInit {
       this.cancel.emit();
     }
   ngOnInit() {
-   // this.feedback= new Feedback();
+    this.cv= new Cv();
   }
 
 }

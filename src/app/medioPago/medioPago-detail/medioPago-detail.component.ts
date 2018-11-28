@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input,ViewContainerRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MedioPagoService } from '../medioPago.service';
 import {MedioPagoDetail} from '../medioPago-detail';
 
 import { MedioPago } from '../medioPago';
-
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-medioPago-detail',
@@ -22,13 +24,17 @@ export class MedioPagoDetailComponent implements OnInit {
     */
     constructor(
         private route: ActivatedRoute,
-        private medioPagoService: MedioPagoService 
+        private medioPagoService: MedioPagoService,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService,
+        private router:Router 
     ) { }
 
     /**
     * El medio de pago
     */
-    medioPagoDetail: MedioPagoDetail;
+    @Input() medioPagoDetail: MedioPagoDetail;
 
     /**
     * El id del medio de Pago que viene en el path get .../medioPago/medioPago_id
@@ -44,7 +50,29 @@ export class MedioPagoDetailComponent implements OnInit {
                 this.medioPagoDetail = medioPagoDetail
             });
     }
-
+    deleteMedioPago(): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Delete a MedioPago',
+            childComponent: SimpleModalComponent,
+            data: {text: 'Are you sure your want to delete this MedioPago?'},
+            actionButtons: [
+                {
+                    text: 'Yes',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.medioPagoService.deleteMedioPago(this.medioPago_id).subscribe(sale => {
+                            this.toastrService.success("The MedioPago  ", "MedioPago deleted");
+                            this.router.navigate(['medioPagos/list']);
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
+    }
    
     /**
     * The method which initializes the component.

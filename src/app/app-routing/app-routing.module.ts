@@ -1,3 +1,4 @@
+import { KindDetailComponent } from './../kind/kind-detail/kind-detail.component';
 import { KindCreateComponent } from './../kind/kind-create/kind-create.component';
 import { LoginComponent } from './../login/login.component';
 import { NotFoundComponent } from './../not-found/not-found.component';
@@ -41,7 +42,11 @@ import { CategoryDetailComponent } from '../category/category-detail/category-de
 import { CategoryEditComponent } from '../category/category-edit/category-edit.component';
 import { CategoryCreateComponent } from '../category/category-create/category-create.component';
 
-
+import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
+import { CvListComponent } from '../cv/cv-list/cv-list.component';
+import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
+import {SaleListListasComponent} from '../sale/sale-list-listas/sale-list-listas.component';
+import { Sale } from '../sale/sale';
 
 export const routes: Routes = [
   {
@@ -56,8 +61,7 @@ export const routes: Routes = [
   {
     path: 'medioPagos', 
     children: [
-      { path: 'list', 
-      component: MedioPagoListComponent },
+      { path: 'list', component: MedioPagoListComponent },
       {path: ':id', component:MedioPagoDetail},
       {path: ':id/edit' , component:MedioPagoEditComponent},
       {path: 'create' , component: MedioPagoCreateComponent}
@@ -65,7 +69,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'buyer', children: [
+    path: 'buyers', children: [
       { path: 'list', component: BuyerListComponent },
       { path: ':id', component: BuyerDetailComponent },
       {path: ':id/edit', component: BuyerEditComponent},
@@ -74,7 +78,9 @@ export const routes: Routes = [
   },
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
-    {path : 'create', component : KindCreateComponent}
+    { path: 'detail/:id', component: KindDetailComponent },
+    {path : 'create', component : KindCreateComponent},
+    {path : 'edit/:id', component : KindEditComponent}
   ]
 },
 
@@ -94,7 +100,6 @@ export const routes: Routes = [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
   },
-
   {
     path: 'categories', children: [
       { path: 'list', component: CategoryListComponent },
@@ -102,7 +107,6 @@ export const routes: Routes = [
       { path: 'edit', component: CategoryEditComponent },
       { path: ':detail', component: CategoryDetailComponent }]
   },
-
   {
     path: 'feedbacks',
     children: [
@@ -122,7 +126,11 @@ export const routes: Routes = [
         path: 'modal', component: ModalBasicComponent
       }
     ]
-
+  },
+  {
+    path: 'cvs', children: [
+      { path: 'list', component: CvListComponent },
+      { path: ':id', component: CvDetailComponent }]
   },
 
   //{path: '**', component :NotFoundComponent},
@@ -138,7 +146,7 @@ export const routes: Routes = [
        path:'create', component: SaleCreateComponent
       },
       {
-        path:'list', component: SaleListComponent
+        path:'list', component: SaleListListasComponent
       },
       {
         path:':id/edit', component: SaleEditComponent
