@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CvService } from '../cv.service';
 import { cvDetail } from '../cv-detail';
+import { ToastrService } from 'ngx-toastr';
+import { Cv } from '../cv';
 
 @Component({
   selector: 'app-cv-detail',
@@ -11,13 +13,15 @@ import { cvDetail } from '../cv-detail';
 export class CvDetailComponent implements OnInit {
 
   constructor(
-    private cvService:CvService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+        private cvService: CvService,
+        private toastrService: ToastrService
+        ) { }
 
      /**
     * El cv
     */
-   cvDetail: cvDetail;
+   cv : Cv;
 
    /**
    * El id del cv que viene en el path get .../cv/cv_id
@@ -26,24 +30,28 @@ export class CvDetailComponent implements OnInit {
    /**
    * The method which obtains el cv whose details we want to show
    */
-   getCvDetail(): void 
-       {
-       this.cvService.getCvDetail(this.cv_id)
-           .subscribe(cvDetail => {
-               this.cvDetail = cvDetail
-           });
-   }
+
+   /**
+    * The function which obtains the author whose details we want to show
+    */
+   getCv(): void {
+    this.cvService.getCv(this.cv_id)
+        .subscribe(cv => {
+            this.cv = cv
+        }, err => {
+            this.toastrService.error(err, "Error");
+        });
+}
+
 
   
    /**
-   * The method which initializes the component.
-   * We need to create el cv so it is never considered as undefined
-   */
-
-  ngOnInit() {
+    * The function which initializes the component.
+    */
+   ngOnInit() {
     this.cv_id = +this.route.snapshot.paramMap.get('id');
-    this.cvDetail = new cvDetail();
-    this.getCvDetail();
-  }
+    this.cv = new Cv();
+    this.getCv();
+}
 
 }

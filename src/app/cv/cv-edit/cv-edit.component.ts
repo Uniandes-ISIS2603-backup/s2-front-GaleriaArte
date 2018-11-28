@@ -21,7 +21,7 @@ export class CvEditComponent implements OnInit {
   @Output() cancel= new EventEmitter();
 
   editCV():void{
-    this.cvService.updateCV(this.cv).subscribe(()=>{
+    this.cvService.updatecv(this.cv).subscribe(()=>{
       this.toastrService.success("The cv was updated","CV edition");
     });
     this.update.emit();
@@ -30,12 +30,9 @@ export class CvEditComponent implements OnInit {
   cancelEdition():void{
     this.cancel.emit();
   }
-  getCV():void{
-    this.cvService.getCvDetail(this.cv.id).subscribe(cv=>{this.cv=cv});
-  }
+  
   ngOnInit() {
     this.cv= new cvDetail();
-    this.getCV();
   }
 
   ngOnChanges()

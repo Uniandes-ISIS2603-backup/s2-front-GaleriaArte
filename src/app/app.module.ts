@@ -30,6 +30,7 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import { CvModule } from './cv/cv.module';
 
 
 
@@ -62,6 +63,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     BuyerModule,
     MedioPagoModule,
     ExtraServiceModule,
+    CvModule,
    ToastrModule.forRoot({
      timeOut: 10000,
     positionClass: 'toast-bottom-right',

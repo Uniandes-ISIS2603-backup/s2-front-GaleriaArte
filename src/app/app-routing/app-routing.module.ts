@@ -35,6 +35,7 @@ import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
 import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
+import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
 
 
 
@@ -92,6 +93,11 @@ export const routes: Routes = [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
   },
+  {
+    path: 'cv', children: [
+      { path: 'detail/:id', component: CvDetailComponent },
+     ]
+  },
 
 
   
@@ -120,6 +126,7 @@ export const routes: Routes = [
     ]
   
 },
+
 
   { path: '**', component: Error404Component }
 

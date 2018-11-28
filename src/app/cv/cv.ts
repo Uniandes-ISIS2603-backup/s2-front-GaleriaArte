@@ -2,9 +2,11 @@ export class Cv {
 
     id: number;
 
-    nombre:String;
+    education:string;
 
-    fechaNacimiento: String;
+    nombreObraMasConocida:string;
 
-    informacionAdicional: String;
+    informacionAdicional: string;
+
+
 }
