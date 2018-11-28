@@ -12,7 +12,7 @@ import { Paintwork } from '../paintwork';
 export class PaintworkDetailComponent implements OnInit, OnDestroy {
 
   constructor(  
-     private paintworService : PaintworkService,
+     private paintworkService : PaintworkService,
      private route: ActivatedRoute,
      private router: Router
     ) {
@@ -31,14 +31,14 @@ export class PaintworkDetailComponent implements OnInit, OnDestroy {
      navigationSubscription;
 
      getPaintworkDetail():void{
-      this.paintworService.getPaintworkDetail(this.paintwork_id)
+      this.paintworkService.getPaintworkDetail(this.paintwork_id)
       .subscribe(paintwork_detail =>{
         this.paintwork_detail = paintwork_detail;
       });
      }
 
      getOtherPaintwork():void{
-       this.paintworService.getPaintworks()
+       this.paintworkService.getPaintworks()
        .subscribe(paintworks=>{
          this.other_paintworks = paintworks;
          this.other_paintworks = this.other_paintworks.filter(paintworks=> paintworks.idPaintwork !== this.paintwork_id);

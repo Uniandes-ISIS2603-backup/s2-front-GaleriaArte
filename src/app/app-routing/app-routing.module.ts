@@ -94,7 +94,7 @@ export const routes: Routes = [
   {
     path: 'cvs', children: [
       { path: 'list', component: CvListComponent },
-      { path: ':id', component: CvDetailComponent }]
+      { path: ':id/cvs', component: CvDetailComponent }]
   },
 
   //{path: '**', component :NotFoundComponent},
