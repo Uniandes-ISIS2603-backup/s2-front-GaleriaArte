@@ -34,7 +34,7 @@ export class MedioPagoDetailComponent implements OnInit {
     /**
     * El medio de pago
     */
-    medioPagoDetail: MedioPagoDetail;
+    @Input() medioPagoDetail: MedioPagoDetail;
 
     /**
     * El id del medio de Pago que viene en el path get .../medioPago/medioPago_id

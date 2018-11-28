@@ -1,26 +1,43 @@
 <div class="container-fluid">
-    <div clas="row">
-            <div class="col">
-                <table class="table table-striped">
-                        <thead class="thead-dark">
-                                <tr>
-                                    <th class = "h3" colspan="2">Medios de Pago</th>
-                                </tr>
-                                    <th>Id</th>
-                                    <th>Descripcion</th>
-                            </thead>
-                    <tbody>
-                        <tr *ngFor = "let medioPago of medioPagos"
-                            (click)="onSelected(medioPago.id)">
-                            <td style="cursor: pointer;">{{medioPago.id}}</td>
-                            <td> {{medioPago.description}}</td>
-                            <td *ngxPermissionsOnly="['ADMIN']">
-                                <button class="btn btn-danger" (click)="deleteMedioPago(medioPago.id)"><span class="fa fa-trash"></span></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center" >
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create a medioPago</button>
             </div>
-         </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Medio pago </th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let medioPago of medioPagos" >
+                        <td style="cursor: pointer;" (click)="onSelected(medioPago.id)"> <dd>{{medioPago.id}}</dd>
+                </td>
+                <td >
+                    <button class="btn btn-primary" (click)="showHideEdit(medioPago.id)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <td >
+                    <button class="btn btn-danger" (click)="deleteMedioPago(medioPago.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="showView">
+                <app-medioPago-detail [medioPagoDetail]="selectedMedioPago"></app-medioPago-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-medioPago-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-medioPago-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-medio-pago-edit [medioPago]="selectedMedioPago" (cancel)="showHideEdit(selectedMedioPago.id)" (update)="updateMedioPago()" ></app-medio-pago-edit>
+            </div>
+        </div>   
     </div>
-    
+</div>

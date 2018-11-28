@@ -77,6 +77,11 @@ export class SaleListListasComponent implements OnInit {
     this.saleService.getSales().subscribe(sale=>this.sales=sale);
 }
   ngOnInit() {
+    this.showCreate = false;
+    this.showView = false;
+    this.showEdit = false;
+    this.selectedSale = undefined;
+    this.sale_id = undefined;
     this.getBooks();
 
   }

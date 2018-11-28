@@ -4,6 +4,7 @@ import {MedioPagoService} from '../medioPago.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
+import { MedioPagoDetail } from '../medioPago-detail';
 
 @Component({
     selector: 'app-medioPago',
@@ -25,6 +26,57 @@ export class MedioPagoListComponent implements OnInit
    
     medioPagos: MedioPago[];
 
+    medioPagoId: number;
+
+    showCreate: boolean;
+
+   
+    showView: boolean;
+
+   
+    showEdit: boolean;
+
+  
+    selectedMedioPago: MedioPago;
+
+    onSelected(medioId: number): void {
+        this.showCreate = false;
+        this.showEdit = false;
+        this.showView = true;
+        this.medioPagoId = medioId;
+        this.selectedMedioPago = new MedioPagoDetail();
+        this.getMedioPagoDetail();
+    }
+    showHideCreate(): void {
+        this.showView = false;
+        this.showEdit = false;
+        this.showCreate = !this.showCreate;
+    }
+    showHideEdit(medioPagoId: number): void {
+        if (!this.showEdit || (this.showEdit && medioPagoId != this.selectedMedioPago.id)) {
+            this.showView = false;
+            this.showCreate = false;
+            this.showEdit = true;
+            this.medioPagoId = medioPagoId;
+            this.selectedMedioPago = new MedioPagoDetail();
+            this.getMedioPagoDetail();
+        }
+        else {
+            this.showEdit = false;
+            this.showView = true;
+        }
+    }
+    getMedioPagoDetail(): void {
+        this.medioPagoService.getMedioPagoDetail(this.medioPagoId)
+            .subscribe(selectedMedioPago => {
+                this.selectedMedioPago = selectedMedioPago
+            });
+    }
+
+    updateMedioPago(): void {
+        this.showEdit = false;
+        this.showView = true;
+    }
     /**
      * Asks the service to update the list of medios de pago
      */
@@ -40,6 +92,7 @@ export class MedioPagoListComponent implements OnInit
             actionButtons: [
                 {
                     text: 'Yes',
+           
                     buttonClass: 'btn btn-danger',
                     onAction: () => {
                         this.medioPagoService.deleteMedioPago(medioId).subscribe(() => {
@@ -62,6 +115,12 @@ export class MedioPagoListComponent implements OnInit
      * This method will be called when the component is created
      */
     ngOnInit() {
+        this.getMedioPagos();
+        this.showCreate = false;
+        this.showView = false;
+        this.showEdit = false;
+        this.selectedMedioPago = undefined;
+        this.medioPagoId = undefined;
         this.getMedioPagos();
     }
 }
