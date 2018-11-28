@@ -17,7 +17,7 @@
                         <label for="artistBirthDate"><b>Birth date</b></label>
                         <div [ngClass]="{ 'is-invalid': f.submitted && artistBDate.invalid }">
                             <input class="form-control" id="artistBDate" name="artistBDate" [(ngModel)]="artist.birthDate"
-                                ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #artistBDate="ngModel" [ngClass]="{'is-invalid': f.submitted && (artistBDate.untouched || artistBDate.invalid) }"
+                                type = "date" #artistBDate="ngModel" [ngClass]="{'is-invalid': f.submitted && (artistBDate.untouched || artistBDate.invalid) }"
                                 required>
                             <div class="invalid-feedback">
                                 <div>The artist's birth date is missing</div>

@@ -10,15 +10,24 @@
                 <label class="text-uppercase">Nombre</label>
                 <input type="text" class="form-control" placeholder="Ingrese su nombre" [(ngModel)]="buyer.name" #buyerName="ngModel" [ngClass]="{'is-invalid': f.submitted && buyerName.invalid}" required>
           </div>
+          <div class="invalid-feedback">
+            <div>The buyer's name is missing</div>
+        </div>
             <div class="form-group">
                 <label class="text-uppercase">Usuario</label>
                 <input type="password" class="form-control" placeholder="Ingrese su usuario" [(ngModel)]="buyer.user" #buyerUser="ngModel" [ngClass]="{'is-invalid': f.submitted && buyerUser.invalid}" required >
+            </div>
+            <div class="invalid-feedback">
+                <div>The buyer's user is missing</div>
             </div>
             <div>
               </div>
             <div class="form-group">
                 <label class="text-uppercase">email</label>
-                <input type="email" class="form-control" placeholder="Ingrese su email" [(ngModel)]="buyer.email" #buyerEmail="ngModel" [ngClass]="{'is-invalid': f.submitted && buyerEmail.invalid}" >
+                <input type="email" class="form-control" placeholder="Ingrese su email" [(ngModel)]="buyer.email" #buyerEmail="ngModel" [ngClass]="{'is-invalid': f.submitted && buyerEmail.invalid}" required >
+            </div>
+            <div class="invalid-feedback">
+                <div>The buyer's email is missing</div>
             </div>
             
               

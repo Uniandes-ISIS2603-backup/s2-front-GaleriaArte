@@ -10,7 +10,10 @@ import { Cv } from '../cv';
   styleUrls: ['./cv-list.component.css']
 })
 export class CvListComponent implements OnInit {
-
+/**
+     * Constructor for the component
+     * @param cvService  services provider
+     */
   constructor(
     private cvService: CvService,
     private toastrService: ToastrService,

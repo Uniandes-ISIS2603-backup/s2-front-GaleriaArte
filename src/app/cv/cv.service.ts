@@ -3,11 +3,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs'         ;
 import { Cv    } from './cv'     ;
+<<<<<<< HEAD
 
 
 const API_URL = environment.apiURL;
 const cvs  = '/cvs'   ;
 const artist ='/artists'; 
+=======
+import {cvDetail}from './cv-detail';
+import { environment } from 'src/environments/environment';
+
+
+const API_URL = environment.apiURL;
+const cvs = '/artists/';
+//const API_URL = "../../assets/";
+//const cvs = 'cv.json';
+>>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +33,7 @@ export class CvService {
 });
 
   constructor(private http: HttpClient) { }
+<<<<<<< HEAD
 
   /**
     * Retrieves the list of cvs in the BookStore
@@ -47,6 +59,19 @@ export class CvService {
     */
    createcv(cv): Observable<boolean> {
     return this.http.post<boolean>(API_URL + cvs, cv, { headers: this.headers });
+=======
+ 
+  getCvs(): Observable<Cv[]> {
+    return this.http.get<Cv[]>(API_URL + cvs);
+  }
+
+  getCvDetail(cvId): Observable<cvDetail> 
+     {
+       return this.http.get<cvDetail>(API_URL + cvs + '/' + cvId);
+    }
+    createCv(cv): Observable<Cv> {
+      return this.http.post<Cv>(API_URL + cvs+cv.id+'/cvs', cv);
+>>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 }
 
 /**

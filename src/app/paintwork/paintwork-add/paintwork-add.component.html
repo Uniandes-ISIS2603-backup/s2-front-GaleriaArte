@@ -1,3 +1,33 @@
-<p>
-  paintwork-add works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Create a paintwork</h2>
+        <br>
+        <form name="paintwork" (ngSubmit)="f.form.valid && createPaintwork()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="paintworkName"><b>Name</b></label>
+                <input type="text" name="paintworkName" class="form-control" id="paintworkName" [(ngModel)]="paintwork.name"
+                    #paintworkName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && paintworkName.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>The paintwork's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="paintworkDescription"><b>Description</b></label>
+                <textarea name="paintworkDescription" class="form-control" id="paintworkDescription" [(ngModel)]="paintwork.description"
+                    #paintworkDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && paintworkDescription.invalid }"
+                    required></textarea>
+                <div class="invalid-feedback">
+                    <div>The paintwork's description is missing</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

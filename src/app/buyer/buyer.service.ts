@@ -4,9 +4,11 @@ import { Observable } from 'rxjs';
 import { BuyerDetail } from './buyer-detail';
 import {Buyer} from './buyer';
 
-const API_URL = "../../assets/";
-const buyers = 'buyer.json';
-
+//const API_URL = "../../assets/";
+//const buyers = 'buyer.json';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const buyers = '/buyers';
 
   @Injectable({
     providedIn: 'root'

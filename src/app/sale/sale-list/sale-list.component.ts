@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,ViewContainerRef } from '@angular/core';
 import { Sale } from '../sale';
 import { SaleService } from '../sale.service';
 import { ActivatedRoute } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-sale-list',
@@ -15,6 +17,8 @@ export class SaleListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private saleService: SaleService,
+    
+
     private modalService: NgbModal
   ) { }
     saleId: number;
@@ -40,12 +44,12 @@ export class SaleListComponent implements OnInit {
     getSale(): void{
       this.saleService.getSale(this.saleId).subscribe(sale=>{this.sale= sale});
     }
-  ngOnInit() 
+    ngOnInit() 
   {
    
-     // this.sale= new Sale();
+     this.sale= new Sale();
       this.getSale();
     
   }
-
+   
 }

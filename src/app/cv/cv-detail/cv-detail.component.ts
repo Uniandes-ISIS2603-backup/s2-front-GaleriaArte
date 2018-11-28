@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CvService } from '../cv.service';
 import { cvDetail } from '../cv-detail';
@@ -21,7 +21,11 @@ export class CvDetailComponent implements OnInit {
      /**
     * El cv
     */
+<<<<<<< HEAD
    cv : Cv;
+=======
+   @Input() cvDetail: cvDetail;
+>>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
    /**
    * El id del cv que viene en el path get .../cv/cv_id

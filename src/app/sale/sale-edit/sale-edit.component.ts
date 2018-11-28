@@ -50,30 +50,9 @@ export class SaleEditComponent implements OnInit,OnChanges {
     this.ngOnInit();
   }
 
-  deleteAuthor(saleId): void {
-    this.modalDialogService.openDialog(this.viewRef, {
-        title: 'Delete an author',
-        childComponent: SimpleModalComponent,
-        data: {text: 'Are you sure your want to delete this sale ?'},
-        actionButtons: [
-            {
-                text: 'Yes',
-                buttonClass: 'btn btn-danger',
-                onAction: () => {
-                    this.saleService.deleteSale(saleId).subscribe(() => {
-                        this.toastrService.error("The sale was successfully deleted", "Sale deleted");
-                        this.ngOnInit();
-                    }, err => {
-                        this.toastrService.error(err, "Error");
-                    });
-                    return true;
-                }
-            },
-            {text: 'No', onAction: () => true}
-        ]
-    });
+ 
 
   
 
   }
-}
+

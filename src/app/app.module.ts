@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
+import { CategoryModule } from './category/category.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
@@ -29,9 +30,15 @@ import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CvModule } from './cv/cv.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+<<<<<<< HEAD
 import { CvModule } from './cv/cv.module';
 
+=======
+import {NgxPermissionsModule} from 'ngx-permissions';
+import { MedioPagoService } from './medioPago/medioPago.service';
+>>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
 
 
@@ -42,9 +49,8 @@ import { CvModule } from './cv/cv.module';
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component
-
-  ],
+    Error404Component,
+    ],
   imports: [
     BrowserModule,
     ModalDialogModule,
@@ -55,13 +61,17 @@ import { CvModule } from './cv/cv.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgxPermissionsModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     KindModule,
     ArtistModule,
     FeedbackModule,
+    CategoryModule,
     BuyerModule,
+    CvModule,
     MedioPagoModule,
+    
     ExtraServiceModule,
     CvModule,
    ToastrModule.forRoot({
@@ -78,7 +88,11 @@ import { CvModule } from './cv/cv.module';
    providers: [ { 
       provide: HTTP_INTERCEPTORS,
      useClass: HttpErrorInterceptor,
-     multi: true}],
+     multi: true},
+    {
+      provide: MedioPagoService
+    }],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

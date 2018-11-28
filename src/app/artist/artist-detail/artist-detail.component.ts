@@ -5,6 +5,7 @@ import { ArtistService } from '../artist.service';
 
 import { ArtistDetail } from '../artist-detail';
 
+
 @Component({
     selector: 'app-artist-detail',
     templateUrl: './artist-detail.component.html',
@@ -27,9 +28,6 @@ export class ArtistDetailComponent implements OnInit {
        private route: ActivatedRoute,
        private artistService: ArtistService 
    ) { }
-
-   
-   
 
    /**
    * El id del artist que viene en el path get .../artists/artist_id

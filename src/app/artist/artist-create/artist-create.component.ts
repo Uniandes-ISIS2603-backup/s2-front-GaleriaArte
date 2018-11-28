@@ -7,6 +7,8 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import { ArtistService } from '../artist.service';
 
 import { Artist } from '../artist';
+import { CvService } from 'src/app/cv/cv.service';
+import { Cv } from 'src/app/cv/cv';
 
 @Component({
     selector: 'app-artist-create',
@@ -22,8 +24,9 @@ export class ArtistCreateComponent implements OnInit {
     * //param toastrService The toastr to show messages to the user
     */
     constructor(
-        private dp : DatePipe,
+        //private dp : DatePipe,
         private artistService: ArtistService,
+        private cvService: CvService
        // private toastrService: ToastrService
     ) { }
 
@@ -31,6 +34,8 @@ export class ArtistCreateComponent implements OnInit {
     * The new artist
     */
     artist: Artist;
+
+    cv: Cv;
 
     /**
     * The output which tells the parent component
@@ -50,11 +55,19 @@ export class ArtistCreateComponent implements OnInit {
     */
    createArtist(): Artist {
 
-    //let dateB: Date = new Date(this.artist.birthDate.year, this.artist.birthDate.month-1, this.artist.birthDate.day);
-    let dateB: Date = new Date('2015-05-18');
-       
-    this.artist.birthDate = this.dp.transform(dateB, 'dd/MM/yyyy');
+    let dateB: Date = new Date(this.artist.birthDate.year, this.artist.birthDate.month-1, this.artist.birthDate.day);
+    //let dateB: Date = new Date('2015-05-18');
+    this.artist.birthDate = dateB;
+    //this.cv.nombre = this.artist.name;
+    //this.artist.cv_id = this.cv.id;
+       // = this.dp.transform(dateB, 'dd/MM/yyyy');
     console.log(this.artist);
+    //this.cvService.createCv(this.cv).subscribe((cv) => {
+        //this.cv = cv;
+       // this.create.emit();
+        //this.toastrService.success("The artist was created", "Artist creation");
+
+    //});
     this.artistService.createArtist(this.artist)
         .subscribe((artist) => {
             this.artist = artist;
@@ -78,5 +91,6 @@ cancelCreation(): void {
 */
 ngOnInit() {
     this.artist = new Artist();
+    this.cv = new Cv();
 }
 }
