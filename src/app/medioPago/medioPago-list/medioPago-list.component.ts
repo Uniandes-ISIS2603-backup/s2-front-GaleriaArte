@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import {Component, OnInit} from '@angular/core';
 import {MedioPago} from '../medioPago';
 import {MedioPagoService} from '../medioPago.service';
@@ -38,4 +36,3 @@ export class MedioPagoListComponent implements OnInit
        // this.getMedioPagos();
     }
 }
->>>>>>> refs/remotes/origin/master
