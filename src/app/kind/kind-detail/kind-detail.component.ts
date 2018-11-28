@@ -3,6 +3,7 @@ import { KindService } from './../kind.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { Kind } from '../kind';
+import { ToastrService } from 'ngx-toastr';
 declare var jquery:any;
 declare var $ :any;
 declare var M:any;
@@ -16,23 +17,32 @@ export class KindDetailComponent implements OnInit {
 
   constructor(
     private route : ActivatedRoute,
-    private kindService: KindService
+    private kindService: KindService,
+    private toastrService: ToastrService
   ) { }
 
-  @Input () kind : KindDetail;
-   kindDetail:KindDetail;
+  kind:Kind;
 
-    kinkId:number;
+  kind_id:number;
 
 
-    getKindDetail():void{
-      this.kindService.getKindDetail(this.kinkId).subscribe(kindDetail => {this.kindDetail = kindDetail});
+
+
+
+    getKind():void{
+
+      this.kindService.getKindDetail(this.kind_id)
+      .subscribe(kind => {this.kind = kind}, err => {
+        this.toastrService.error(err, "Error");
+    });
     }
+
+
   ngOnInit() { 
     
-    this.kinkId =+ this.route.snapshot.paramMap.get('id');
-    this.kindDetail = new KindDetail();
-    this.getKindDetail();
+    this.kind_id =+ this.route.snapshot.paramMap.get('id');
+    this.kind = new Kind();
+    this.getKind();
     $(document).ready(function(){
       $('.modal').modal();
     });

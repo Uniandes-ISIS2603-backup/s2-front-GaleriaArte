@@ -24,7 +24,7 @@ export class KindEditComponent implements OnInit {
   /**
    * 
    */
-  @Input() kindId;
+  @Input() kind_id;
 
    /**
     * The output which tells the parent component
@@ -43,7 +43,7 @@ export class KindEditComponent implements OnInit {
    */
     kind:Kind;
     getKind():void{
-      this.kindService.getKind(this.kindId)
+      this.kindService.getKind(this.kind_id)
       .subscribe(kind => {
         this.kind = kind;
       }, err => {
@@ -53,15 +53,15 @@ export class KindEditComponent implements OnInit {
 
     editKind():void{
       var kind_edit = {
-        idType: this.kindId,
+        idType: this.kind_id,
         name: this.kind.name,
         description: this.kind.description
       };
 
       this.kindService.updateKind(kind_edit)
       .subscribe(()=> {
-        this.toastrService.success("The kinds's information was updated", "Author edition");
         this.update.emit();
+        this.toastrService.success("The kinds's information was updated", "Author edition");
       }, err => {
         this.toastrService.error(err, "Error");
     });
@@ -79,5 +79,11 @@ export class KindEditComponent implements OnInit {
     this.kind = new Kind();
     this.getKind();
   }
+  /**
+    * This function will be called when the user chooses another author to edit
+    */
+   ngOnChanges() {
+    this.ngOnInit();
+}
 
 }

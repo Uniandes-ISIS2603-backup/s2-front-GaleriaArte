@@ -29,6 +29,7 @@ import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 
 
@@ -67,7 +68,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule,
-    SaleModule
+    SaleModule,
+    ModalDialogModule.forRoot()
     ],
    providers: [ { 
       provide: HTTP_INTERCEPTORS,

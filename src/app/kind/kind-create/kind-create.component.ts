@@ -16,12 +16,10 @@ export class KindCreateComponent implements OnInit {
   /**
    * 
    * @param kindService 
-   * @param router 
    * @param toastrService 
    */
   constructor(
     private kindService: KindService,
-    private router: Router,
     private toastrService: ToastrService
   ) { }
 
@@ -37,7 +35,10 @@ export class KindCreateComponent implements OnInit {
    */
    @Output() create = new EventEmitter();
 
-  kind:Kind
+   /**
+    * 
+    */
+   kind:Kind
 
    /**
     * Cancels the creation of the new kind
