@@ -11,5 +11,8 @@
               </div>
           </figure>
       </div>
+      <td *ngxPermissionsOnly="['ADMIN']">
+        <button class="btn btn-danger" (click)="deleteSale(sale.id)"><span class="fa fa-trash"></span></button>
+    </td>
   </div>
 </div>

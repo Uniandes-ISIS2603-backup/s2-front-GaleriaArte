@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {ExtraServiceListComponent} from './extraService-list/extraService-list.component';
 import {ExtraServiceService} from './extraService.service';
@@ -17,6 +18,8 @@ import { ExtraServiceDetailComponent } from './extraService-detail/extraService-
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
+        ReactiveFormsModule,
+        NgxPermissionsModule,
         FormsModule
     ],
     declarations: [ExtraServiceListComponent, ExtraServiceCreateComponent, ExtraServiceDetailComponent, ExtraServiceEditComponent]

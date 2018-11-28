@@ -14,6 +14,9 @@
                         <td style="cursor: pointer;"> <dd routerLink="/extraServices/{{extraService.id}}">{{extraService.id}}</dd></td>
                         <td> {{extraService.name}}</td>
                     </tr>
+                     <td *ngxPermissionsOnly="['ADMIN']">
+        <button class="btn btn-danger" (click)="deleteExtraService(extraService.id)"><span class="fa fa-trash"></span></button>
+    </td>
                 </tbody>
             </table>
         </div>
