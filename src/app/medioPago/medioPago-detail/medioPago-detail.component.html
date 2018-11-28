@@ -17,6 +17,11 @@
                         <td> {{medioPagoDetail.number}}</td>
                          <td> {{medioPagoDetail.description}}</td>
                           <td> {{medioPagoDetail.bank}}</td>
+                          <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+                            <button class="btn btn-primary text-center" routerLink="/medioPagos/{{medioPagoDetail.id}}/edit">Edit</button>
+                            <div class="divider"></div>
+                            <button class="btn btn-danger text-center" (click)="deleteMedioPago()"><span class="fa fa-trash"></span></button>
+                        </div>
                     </tr>
                 </tbody>
             </table>

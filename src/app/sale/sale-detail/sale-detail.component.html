@@ -7,6 +7,11 @@
                   <img class="img-fluid" src='' alt="" />   
               </div>
           </div>
+          <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+            <button class="btn btn-primary text-center" routerLink="/sales/{{saleDetail.id}}/edit">Edit</button>
+            <div class="divider"></div>
+            <button class="btn btn-danger text-center" (click)="deleteSale()"><span class="fa fa-trash"></span></button>
+        </div>
           <div class="col">
               <dl>     
                   <dt>Bio</dt>

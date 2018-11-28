@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {MedioPagoService } from '../medioPago.service';
-//import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { MedioPago } from '../medioPago';
 
 @Component({
@@ -12,7 +12,7 @@ export class MedioPagoCreateComponent implements OnInit {
 
   constructor(
     private medioPagoService: MedioPagoService,
-   // private toastrService: ToastrService
+   private toastrService: ToastrService
   ) { }
     medioPago: MedioPago;
 
@@ -25,7 +25,7 @@ export class MedioPagoCreateComponent implements OnInit {
       console.log(this.medioPago);
 
       this.medioPagoService.createMedioPago(this.medioPago).subscribe((medioPago) => {this.medioPago=medioPago; this.create.emit(); 
-        //this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
+        this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
       });
 
       return this.medioPago ;
