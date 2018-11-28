@@ -24,16 +24,18 @@
     <div>
         <div class="card-group">
             <div class="col-3" *ngFor="let artist of artists">
-                <div class="card">
-                    <img class="card-img-top" src="{{artist.image}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{artist.name}}</h5>
-                        <!--p class="card-text">{{artist.description}}</p>
-                        <p class="card-text"><small class="text-muted">{{paintwork.kind}}</small></p-->
-                        <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
+                <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="{{artist.image}}" style="width:200px;height:200px;">
+                          </div>
+                          <div class="flip-card-back">
+                            <h1>{{artist.name}}</h1> 
+                            <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
                         <a class="btn btn-primary" (click)="showHideEdit(artist.id)">Edit<span class="fa fa-pencil"></span>
                         </a>
-                    </div>
-                </div>
+                          </div>
+                        </div>
+                      </div>
             </div>
         </div>

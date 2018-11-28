@@ -52,8 +52,7 @@ export const routes: Routes = [
   {
     path: 'medioPagos', 
     children: [
-      { path: 'list', 
-      component: MedioPagoListComponent },
+      { path: 'list', component: MedioPagoListComponent },
       {path: ':id', component:MedioPagoDetail},
       {path: ':id/edit' , component:MedioPagoEditComponent},
       {path: 'create' , component: MedioPagoCreateComponent}
@@ -92,9 +91,11 @@ export const routes: Routes = [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
   },
-
-
-  
+  //{
+  //  path: 'cvs', children: [
+  //    { path: 'list', component: CvListComponent },
+  //    { path: ':id', component: CvDetailComponent }]
+  //},
 
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },

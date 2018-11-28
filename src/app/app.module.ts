@@ -29,8 +29,8 @@ import { Error404Component } from './error404/error404.component';
 import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CvModule } from './cv/cv.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-
 
 
 
@@ -60,6 +60,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     ArtistModule,
     FeedbackModule,
     BuyerModule,
+    CvModule,
     MedioPagoModule,
     ExtraServiceModule,
    ToastrModule.forRoot({

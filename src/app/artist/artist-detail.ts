@@ -1,10 +1,10 @@
-//import { CV } from "../cv/cv";
+import { Cv } from "../cv/Cv";
 
 import { Artist } from "./artist";
 
 export class ArtistDetail extends Artist {
     
     /** Los cvs del artist **/
-    //cvs : CV[];
+    cv : Cv;
 }
 
