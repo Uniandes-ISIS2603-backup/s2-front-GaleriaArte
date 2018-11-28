@@ -1,40 +1,43 @@
-﻿
-            <h1 class="text-center h2"><span>Compradores</span></h1>
-            <div class="card-group">
-
-           <div class="col-4"  *ngFor="let buyer of buyers">
-               
-                   <div class="card profile-card-2">
-                           
-                       <div class="card-body pt-5">
-               
-                               <h5>{{buyer.name}}</h5>
-                               <p class="card-text">Usuario:</p>
-                               <td>{{buyer.user}}</td>
-                               <p class="card-text">Email:</p>
-                               <td>{{buyer.email}}</td>
-                               <p class="card-text">Phone:</p>
-                               <td>{{buyer.phone}}</td>
-                         <td *ngxPermissionsOnly="['ADMIN']">
-                           <button class="btn btn-danger" (click)="deleteBuyer(buyer.id)"><span class="fa fa-trash"></span></button>
-                         </td>
-                       </div>  
-                   </div>
-           
-              
-           </div>
-
-           <br>
-           <div class=" align-self-center">
-               <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                   (click)="showHideCreate()">Nuevo comprador</button>
-           </div>
-           <div class="col-8">
-               
-               <div *ngIf="showCreate">
-                   <app-buyer-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-buyer-create>
-               </div>
-           </div>
-   
-   <br> 
-           
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center" >
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create a buyer</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Buyer Name</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let buyer of buyers" >
+                        <td style="cursor: pointer;" (click)="onSelected(buyer.id)"> <dd>{{buyer.name}}</dd>
+                </td>
+                <td >
+                    <button class="btn btn-primary" (click)="showHideEdit(buyer.id)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <td >
+                    <button class="btn btn-danger" (click)="deleteBuyer(buyer.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="showView">
+                <app-buyer-detail [buyerDetail]="selectedBuyer"></app-buyer-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-buyer-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-buyer-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-buyer-edit [buyer]="selectedBuyer" (cancel)="showHideEdit(selectedBuyer.id)" (update)="updateBuyer()" ></app-buyer-edit>
+            </div>
+        </div>   
+    </div>
+</div>

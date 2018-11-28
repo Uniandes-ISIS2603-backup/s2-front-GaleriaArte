@@ -1,8 +1,7 @@
 ﻿
 import { Component, OnInit, Input,ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SaleService } from '../sale.service';
-import { SaleDetail } from '../sale-detail';
+
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';

@@ -3,19 +3,17 @@
     <p class="h3 p-3">{{buyerDetail.name}}<p>
       <div class="row">
         <div class="col-md-3">
-          <div class="thumb">
-            <img class="img-fluid" src='{{buyerDetail.email}}'  />
-          </div>
+         
         </div>
         <div class="col">
           <dl>
             <dt>Phone</dt>
             <dd>{{buyerDetail.phone}}</dd>
-            <dt>Phone</dt>
-            <dd>{{buyerDetail.phone}}</dd>
+            <dt>Email</dt>
+            <dd>{{buyerDetail.email}}</dd>
           </dl>
         </div>
-        <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+        <div class="row justify-content-center align-self-center">
           <button class="btn btn-primary text-center" routerLink="/buyers/{{buyerDetail.id}}/edit">Edit</button>
           <div class="divider"></div>
           <button class="btn btn-danger text-center" (click)="deleteBuyer()"><span class="fa fa-trash"></span></button>

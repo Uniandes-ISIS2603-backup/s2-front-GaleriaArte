@@ -4,6 +4,7 @@ import { SaleService } from '../sale.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
+import { SaleDetail } from '../sale-detail';
 
 @Component({
   selector: 'app-sale-list-listas',
@@ -19,7 +20,59 @@ export class SaleListListasComponent implements OnInit {
     private viewRef: ViewContainerRef,
     private toastrService: ToastrService
     ) { }
+    sale_id:number;
 
+    showCreate:boolean;
+
+    showView:boolean;
+
+    showEdit: boolean;
+
+    selectedSale: Sale;
+
+    onSelected(sale_id:number):void{
+        this.showCreate=false;
+        this.showEdit=false;
+        this.showView=true;
+        this.sale_id=sale_id;
+        this.selectedSale= new SaleDetail();
+        this.getSaleDetail();
+    }
+
+    showHideCreate(): void {
+        this.showView = false;
+        this.showEdit = false;
+        this.showCreate = !this.showCreate;
+    }
+
+    /**
+    * Shows or hides the create component
+    */
+
+    showHideEdit(sale_id: number): void {
+        if (!this.showEdit || (this.showEdit && sale_id != this.selectedSale.id)) {
+            this.showView = false;
+            this.showCreate = false;
+            this.showEdit = true;
+            this.sale_id = sale_id;
+            this.selectedSale = new SaleDetail();
+            this.getSaleDetail();
+        }
+        else {
+            this.showEdit = false;
+            this.showView = true;
+        }
+    }
+    getSaleDetail(): void {
+        this.saleService.getSale(this.sale_id)
+            .subscribe(selectedSale => {
+                this.selectedSale = selectedSale
+            });
+    }
+    updateSale(): void {
+        this.showEdit = false;
+        this.showView = true;
+    }
   getBooks(): void {
     this.saleService.getSales().subscribe(sale=>this.sales=sale);
 }

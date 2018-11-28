@@ -31,6 +31,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvModule } from './cv/cv.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 
@@ -54,6 +55,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgxPermissionsModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
     KindModule,

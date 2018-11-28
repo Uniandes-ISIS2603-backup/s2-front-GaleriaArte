@@ -6,8 +6,11 @@ import { SaleDetail } from './sale-detail';
 
 
 
-const API_URL = "../../assets/";
-const sales = 'sale.json'; 
+// const API_URL = "../../assets/";
+// const sales = 'sale.json'; 
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const sales = '/sales';
 /**
 * The service provider for everything related to sale
 */

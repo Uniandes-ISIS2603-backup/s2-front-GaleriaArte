@@ -37,7 +37,8 @@ import { ExtraServiceCreateComponent } from '../extraService/extraService-add/ex
 import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
 import { CvListComponent } from '../cv/cv-list/cv-list.component';
 import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
-
+import {SaleListListasComponent} from '../sale/sale-list-listas/sale-list-listas.component';
+import { Sale } from '../sale/sale';
 export const routes: Routes = [
   {
     path: 'paintwork', children: [
@@ -59,7 +60,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'buyer', children: [
+    path: 'buyers', children: [
       { path: 'list', component: BuyerListComponent },
       { path: ':id', component: BuyerDetailComponent },
       {path: ':id/edit', component: BuyerEditComponent},
@@ -109,7 +110,7 @@ export const routes: Routes = [
        path:'create', component: SaleCreateComponent
       },
       {
-        path:'list', component: SaleListComponent
+        path:'list', component: SaleListListasComponent
       },
       {
         path:':id/edit', component: SaleEditComponent
