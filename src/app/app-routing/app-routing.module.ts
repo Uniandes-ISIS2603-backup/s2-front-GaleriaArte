@@ -37,17 +37,10 @@ import { BuyerCreateComponent } from '../buyer/buyer-create/buyer-create.compone
 import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
-<<<<<<< HEAD
-import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
-import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
-
-
-=======
 import { CategoryListComponent } from '../category/category-list/category-list.component';
 import { CategoryDetailComponent } from '../category/category-detail/category-detail.component';
 import { CategoryEditComponent } from '../category/category-edit/category-edit.component';
 import { CategoryCreateComponent } from '../category/category-create/category-create.component';
->>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
 import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
 import { CvListComponent } from '../cv/cv-list/cv-list.component';
@@ -108,7 +101,6 @@ export const routes: Routes = [
       { path: ':id', component: ArtistDetailComponent }]
   },
   {
-<<<<<<< HEAD
     path: 'cv', children: [
       { path: 'detail/:id', component: CvDetailComponent },
      ]
@@ -116,8 +108,7 @@ export const routes: Routes = [
 
 
   
-=======
-    path: 'categories', children: [
+   { path: 'categories', children: [
       { path: 'list', component: CategoryListComponent },
       { path: 'create', component: CategoryCreateComponent },
       { path: 'edit', component: CategoryEditComponent },
@@ -142,13 +133,12 @@ export const routes: Routes = [
         path: 'modal', component: ModalBasicComponent
       }
     ]
-  },
+  }, 
   {
     path: 'cvs', children: [
       { path: 'list', component: CvListComponent },
       { path: ':id/cvs', component: CvDetailComponent }]
   },
->>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },
