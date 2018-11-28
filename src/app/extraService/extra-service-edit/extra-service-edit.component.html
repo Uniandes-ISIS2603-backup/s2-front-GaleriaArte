@@ -2,20 +2,20 @@
   <div class="col-3"></div>
   <div class="col-6">
      
-      <form name="extraService" (ngSubmit)="editExtraService()">
+      <form name="extraService" (ngSubmit)="editExtraService() && f.form.valid" #f="ngForm" novalidate>
          
             <div class="form-group">
               <label for="extraServiceName"><b>Nombre: </b></label>
-              <textarea name="extraServiceName" class="form-control" id="extraServiceName" ></textarea>
+              <input name="extraServiceName" class="form-control" id="extraServiceName" [(ngModel)]="extraService.name" #extraServiceName="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServiceName.invalid}" required >
             </div>
           <div class="form-group">
               <label for="extraServiceDescription"><b>Descripcion: </b></label>
-              <textarea name="extraServiceDescription" class="form-control" id="extraServiceDescription" ></textarea>       
+              <input name="extraServiceDescription" class="form-control" id="extraServiceDescription" [(ngModel)]="extraService.description" #extraServiceDescription="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServiceDescription.invalid}" required >       
           </div>
           
              <div class="form-group">
               <label for="extraServicePrice"><b>Precio: </b></label>
-              <input type="number" name="extraServicePrice" class="form-control" id="extraServicePrice" >       
+              <input type="number" name="extraServicePrice" class="form-control" id="extraServicePrice" [(ngModel)]="extraService.price" #extraServicePrice="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServicePrice.invalid}" required >       
           </div>
           
           <div class="form-group">

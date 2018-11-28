@@ -34,8 +34,10 @@ import { BuyerCreateComponent } from '../buyer/buyer-create/buyer-create.compone
 import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
-import { CvListComponent } from '../cv/cv-list/cv-list.component';
-import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
+import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
+
+
+
 
 export const routes: Routes = [
   {
@@ -68,7 +70,8 @@ export const routes: Routes = [
   {path: 'kinds', children: [
     { path: 'list', component: KindListComponent },
     { path: 'detail/:id', component: KindDetailComponent },
-    {path : 'create', component : KindCreateComponent}
+    {path : 'create', component : KindCreateComponent},
+    {path : 'edit/:id', component : KindEditComponent}
   ]
 },
 
@@ -87,11 +90,12 @@ export const routes: Routes = [
     path: 'artists', children: [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
-  },{
-    path: 'cvs', children: [
-      { path: 'list', component: CvListComponent },
-      { path: ':id', component: CvDetailComponent }]
   },
+  //{
+  //  path: 'cvs', children: [
+  //    { path: 'list', component: CvListComponent },
+  //    { path: ':id', component: CvDetailComponent }]
+  //},
 
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },

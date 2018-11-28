@@ -30,6 +30,8 @@ import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.servic
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvModule } from './cv/cv.module';
+import { ModalDialogModule } from 'ngx-modal-dialog';
+
 
 
 @NgModule({
@@ -39,10 +41,12 @@ import { CvModule } from './cv/cv.module';
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component,
+    Error404Component
+
   ],
   imports: [
     BrowserModule,
+    ModalDialogModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -67,7 +71,8 @@ import { CvModule } from './cv/cv.module';
 /*********************************************************************** */
     AppRoutingModule,
     NgbModule,
-    SaleModule
+    SaleModule,
+    ModalDialogModule.forRoot()
     ],
    providers: [ { 
       provide: HTTP_INTERCEPTORS,

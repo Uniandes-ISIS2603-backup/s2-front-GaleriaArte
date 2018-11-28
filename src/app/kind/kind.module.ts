@@ -5,6 +5,7 @@ import { KindListComponent } from './kind-list/kind-list.component';
 import { KindCreateComponent } from './kind-create/kind-create.component';
 import { KindDetailComponent } from './kind-detail/kind-detail.component';
 import { KindEditComponent } from './kind-edit/kind-edit.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
