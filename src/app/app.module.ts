@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvModule } from './cv/cv.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import {NgxPermissionsModule} from 'ngx-permissions';
+import { MedioPagoService } from './medioPago/medioPago.service';
 
 
 
@@ -64,6 +65,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
     BuyerModule,
     CvModule,
     MedioPagoModule,
+    
     ExtraServiceModule,
    ToastrModule.forRoot({
      timeOut: 10000,
@@ -79,7 +81,11 @@ import {NgxPermissionsModule} from 'ngx-permissions';
    providers: [ { 
       provide: HTTP_INTERCEPTORS,
      useClass: HttpErrorInterceptor,
-     multi: true}],
+     multi: true},
+    {
+      provide: MedioPagoService
+    }],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

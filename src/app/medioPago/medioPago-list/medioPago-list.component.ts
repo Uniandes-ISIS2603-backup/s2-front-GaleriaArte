@@ -115,7 +115,6 @@ export class MedioPagoListComponent implements OnInit
      * This method will be called when the component is created
      */
     ngOnInit() {
-        this.getMedioPagos();
         this.showCreate = false;
         this.showView = false;
         this.showEdit = false;

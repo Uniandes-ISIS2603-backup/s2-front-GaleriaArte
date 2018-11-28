@@ -14,9 +14,7 @@ const medioPagos = '/medioPagos';
 /**
 * The service provider for everything related to medioPagos
 */
-@Injectable()({
-  providedIn: 'root'
-})
+@Injectable()
 export class MedioPagoService 
     {
 
