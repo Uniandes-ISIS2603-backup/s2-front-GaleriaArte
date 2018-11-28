@@ -1,4 +1,4 @@
-
+﻿
             <h1 class="text-center h2"><span>Compradores</span></h1>
             <div class="card-group">
 
@@ -15,7 +15,9 @@
                                <td>{{buyer.email}}</td>
                                <p class="card-text">Phone:</p>
                                <td>{{buyer.phone}}</td>
-                               
+                         <td *ngxPermissionsOnly="['ADMIN']">
+                           <button class="btn btn-danger" (click)="deleteBuyer(buyer.id)"><span class="fa fa-trash"></span></button>
+                         </td>
                        </div>  
                    </div>
            

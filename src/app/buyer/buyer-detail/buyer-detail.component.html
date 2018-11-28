@@ -1,23 +1,25 @@
-
-            <h1 class="text-center h2"><span>Buyers </span></h1>
-            <div class="card-group">
-
-               
-                   <div class="card profile-card-2">
-                           
-                       <div class="card-body pt-5">
-               
-                               <h5 class="card-text"> Sara</h5>
-                               <p class="card-text">Usuario:</p>
-                               <td class = "card-text"> s.acostav</td>
-                               <p class="card-text">Email:</p>
-                               <td class = "card-text"> s.acostav@correo.com</td>                               
-                               <p class="card-text">Phone:</p>
-                               <td class = "card-text"> 1234567</td>
-                               
-                               
-                       </div>  
-                   </div>
-           
-              
-           </div>
+﻿<div class="panel-body">
+  <div class="border margin">
+    <p class="h3 p-3">{{buyerDetail.name}}<p>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="thumb">
+            <img class="img-fluid" src='{{buyerDetail.email}}'  />
+          </div>
+        </div>
+        <div class="col">
+          <dl>
+            <dt>Phone</dt>
+            <dd>{{buyerDetail.phone}}</dd>
+            <dt>Phone</dt>
+            <dd>{{buyerDetail.phone}}</dd>
+          </dl>
+        </div>
+        <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+          <button class="btn btn-primary text-center" routerLink="/buyers/{{buyerDetail.id}}/edit">Edit</button>
+          <div class="divider"></div>
+          <button class="btn btn-danger text-center" (click)="deleteBuyer()"><span class="fa fa-trash"></span></button>
+        </div>
+      </div>
+  </div>
+</div>

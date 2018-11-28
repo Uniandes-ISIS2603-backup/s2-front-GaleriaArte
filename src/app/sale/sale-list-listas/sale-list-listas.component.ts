@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,ViewContainerRef } from '@angular/core';
+﻿import { Component, OnInit, Input,ViewContainerRef } from '@angular/core';
 import { Sale } from '../sale';
 import { SaleService } from '../sale.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
@@ -29,7 +29,7 @@ export class SaleListListasComponent implements OnInit {
   }
   deleteSale(saleId): void {
     this.modalDialogService.openDialog(this.viewRef, {
-        title: 'Delete an author',
+        title: 'Delete a Sale',
         childComponent: SimpleModalComponent,
         data: {text: 'Are you sure your want to delete this sale ?'},
         actionButtons: [
