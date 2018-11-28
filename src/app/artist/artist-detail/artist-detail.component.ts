@@ -5,6 +5,7 @@ import { ArtistService } from '../artist.service';
 
 import { ArtistDetail } from '../artist-detail';
 
+
 @Component({
     selector: 'app-artist-detail',
     templateUrl: './artist-detail.component.html',
