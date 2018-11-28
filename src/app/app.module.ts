@@ -41,10 +41,12 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component,
+    Error404Component
+
   ],
   imports: [
     BrowserModule,
+    ModalDialogModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

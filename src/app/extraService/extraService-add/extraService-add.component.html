@@ -1,22 +1,21 @@
-
- <div class="row">
+<div class="row">
     <div class="col-3"></div>
     <div class="col-6">
        
-        <form name="extraService" (ngSubmit)="createExtraService()">
+        <form name="extraService" (ngSubmit)="createExtraService() && f.form.valid" #f="ngForm" novalidate>
            
               <div class="form-group">
                 <label for="extraServiceName"><b>Nombre: </b></label>
-                <textarea name="extraServiceName" class="form-control" id="extraServiceName" ></textarea>
+                <input name="extraServiceName" class="form-control" id="extraServiceName" [(ngModel)]="extraService.name" #extraServiceName="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServiceName.invalid}" required >
               </div>
             <div class="form-group">
                 <label for="extraServiceDescription"><b>Descripcion: </b></label>
-                <textarea name="extraServiceDescription" class="form-control" id="extraServiceDescription" ></textarea>       
+                <input name="extraServiceDescription" class="form-control" id="extraServiceDescription" [(ngModel)]="extraService.description" #extraServiceDescription="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServiceDescription.invalid}" required >       
             </div>
             
                <div class="form-group">
                 <label for="extraServicePrice"><b>Precio: </b></label>
-                <input type="number" name="extraServicePrice" class="form-control" id="extraServicePrice" >       
+                <input type="number" name="extraServicePrice" class="form-control" id="extraServicePrice" [(ngModel)]="extraService.price" #extraServicePrice="ngModel" [ngClass]="{'is-invalid': f.submitted && extraServicePrice.invalid}" required >       
             </div>
             
             <div class="form-group">
@@ -25,7 +24,7 @@
                 <input type="checkbox" name=extraServiceAvailabilty value="false"> No<br>
                 <textarea name="extraServiceAvailability" class="form-control" id="extraService" ></textarea>       
             </div>
-
+  
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Enviar</button>
                 <div class="divider"></div>
@@ -34,4 +33,4 @@
         </form>
     </div>
     <div class="col-3"></div>
-</div>
+  </div>
