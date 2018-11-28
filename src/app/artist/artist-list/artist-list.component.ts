@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 //import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
-//import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 import { ArtistService } from '../artist.service';
 import { Artist } from '../artist';
 import { ArtistDetail } from '../artist-detail';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 /**
 * The artist's list component
@@ -23,7 +24,9 @@ export class ArtistListComponent implements OnInit {
     */
     constructor(
         private artistService: ArtistService,
-        private viewRef: ViewContainerRef) {}
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) {}
 
     /**
     * The list of artists
@@ -116,6 +119,33 @@ export class ArtistListComponent implements OnInit {
         this.showEdit = false;
         this.showView = true;
     }
+
+    /**
+    * Deletes an artist
+    */
+   deleteArtist(artistId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Delete an artist',
+        childComponent: SimpleModalComponent,
+        data: {text: 'Are you sure your want to delete this artist?'},
+        actionButtons: [
+            {
+                text: 'Yes',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.artistService.deleteArtist(artistId).subscribe(() => {
+                        this.toastrService.error("The artist was successfully deleted", "Artist deleted");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
+}
 
     /**
     * This will initialize the component by retrieving the list of artists from the service

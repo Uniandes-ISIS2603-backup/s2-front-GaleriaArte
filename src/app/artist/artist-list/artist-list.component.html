@@ -12,6 +12,9 @@
                 <div *ngIf="showEdit">
                         <app-artist-edit [artist]="selectedArtist" (cancel)="showHideEdit(selectedArtist.id)" (update)="updateArtist()" ></app-artist-edit>
                 </div>
+                <div *ngIf="showEdit">
+                        <app-artist-edit [artist]="selectedArtist" (cancel)="showHideEdit(selectedArtist.id)" (update)="updateArtist()" ></app-artist-edit>
+                    </div>
             </div>
          </div>
     </div>
@@ -27,8 +30,8 @@
                           <div class="flip-card-back">
                             <h1>{{artist.name}}</h1> 
                             <a class="btn btn-primary" (click)="onSelected(artist.id)">Ver mas</a>
-                        <a class="btn btn-primary" (click)="showHideEdit(artist.id)">Edit<span class="fa fa-pencil"></span>
-                        </a>
+                        <a class="btn btn-primary" (click)="showHideEdit(artist.id)">Edit<span class="fa fa-pencil"></span></a>
+                        <button class="btn btn-danger" (click)="deleteArtist(artist.id)">Borrar<span class="fa fa-trash"></span></button>
                           </div>
                         </div>
                       </div>

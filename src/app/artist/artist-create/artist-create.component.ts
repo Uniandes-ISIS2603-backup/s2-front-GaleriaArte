@@ -58,7 +58,6 @@ export class ArtistCreateComponent implements OnInit {
     let dateB: Date = new Date(this.artist.birthDate.year, this.artist.birthDate.month-1, this.artist.birthDate.day);
     //let dateB: Date = new Date('2015-05-18');
     this.artist.birthDate = dateB;
-    //this.cv.nombre = this.artist.name;
     //this.artist.cv_id = this.cv.id;
        // = this.dp.transform(dateB, 'dd/MM/yyyy');
     console.log(this.artist);

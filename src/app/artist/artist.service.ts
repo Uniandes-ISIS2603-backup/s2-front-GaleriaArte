@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Artist } from './artist';
 import { ArtistDetail } from './artist-detail';
@@ -14,6 +14,16 @@ const artists = '/artists';
   providedIn: 'root'
 })
 export class ArtistService {
+
+  /**
+    * The headers sent in every request to the API
+    */
+   headers = new HttpHeaders({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    'Access-Control-Allow-Headers' : 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+
+});
 
   constructor(private http: HttpClient) { }
 
@@ -43,7 +53,7 @@ export class ArtistService {
 * @returns The confirmation that the artist was updated
 */
 updateArtist(artist): Observable<ArtistDetail> {
-    return this.http.put<ArtistDetail>(API_URL + artists + '/' + artist.id, artist);
+    return this.http.put<ArtistDetail>(API_URL + artists + '/' + artist.id, artist, { headers: this.headers });
 }
 
 /**

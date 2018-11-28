@@ -36,7 +36,7 @@ export class CvService {
     * @param cvId The id of the cv
     * @returns The cv details
     */
-   getCv(cvId): Observable<Cv> {
+   getCvDetail(cvId): Observable<Cv> {
     return this.http.get<Cv>(API_URL + artist+ '/' + cvId + cvs, { headers: this.headers });
 }
 
@@ -45,7 +45,7 @@ export class CvService {
     * @param cv The new cv
     * @returns The confirmation that the cv was created
     */
-   createcv(cv): Observable<boolean> {
+   createCv(cv): Observable<boolean> {
     return this.http.post<boolean>(API_URL + cvs, cv, { headers: this.headers });
 }
 
