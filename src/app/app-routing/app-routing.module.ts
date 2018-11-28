@@ -35,9 +35,8 @@ import { ExtraServiceDetail } from '../extraService/extraService-detail';
 import { ExtraServiceEditComponent } from '../extraService/extra-service-edit/extra-service-edit.component';
 import { ExtraServiceCreateComponent } from '../extraService/extraService-add/extraService-add.component';
 import { KindEditComponent } from '../kind/kind-edit/kind-edit.component';
-
-
-
+import { CvListComponent } from '../cv/cv-list/cv-list.component';
+import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
 
 export const routes: Routes = [
   {
@@ -91,11 +90,11 @@ export const routes: Routes = [
       { path: 'list', component: ArtistListComponent },
       { path: ':id', component: ArtistDetailComponent }]
   },
-  //{
-  //  path: 'cvs', children: [
-  //    { path: 'list', component: CvListComponent },
-  //    { path: ':id', component: CvDetailComponent }]
-  //},
+  {
+    path: 'cvs', children: [
+      { path: 'list', component: CvListComponent },
+      { path: ':id', component: CvDetailComponent }]
+  },
 
   //{path: '**', component :NotFoundComponent},
   { path: 'login', component: LoginComponent },

@@ -23,4 +23,9 @@ export class Artist
     * A brief description of the artist's life
     */
    description: string;
+
+   /**
+    * The Cv of the artist
+    */
+   cv_id: number;
 }
