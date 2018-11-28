@@ -28,9 +28,6 @@ export class ArtistDetailComponent implements OnInit {
        private artistService: ArtistService 
    ) { }
 
-   
-   
-
    /**
    * El id del artist que viene en el path get .../artists/artist_id
    */

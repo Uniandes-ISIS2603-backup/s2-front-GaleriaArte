@@ -24,8 +24,8 @@ export class MedioPagoListComponent implements OnInit
      * Asks the service to update the list of medios de pago
      */
     getMedioPagos(): void {
-        this.medioPagoService.getMedioPagos()
-            .subscribe(medioPagos => this.medioPagos = medioPagos);
+      //  this.medioPagoService.getMedioPagos()
+      //      .subscribe(medioPagos => this.medioPagos = medioPagos);
     }
 
     /**
@@ -33,6 +33,6 @@ export class MedioPagoListComponent implements OnInit
      * This method will be called when the component is created
      */
     ngOnInit() {
-        this.getMedioPagos();
+       // this.getMedioPagos();
     }
 }
