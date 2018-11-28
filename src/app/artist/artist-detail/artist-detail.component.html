@@ -1,23 +1,24 @@
 <div class="panel-body">
-  <div class="border margin">
-      <div class="row">
-          <div class="col">
+    <div class="border margin">
+        <div class="row">
+            <div class="col">
                 <div class="card">
-                        <img src="{{artistDetail.image}}" style="width:100%">
-                        </div>
-          </div>
-          <div class="col">
+                    <img src="{{artistDetail.image}}" style="width:100%">
+                </div>
+            </div>
+            <div class="col">
                 <div class="card">
-        <h1>{{artistDetail.name}}</h1>
-        <p class="price">{{artistDetail.birthDate| date:'yyyy-mm-dd'}}</p>
-        <p>{{artistDetail.description}}</p>
-   </div>
-   <div clas="col">
-        <a class="btn btn-primary" routerLink= "/artists/{{artistDetail.id}}/cvs">CV</a>
-    <button class="btn btn-primary" (click)="showHideEdit(artist.id)"><span class="fa fa-pencil">Edit</span></button>
-   </div>
-          </div>
-  </div>
-  <p class="h3 p-3">Obras del artista: </p>
-    <app-paintwork-list [paintworks]="artistDetail.obras"></app-paintwork-list>
-</div>
+                    <span title="Nombre del artista">
+                        <h1>{{artistDetail.name}}</h1>
+                    </span>
+                    <p class="price">{{artistDetail.birthDate| date:'yyyy-mm-dd'}}</p>
+                    <p>{{artistDetail.description}}</p>
+                    <span title="Hoja de vida del artista">
+                        <a class="btn btn-primary" routerLink="/cvs/{{artistDetail.id}}/cvs">Hoja de vida</a></span>
+                </div>
+            </div>
+        </div>
+        <p class="h3 p-3">Obras del artista: </p>
+        <app-paintwork-list [paintworks]="artistDetail.obras"></app-paintwork-list>
+        <!--app-cv-detail [cv_detail] = "artistDetail.cv"></app-cv-detail-->
+    </div>

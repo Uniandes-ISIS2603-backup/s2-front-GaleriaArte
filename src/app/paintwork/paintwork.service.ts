@@ -77,7 +77,7 @@ const paintworks = '/paintworks';
       return this.http.delete<boolean>(API_URL + paintworks + '/' + paintworkId);
     }
   
-    getPaintworkDetail(paintworkId): Observable<Paintwork> 
+    getPaintworkDetail(paintworkId): Observable<PaintworkDetail> 
      {
           return this.http.get<PaintworkDetail>(API_URL + paintworks + '/' + paintworkId);
      }

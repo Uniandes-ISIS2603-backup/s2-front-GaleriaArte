@@ -32,13 +32,9 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvModule } from './cv/cv.module';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-<<<<<<< HEAD
-import { CvModule } from './cv/cv.module';
 
-=======
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { MedioPagoService } from './medioPago/medioPago.service';
->>>>>>> 279f51bab0513f68809de9efe7ec8e5443533efe
 
 
 

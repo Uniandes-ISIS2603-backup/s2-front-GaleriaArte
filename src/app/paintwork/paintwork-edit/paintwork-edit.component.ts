@@ -53,7 +53,7 @@ export class PaintworkEditComponent implements OnInit {
 
     editPaintwork():void{
       var paintwork_edit = {
-        idType: this.paintwork_id,
+        idPaintwork: this.paintwork_id,
         name: this.paintwork.name,
         description: this.paintwork.description
       };
