@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
+import { CategoryModule } from './category/category.module';
 import { BrowserModule    } from '@angular/platform-browser'        ;
 import { NgModule         } from '@angular/core'                    ;
 import { AppRoutingModule } from './app-routing/app-routing.module' ;
@@ -43,9 +44,8 @@ import { MedioPagoService } from './medioPago/medioPago.service';
     NotFoundComponent,
     LoginComponent,
     ModalBasicComponent,
-    Error404Component
-
-  ],
+    Error404Component,
+    ],
   imports: [
     BrowserModule,
     ModalDialogModule,
@@ -62,6 +62,7 @@ import { MedioPagoService } from './medioPago/medioPago.service';
     KindModule,
     ArtistModule,
     FeedbackModule,
+    CategoryModule,
     BuyerModule,
     CvModule,
     MedioPagoModule,

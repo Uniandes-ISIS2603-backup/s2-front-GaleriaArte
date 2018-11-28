@@ -1,3 +1,28 @@
-<p>
-  feedback-detail works!
-</p>
+<div class="container-fluid">
+    <div clas="row">
+            <div class="col">
+                <table class="table table-striped">
+                        <thead class="thead-dark">
+                                <tr>
+                                    <th class = "h3" colspan="2">Comentarios </th>
+                                </tr>
+                                    <th>Usuario</th>
+                                    <th>Descripción</th>
+                                    <th>Calificación</th>
+                                   
+                            </thead>
+                    <tbody>
+                        <tr *ngFor = "let feedbacklDetail of feedbacklDetail">
+                            <td>{{feedbacklDetail.user}}</td>
+                            <td> {{feedbacklDetail.description}}</td>
+                             <td> {{feedbacklDetail.rating}}</td>
+                              
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <button type="button" class="btn btn-danger">Volver</button>
+                </div>
+            </div>
+         </div>
+    </div>
