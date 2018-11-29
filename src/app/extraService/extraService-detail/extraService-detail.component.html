@@ -1,36 +1,21 @@
-<div class="container-fluid">
-<div clas="row">
-        <div class="col">
-            <table class="table table-striped">
-                    <thead class="thead-dark">
-                            <tr>
-                                <th class = "h3" colspan="2">{{extraServiceDetail.name}}  </th>
-                            </tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Availability</th>
-                        </thead>
-                <tbody>
-                    <tr *ngFor = "let extraServiceDetail of extraServicesDetail">
-                        <td>{{extraServiceDetail.id}}</td>
-                        <td> {{extraServiceDetail.name}}</td>
-                         <td> {{extraServiceDetail.description}}</td>
-                          <td> {{extraServiceDetail.price}}</td>
-                           <td> {{extraServiceDetail.availability}}</td>
-                           <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
-                            <button class="btn btn-primary text-center" routerLink="/extraServices/{{extraServicesDetail.id}}/edit">Edit</button>
-                            <div class="divider"></div>
-                            <button class="btn btn-danger text-center" (click)="deleteExtraService()"><span class="fa fa-trash"></span></button>
-                        </div>
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <button type="button" class="btn btn-danger">Volver</button>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3">{{extraServiceDetail.name}}<p> 
+        <div class="row">
+            <div class="col-md-3">
+                <div class="thumb">
+                </div>
             </div>
-        </div>
-     </div>
-</div>
+            <div class="col">
+                <dl>     
+                    <dt>Description</dt>
+                    <dd>{{extraServiceDetail.description}}</dd>
+                    <dt>Price</dt>
+                    <dd>{{extraServiceDetail.price}}</dd>
+                </dl>
+            </div>
 
+        </div>
+    </div>
+
+</div>
