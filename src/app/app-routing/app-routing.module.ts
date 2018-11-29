@@ -47,6 +47,8 @@ import { CvListComponent } from '../cv/cv-list/cv-list.component';
 import { CvDetailComponent } from '../cv/cv-detail/cv-detail.component';
 import {SaleListListasComponent} from '../sale/sale-list-listas/sale-list-listas.component';
 import { Sale } from '../sale/sale';
+import { CvCreateComponent } from '../cv/cv-create/cv-create.component';
+import { CvEditComponent } from '../cv/cv-edit/cv-edit.component';
 
 export const routes: Routes = [
   {
@@ -103,6 +105,8 @@ export const routes: Routes = [
   {
     path: 'cv', children: [
       { path: 'detail/:id', component: CvDetailComponent },
+      {path: 'create' , component: CvCreateComponent},
+      {path: 'edit/:id' , component: CvEditComponent}
      ]
   },
 

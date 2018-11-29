@@ -8,7 +8,7 @@
           <h5 class="card-title">{{k.name}}</h5>
           <p class="card-text">{{k.description}}</p>
           <button type="button" class="btn btn-primary pull-right mr-3" (click)="btnClick(k.idType)"><i class="fa fa-plus"></i>Ver más</button>    
-          <button [ngClass]="{ 'btn-warning': (!showEdit || edit_kind_id != k.idType), 'btn-danger': (showEdit && edit_kind_idType == k.idType) }"
+          <button [ngClass]="{ 'btn-warning': (!showEdit || edit_kind_id != k.idType), 'btn-danger': (showEdit && edit_kind_id == k.idType) }"
                                 type="button" class="btn mr-3" (click)="showEditKind(k.idType)">Editar Tipo</button>
           <button class="btn btn-danger" (click)="deleteKind(k.idType)"><span class="fa fa-trash mb-3"></span>Eliminar tipo</button>
           
