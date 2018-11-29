@@ -5,6 +5,7 @@ import { Artist } from './artist';
 import { ArtistDetail } from './artist-detail';
 
 import { environment } from '../../environments/environment';
+import { Cv } from '../cv/cv';
 const API_URL = environment.apiURL;
 const artists = '/artists';
 //const API_URL = "../../assets/";
@@ -56,12 +57,17 @@ updateArtist(artist): Observable<ArtistDetail> {
     return this.http.put<ArtistDetail>(API_URL + artists + '/' + artist.id, artist, { headers: this.headers });
 }
 
+cvId: Cv;
 /**
-* Deletes an artist from the BookStore
+* Deletes an artist
 * @param artistId The id of the artist
 * @returns The confirmation that the artist was deleted
 */
 deleteArtist(artistId): Observable<boolean> {
+  //this.http.get<Cv>(API_URL + artists+ '/' + artistId + '/cvs').subscribe(cvId => {
+    //this.cvId = cvId
+//});
+  //return this.http.delete<boolean>(API_URL + artists + '/' + artistId + '/cvs/'+this.cvId.id);
     return this.http.delete<boolean>(API_URL + artists + '/' + artistId);
 }
 }
