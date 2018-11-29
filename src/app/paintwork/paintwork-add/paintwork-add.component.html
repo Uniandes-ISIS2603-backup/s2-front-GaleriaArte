@@ -29,5 +29,32 @@
             </div>
         </form>
     </div>
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+            <div class="form-group">
+                    <label for="paintworkValue"><b>Valor de la imagen</b></label>
+                    <input type="number" name="paintworkValue" min="1" max="5"class="form-control" id="paintworkValue" [(ngModel)]="paintwork.value"
+                    #paintworkValue="ngModel" [ngClass]="{ 'is-invalid': f.submitted && paintworkValue.invalid }"
+                    required>
+                    <div class="invalid-feedback">
+                        <div>The paintwork's description is missing</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="artistImage"><b>Image</b></label>
+                    <input type="text" name="artistImage" class="form-control" id="artistImage" [(ngModel)]="artist.image"
+                        #artistImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && artistImage.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>The artist's image is missing</div>
+                    </div>
+                </div>
+                <!-->form action="/action_page.php">
+                    <input type="file" name="pic" accept="image/*">
+                    <input type="submit">
+                  </form-->
+    </div>
     <div class="col-3"></div>
 </div>

@@ -23,6 +23,14 @@
             </div>
         </form>
     </div>
+    <div class="form-group">
+            <label for="paintworkImage"><b>Image</b></label>
+            <input type="text" name="paintworkImage" class="form-control" id="paintworkImage" [(ngModel)]="paintwork.imagePath"
+                #paintworkImage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && paintworkImage.invalid }" required>
+            <div class="invalid-feedback">
+                <div>The paintwork's image is missing</div>
+            </div>
+        </div>
 </div>
 <br>
 <div class="row">
