@@ -20,7 +20,7 @@ export class FeedbackDetailComponent implements OnInit {
 
   feedback_id: number;
  
-  getBuyerDetail(): void {
+  getFeedbackDetail(): void {
       this.feedbackService.getFeedbackDetail(this.feedback_id)
           .subscribe(feedbackDetail => {
               this.feedbackDetail = feedbackDetail
@@ -31,7 +31,7 @@ export class FeedbackDetailComponent implements OnInit {
       this.feedback_id = +this.route.snapshot.paramMap.get('id');
       if (this.feedback_id){
       this.feedbackDetail = new FeedbackDetail();
-      this.getBuyerDetail();
+      this.getFeedbackDetail();
       }
   }
 }
