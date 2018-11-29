@@ -1,15 +1,12 @@
 export class Feedback {
-    idType:number;
+    id:number;
         /**
     * The feedbacks's description
     */
-   descripcion:String;
+   comentario:String;
    /**
    * The feedbacks's user
    */
-   usuario:String;
-   /**
-   * The feedbacks's rating
-   */
-   rating:number;    
+   name:String;
+
 }

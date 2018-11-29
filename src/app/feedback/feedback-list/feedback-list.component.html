@@ -9,13 +9,13 @@
               </tr>
           </thead>
           <tbody>
-              <th>Usuario</th>
-              <th>Descripcion</th>
-              <th>Calificacion</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+             
               <tr *ngFor="let feedback of feedbacks">
-                  <td>{{feedback.usuario}}</td>
-                  <td>{{feedback.descripcion}}</td>
-                  <td>{{feedback.rating}}</td>
+                  <td>{{feedback.name}}</td>
+                  <td>{{feedback.comentario}}</td>
+                
               </tr>
           </tbody>
       </table>

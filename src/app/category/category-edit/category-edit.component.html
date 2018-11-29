@@ -6,7 +6,7 @@
         <form name="category" (ngSubmit)="f.form.valid && editCategory()" #f="ngForm" novalidate>
               <div class="form-group">
                 <label for="name"><b>Nombre</b></label>
-                <input type="text" name="name" class="form-control" id="name" [(ngModel)]="category.nombre"
+                <input type="text" name="name" class="form-control" id="name" [(ngModel)]="category.name"
                        #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required>
                        <div class="invalid-feedback">
                     <div>Falta el nombre de la categoría</div>
@@ -15,7 +15,7 @@
            
             <div class="form-group">
                 <label for="description"><b>Descripción</b></label>
-                <textarea name="description" class="form-control" id="description" [(ngModel)]="category.descripcion"
+                <textarea name="description" class="form-control" id="description" [(ngModel)]="category.description"
                           #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
@@ -28,12 +28,12 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <div class="row form-inline justify-content-center align-self-center">
-            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editArtist()">Salvar</i>
-          
-            <i class="fa fa-ban" (click)="cancelEdition()">Cancelar</i>
+            <div class="row form-inline justify-content-center align-self-center">
+                    <button type="button" class="btn btn-primary" (click)="editCategory()">Guardar</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancelar</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<br>
-<br>
+        <br>
+        <br>

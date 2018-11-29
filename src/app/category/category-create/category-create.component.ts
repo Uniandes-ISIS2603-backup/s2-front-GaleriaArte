@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CategoryService } from '../category.service';
-//import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { Category } from '../category';
 import { Router } from '@angular/router';
 
@@ -15,12 +15,12 @@ export class CategoryCreateComponent implements OnInit {
      /**
     * Constructor for the component
     * @param feedbackService The feedbacks's services provider
-    * //param toastrService The toastr to show messages to the user
+    *  @param toastrService  The toastr to show messages to the user
     */
    constructor(
     private categoryService: CategoryService,
-    private router: Router,
-   // private toastrService: ToastrService
+    private toastrService: ToastrService
+  
   ) { }
 
     /**
@@ -39,33 +39,35 @@ export class CategoryCreateComponent implements OnInit {
     * that the user created a new category
     */
  @Output() create = new EventEmitter();
-
-   /**
-    * Creates a category
-    */
- createCategory(): Category
- {
-   console.log(this.category);
-
-   this.categoryService.createCategory(this.category).subscribe((category) => {this.category=category; this.create.emit(); 
-     //this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
-   });
-
-   return this.category;
- }
     /**
     * Emits the signal to tell the parent component that the
     * user no longer wants to create a category
     */
- cancelCreation(): void{
-   this.cancel.emit();
- }
+   cancelCreation(): void{
+    this.cancel.emit();
+  }
+   /**
+    * Creates a category
+    */
+   createCategory(): void {
+    var category_create = {
+      name: this.category.name,
+      description: this.category.description,
+  };
+  this.categoryService.createCategory(category_create)
+      .subscribe(() => {
+        this.create.emit()
+          this.toastrService.success("The category was successfully created", 'category creation');
+      }, err => {
+          this.toastrService.error(err, 'Error');
+      });
+
 
      /**
     * This function will initialize the component
     */
-ngOnInit() {
- this.category= new Category();
 }
-
+ngOnInit() {
+  this.category= new Category();
+}
 }

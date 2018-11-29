@@ -30,7 +30,7 @@ export class FeedbackEditComponent implements OnInit {
     this.cancel.emit();
   }
   getFeedback():void{
-    this.feedbackService.getFeedbackDetail(this.feedback.idType).subscribe(feedback=>{this.feedback=feedback});
+    this.feedbackService.getFeedbackDetail(this.feedback.id).subscribe(feedback=>{this.feedback=feedback});
   }
   ngOnInit() {
     this.feedback= new FeedbackDetail();

@@ -5,8 +5,8 @@ import {Category} from './category';
 import { CategoryDetail } from './category-detail';
 import { environment } from '../../environments/environment';
 
-const API_URL = environment.apiURL;
-const categories = '/categories';
+const API_URL = "http://localhost:8080/s2_galeriaarte-api/api/";
+const categories = 'categories';
 /**
 * The service provider for everything related to feedbacks
 */

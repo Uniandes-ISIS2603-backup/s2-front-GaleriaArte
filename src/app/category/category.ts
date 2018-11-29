@@ -1,12 +1,12 @@
 export class Category {
-    idType:number;
+    idCategory:number;
     /**
 * The category's description
 */
-nombre:String;
+name:String;
 /**
 * The category's user
 */
-descripcion:String;
+description:String;
 
 }

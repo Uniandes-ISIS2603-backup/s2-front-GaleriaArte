@@ -11,7 +11,7 @@
         <form name="categoria" (ngSubmit)="f.form.valid && createCategory()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="nombre"><b>Nombre</b></label>
-                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="category.nombre"
+                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="category.name"
                     #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Falta el nombre de la categoría</div>
@@ -20,7 +20,7 @@
             
             <div class="form-group">
                 <label for="categoryDescription"><b>Descripción</b></label>
-                <textarea name="categoryDescription" class="form-control" id="categoryDescription" [(ngModel)]="category.descripcion"
+                <textarea name="categoryDescription" class="form-control" id="categoryDescription" [(ngModel)]="category.description"
                     #categoryDescription="ngModel" [ngClass]="{ 'is-invalid': f.submitted && categoryDescription.invalid }"
                     required></textarea>
                 <div class="invalid-feedback">
