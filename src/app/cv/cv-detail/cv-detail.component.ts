@@ -35,7 +35,7 @@ export class CvDetailComponent implements OnInit {
     * The function which obtains the author whose details we want to show
     */
    getCv(): void {
-    this.cvService.getCv(this.cv_id)
+    this.cvService.getCvDetail(this.cv_id)
         .subscribe(cv => {
             this.cv = cv
         }, err => {

@@ -1,9 +1,5 @@
 import { KindModule } from './kind/kind.module';
 import { KindCreateComponent } from './kind/kind-create/kind-create.component';
-import { AuthService } from './services/auth.service';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireModule } from 'angularfire2';
 import { environment } from './../environments/environment';
 import { PaintworkModule } from './paintwork/paintwork.module';
 import { CategoryModule } from './category/category.module';
@@ -53,10 +49,7 @@ import { MedioPagoService } from './medioPago/medioPago.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
+    BrowserAnimationsModule,    
     NgxPermissionsModule,
 /**********  Importe de los modulos nuestros  ************************** */
     PaintworkModule,
