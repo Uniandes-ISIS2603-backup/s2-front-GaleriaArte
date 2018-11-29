@@ -29,7 +29,7 @@ export class CategoryEditComponent implements OnInit {
     this.cancel.emit();
   }
   getCategory():void{
-    this.categoryService.getCategoryDetail(this.category.idType).subscribe(category=>{this.category=category});
+    this.categoryService.getCategoryDetail(this.category.idCategory).subscribe(category=>{this.category=category});
   }
   ngOnInit() {
     this.category= new CategoryDetail();

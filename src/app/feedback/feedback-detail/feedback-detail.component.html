@@ -7,15 +7,15 @@
                                 <tr>
                                     <th class = "h3" colspan="2">Comentarios </th>
                                 </tr>
-                                    <th>Usuario</th>
+                                    <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Calificación</th>
                                    
                             </thead>
                     <tbody>
                         <tr *ngFor = "let feedbacklDetail of feedbacklDetail">
-                            <td>{{feedbacklDetail.user}}</td>
-                            <td> {{feedbacklDetail.description}}</td>
+                            <td>{{feedbacklDetail.name}}</td>
+                            <td> {{feedbacklDetail.comentario}}</td>
                              <td> {{feedbacklDetail.rating}}</td>
                               
                         </tr>

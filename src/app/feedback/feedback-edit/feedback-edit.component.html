@@ -5,31 +5,24 @@
         <br>
         <form name="Comentario" (ngSubmit)="f.form.valid && editFeedback()" #f="ngForm" novalidate>
               <div class="form-group">
-                <label for="user"><b>Usuario</b></label>
-                <input type="text" name="user" class="form-control" id="user" [(ngModel)]="feedback.usuario"
+                <label for="user"><b>Nombre</b></label>
+                <input type="text" name="user" class="form-control" id="user" [(ngModel)]="feedback.name"
                        #user="ngModel" [ngClass]="{ 'is-invalid': f.submitted && user.invalid }" required>
                        <div class="invalid-feedback">
-                    <div>Falta el usuario</div>
+                    <div>Falta el nombre</div>
                 </div>
             </div>
            
             <div class="form-group">
                 <label for="description"><b>Descripción</b></label>
-                <textarea name="description" class="form-control" id="description" [(ngModel)]="feedback.descripcion"
+                <textarea name="description" class="form-control" id="description" [(ngModel)]="feedback.description"
                           #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
                     <div>Falta la descripción</div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="rating"><b>Calificación</b></label>
-                <input type="number" name="rating" min="1" max="10"  class="form-control" id="rating" [(ngModel)]="feedback.rating"
-                       #rating="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rating.invalid }" required>
-                       <div class="invalid-feedback">
-                    <div>Falta la calificación</div>
-                </div>
-            </div>
+
         </form>
     </div>
 </div>
