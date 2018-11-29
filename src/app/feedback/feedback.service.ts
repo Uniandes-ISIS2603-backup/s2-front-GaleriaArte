@@ -6,7 +6,7 @@ import { FeedbackDetail } from './feedback-detail';
 
 
 const API_URL = "http://localhost:8080/s2_galeriaarte-api/api/paintworks/1/";
-const feedbacks = 'feedBacks';
+const feedbacks = 'feedbacks';
 /**
 * The service provider for everything related to feedbacks
 */

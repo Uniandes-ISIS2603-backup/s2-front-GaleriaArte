@@ -5,7 +5,7 @@
         <br>
         <form name="Comentario" (ngSubmit)="f.form.valid && editFeedback()" #f="ngForm" novalidate>
               <div class="form-group">
-                <label for="user"><b>Nombre</b></label>
+                <label for="user"><b>Usuario</b></label>
                 <input type="text" name="user" class="form-control" id="user" [(ngModel)]="feedback.usuario"
                        #user="ngModel" [ngClass]="{ 'is-invalid': f.submitted && user.invalid }" required>
                        <div class="invalid-feedback">
