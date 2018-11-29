@@ -104,8 +104,8 @@ export const routes: Routes = [
     path: 'categories', children: [
       { path: 'list', component: CategoryListComponent },
       { path: 'create', component: CategoryCreateComponent },
-      { path: 'edit', component: CategoryEditComponent },
-      { path: ':detail', component: CategoryDetailComponent }]
+      { path: 'edit/:id', component: CategoryEditComponent },
+      { path: 'detail/:id', component: CategoryDetailComponent }]
   },
   {
     path: 'feedbacks',
@@ -117,10 +117,10 @@ export const routes: Routes = [
         path: 'list', component: FeedbackListComponent
       },
       {
-        path: 'detail', component: FeedbackDetailComponent
+        path: 'detail/:id', component: FeedbackDetailComponent
       },
       {
-        path: 'edit', component: FeedbackEditComponent
+        path: 'edit/:id', component: FeedbackEditComponent
       },
       {
         path: 'modal', component: ModalBasicComponent
