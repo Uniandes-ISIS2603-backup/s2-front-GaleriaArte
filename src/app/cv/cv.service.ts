@@ -40,6 +40,10 @@ export class CvService {
     return this.http.get<Cv>(API_URL + artist+ '/' + cvId + cvs, { headers: this.headers });
 }
 
+getCv(cvId): Observable<Cv> {
+    return this.http.get<Cv>(API_URL + artist+ '/' + cvId + cvs, { headers: this.headers });
+}
+
    /**
     * Creates an cv
     * @param cv The new cv

@@ -53,7 +53,7 @@ export class KindEditComponent implements OnInit {
 
     editKind():void{
       var kind_edit = {
-        idType: this.kind_id,
+        idType: this.kind.idType,
         name: this.kind.name,
         description: this.kind.description
       };

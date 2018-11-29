@@ -1,3 +1,4 @@
+import { Cv } from 'src/app/cv/cv';
 import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { CvService } from '../cv.service';
@@ -14,17 +15,36 @@ export class CvEditComponent implements OnInit {
     private toastrService: ToastrService
   ) { }
 
+  @Input () cv_id
   @Input() cv: cvDetail;
 
 
   @Output() update= new EventEmitter();
   @Output() cancel= new EventEmitter();
 
+  getCv(): void{
+    this.cvService.getCv(this.cv_id)
+    .subscribe(cv => {
+      this.cv = cv;
+    }, err => {
+      this.toastrService.error(err, "Error");
+  });
+  }
+
   editCV():void{
-    this.cvService.updatecv(this.cv).subscribe(()=>{
-      this.toastrService.success("The cv was updated","CV edition");
+    var cv_edit={
+      id: this.cv.id,
+      education: this.cv.education,
+      nombreObraMasConocida: this.cv.nombreObraMasConocida,
+      informacionAdicional: this.cv.informacionAdicional
+    };
+    this.cvService.updatecv(cv_edit)
+    .subscribe(() => {
+      this.toastrService.success("The author's information was updated", "Author edition");
+      this.update.emit()}
+      , err => {
+        this.toastrService.error(err, "Error");
     });
-    this.update.emit();
   }
 
   cancelEdition():void{
@@ -32,7 +52,8 @@ export class CvEditComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.cv= new cvDetail();
+    this.cv= new Cv();
+    this.getCv()
   }
 
   ngOnChanges()
