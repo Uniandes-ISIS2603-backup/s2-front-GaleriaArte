@@ -36,7 +36,7 @@ export class ExtraServiceDetailComponent implements OnInit {
     /**
     * El servicio extra
     */
-    extraServiceDetail: ExtraServiceDetail;
+    @Input() extraServiceDetail: ExtraServiceDetail;
 
     /**
     * El id del servicio extra que viene en el path get .../extraService/extraService_id

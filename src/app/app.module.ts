@@ -31,6 +31,7 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { MedioPagoService } from './medioPago/medioPago.service';
+import { ExtraServiceService } from './extraService/extraService.service';
 
 
 
@@ -80,7 +81,11 @@ import { MedioPagoService } from './medioPago/medioPago.service';
      multi: true},
     {
       provide: MedioPagoService
-    }],
+    },
+    {
+      provide: ExtraServiceService
+    }
+  ],
     
   bootstrap: [AppComponent]
 })

@@ -1,24 +1,43 @@
 <div class="container-fluid">
-<div clas="row">
-        <div class="col">
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Create an ExtraService</button>
+            </div>
+            <br>
+            <br>
             <table class="table table-striped">
-                    <thead class="thead-dark">
-                            <tr>
-                                <th class = "h3" colspan="2">Servicios Extra</th>
-                            </tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                        </thead>
-                <tbody>
-                    <tr *ngFor = "let extraService of extraServices">
-                        <td style="cursor: pointer;"> <dd routerLink="/extraServices/{{extraService.id}}">{{extraService.id}}</dd></td>
-                        <td> {{extraService.name}}</td>
+                <thead>
+                    <tr>
+                        <th class="h4">ExtraService´<script src=""></script> Name</th>    
                     </tr>
-                     <td *ngxPermissionsOnly="['ADMIN']">
-        <button class="btn btn-danger" (click)="deleteExtraService(extraService.id)"><span class="fa fa-trash"></span></button>
-    </td>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let extraService of extraServices" >
+                        <td style="cursor: pointer;" (click)="onSelected(extraService.id)"> <dd>{{extraService.name}}</dd>
+                </td>
+                <td >
+                    <button class="btn btn-primary" (click)="showHideEdit(extraService.id)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <td >
+                    <button class="btn btn-danger" (click)="deleteAuthor(extraService.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                </tr>
                 </tbody>
             </table>
         </div>
-     </div>
+        <div class="col-8">
+            <div *ngIf="showView">
+                <app-extraService-detail [extraServiceDetail]="selectedExtraService"></app-extraService-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-extraService-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-extraService-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-extra-service-edit [extraService]="selectedExtraService" (cancel)="showHideEdit(selectedExtraService.id)" (update)="updateExtraService()" ></app-extra-service-edit>
+            </div>
+        </div>   
+    </div>
 </div>

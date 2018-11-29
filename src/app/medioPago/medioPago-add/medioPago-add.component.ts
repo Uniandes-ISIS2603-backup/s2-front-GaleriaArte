@@ -25,7 +25,7 @@ export class MedioPagoCreateComponent implements OnInit {
       console.log(this.medioPago);
 
       this.medioPagoService.createMedioPago(this.medioPago).subscribe((medioPago) => {this.medioPago=medioPago; this.create.emit(); 
-        this.toastrService.success("El comentario fue creado", "Creacion de comentario") 
+        this.toastrService.success("El medio fue creado", "Creacion de medioPago") 
       });
 
       return this.medioPago ;
@@ -33,7 +33,7 @@ export class MedioPagoCreateComponent implements OnInit {
 
  
   ngOnInit() {
-   // this.feedback= new Feedback();
+    this.medioPago= new MedioPago();
   }
 
 }

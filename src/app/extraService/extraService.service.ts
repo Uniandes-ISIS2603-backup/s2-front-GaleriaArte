@@ -5,9 +5,11 @@ import {HttpClient} from '@angular/common/http';
 import {ExtraService} from './extraService';
 import {ExtraServiceDetail}from './extraService-detail';
 
-const API_URL = "../../assets/";
-const extraServices = 'extraService.json';
-
+//const API_URL = "../../assets/";
+//const extraServices = 'extraService.json';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const extraServices = '/extraServices';
 @Injectable()
 export class ExtraServiceService 
     {
